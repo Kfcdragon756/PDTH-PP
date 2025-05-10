@@ -14,3 +14,16 @@ module:hook(FPCameraPlayerBase, "recoil_kick", function(self, v, v_h)
 end)
 
 --code courtesy from static recoil.
+
+function FPCameraPlayerBase:set_stance_newfov_instant(stance_name, newfov)
+	local new_fov = tweak_data.player.stances.default[stance_name].zoom_fov and newfov or managers.user:get_setting("fov_standard")
+	if new_fov then
+		self._fov.transition = nil
+		self._fov.fov = new_fov
+		self._fov.dirty = true
+		if Application:paused() then
+			self._parent_unit:camera():set_FOV(self._fov.fov)
+		end
+	end
+end
+--Just to change fov instantly, dunno if there will be problems.

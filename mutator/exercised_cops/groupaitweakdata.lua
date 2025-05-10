@@ -10,8 +10,8 @@ function GroupAITweakData:_set_overkill()
 	self.besiege.assault.delay = { 40, 35, 30 }
 	self.besiege.assault.units = {
 	    cop = { 0.5, 0.2, 0 },
-		swat = { 0.7, 1, 1 },
-		swat_kevlar = { 0.4, 0.6, 0.7 },
+		swat = { 0.7, 0.5, 0.5 },
+		swat_kevlar = { 0.4, 0.7, 0.7 },
 		shield = { 0.5, 0.7, 0.9 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.2, 0.7, 1 },
@@ -31,8 +31,8 @@ function GroupAITweakData:_set_overkill()
 	self.street.assault.sustain_duration_max = { 60, 120, 160 }
 	self.street.assault.delay = { 40, 35, 30 }
 	self.street.assault.units = {
-		swat = { 1, 1, 1 },
-		swat_kevlar = { 0.3, 0.4, 0.5 },
+		swat = { 0.5, 0.7, 0.7 },
+		swat_kevlar = { 0.4, 0.5, 0.6 },
 		murky = { 0.3, 0.3, 0.3 },
 		shield = { 0.5, 0.7, 0.8 },
 		tank = { 0, 0.1, 0.2 },
@@ -54,7 +54,7 @@ function GroupAITweakData:_set_overkill()
 		flank = {
 			spooc = { 1, 1, 1 },
 			taser = { 1, 1, 1 },
-			fbi_special = { 1, 1, 1 },
+			fbi = { 1, 1, 1 },
 		},
 	}
 end
@@ -67,9 +67,9 @@ function GroupAITweakData:_set_overkill_145()
 	self.besiege.assault.sustain_duration_max = { 200, 360, 400 }
 	self.besiege.assault.delay = { 40, 35, 30 }
 	self.besiege.assault.units = {
-	    cop = { 0.5, 0, 0 },
-		swat = { 1, 0.8, 0.7 },
-		swat_kevlar = { 0.3, 0.9, 0.9 },
+	    cop = { 0.3, 0, 0 },
+		swat = { 1, 0.5, 0.4 },
+		swat_kevlar = { 0.4, 0.7, 0.9 },
 		shield = { 0.5, 0.7, 0.8 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.3, 0.9, 1 },
@@ -88,22 +88,21 @@ function GroupAITweakData:_set_overkill_145()
 	self.street.assault.sustain_duration_max = { 60, 120, 160 }
 	self.street.assault.delay = { 40, 35, 30 }
 	self.street.assault.units = {
-		swat = { 1, 1, 1 },
-		swat_kevlar = { 0.2, 0.5, 0.5 },
-		murky = { 0.2, 0.2, 0.4 },
+		swat = { 0.5, 0.4, 0.45 },
+		swat_kevlar = { 0.5, 0.6, 0.7 },
 		shield = { 0.5, 0.7, 0.7 },
 		spooc = { 0.2, 0.7, 1 },
-		taser = { 0.2, 0.3, 0.5 },
+		taser = { 0.4, 0.4, 0.5 },
 	}
 	self.street.blockade.units = {
 		defend = {
-			swat = { 1, 1, 0.5 },
+			swat = { 0.5, 0.5, 0.5 },
 			swat_kevlar = { 0.8, 0.8, 0.8 },
 			shield = { 0.7, 0.9, 0.9 },
 		},
 		frontal = {
-			swat = { 0.4, 0.4, 0.4 },
-			swat_kevlar = { 0.3, 0.4, 0.5 },
+			swat = { 0.6, 0.5, 0.5 },
+			swat_kevlar = { 0.5, 0.5, 0.5 },
 			shield = { 0, 0.3, 0.5 },
 			spooc = { 0.1, 0.3, 0.4 },
 			fbi = { 0.6, 0.6, 0.7 },

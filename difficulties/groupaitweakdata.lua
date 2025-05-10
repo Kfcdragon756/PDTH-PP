@@ -47,7 +47,7 @@ function GroupAITweakData:_set_normal()
 	self.besiege.assault.units = {
 	    cop = { 1, 0.5, 0 },
 		swat = { 0.25, 0.8, 1 },
-		swat_kevlar = { 0, 0.1, 0.1258 },
+		swat_kevlar = { 0, 0.1, 0.2 },
 		shield = { 0.2, 0.5, 0.5 },
 	}
 	
@@ -88,7 +88,7 @@ function GroupAITweakData:_set_hard()
 	self.besiege.assault.delay = { 40, 35, 30 }
 	self.besiege.assault.units = {
 	    cop = { 1 , 0.2 , 0 },
-		swat = { 1, 1, 1 },
+		swat = { 0.5, 0.9, 0.8 },
 		swat_kevlar = { 0, 0.4, 0.5 },
 		shield = { 0.2, 0.5, 0.5 },
 		tank = { 0, 0, 0.127 },
@@ -139,7 +139,7 @@ function GroupAITweakData:_set_overkill()
 	self.besiege.assault.delay = { 40, 35, 30 }
 	self.besiege.assault.units = {
 	    cop = { 0.5, 0.1, 0 },
-		swat = { 0.7, 1, 1 },
+		swat = { 0.7, 0.7, 0.8 },
 		swat_kevlar = { 0.25, 0.5, 0.6 },
 		shield = { 0.5, 0.7, 0.9 },
 		tank = { 0, 0.1, 0.2 },
@@ -160,12 +160,12 @@ function GroupAITweakData:_set_overkill()
 	self.street.assault.sustain_duration_max = { 60, 120, 160 }
 	self.street.assault.delay = { 40, 35, 30 }
 	self.street.assault.units = {
-		swat = { 1, 1, 1 },
-		swat_kevlar = { 0.2, 0.3, 0.3 },
+		swat = { 0.8, 0.7, 0.7 },
+		swat_kevlar = { 0.4, 0.5, 0.5 },
 		shield = { 0.5, 0.7, 0.8 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.2, 0.7, 1 },
-		taser = { 0.05, 0.35, 0.45 },
+		taser = { 0.3, 0.35, 0.45 },
 	}
 	self.street.blockade.units = {
 		defend = {
@@ -195,8 +195,8 @@ function GroupAITweakData:_set_overkill_145()
 	self.besiege.assault.sustain_duration_max = { 200, 360, 400 }
 	self.besiege.assault.delay = { 40, 35, 30 }
 	self.besiege.assault.units = {
-	    cop = { 0.5, 0, 0 },
-		swat = { 1, 1, 1 },
+	    cop = { 0.3, 0, 0 },
+		swat = { 1, 0.7, 0.6 },
 		swat_kevlar = { 0.3, 0.6, 0.9 },
 		shield = { 0.5, 0.7, 0.8 },
 		tank = { 0, 0.1, 0.2 },
@@ -216,17 +216,17 @@ function GroupAITweakData:_set_overkill_145()
 	self.street.assault.sustain_duration_max = { 60, 120, 160 }
 	self.street.assault.delay = { 40, 35, 30 }
 	self.street.assault.units = {
-		swat = { 1, 1, 1 },
-		swat_kevlar = { 0.3, 0.4, 0.5 },
+		swat = { 0.7, 0.6, 0.5 },
+		swat_kevlar = { 0.5, 0.5, 0.5 },
 		shield = { 0.5, 0.7, 0.7 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.2, 0.7, 1 },
-		taser = { 0.2, 0.3, 0.5 },
+		taser = { 0.4, 0.4, 0.5 },
 	}
 	self.street.blockade.units = {
 		defend = {
-			swat = { 1, 0.8, 0.7 },
-			swat_kevlar = { 0.3, 0.3, 0.5 },
+			swat = { 0.7, 0.6, 0.6 },
+			swat_kevlar = { 0.5, 0.5, 0.5 },
 			shield = { 0.7, 0.9, 0.9 },
 		},
 		frontal = {

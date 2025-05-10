@@ -2,10 +2,12 @@ local module = DorHUDMod:new("PDTH++", { abbr = "PDTH++",
 	author = "kfcdragon756",
 	bundled = "standard", 
 	categories = "Gameplay-changing", 
-	version = "v1.34.1", 
+	version = "v1.35.1", 
 	description = {
 	chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
 	english = "The gameplay variety is still not enough, and this overhaul is just trying to add as much variety as possible in limited contents.",
+	spanish = "La variedad del gameplay vanilla no es suficiente, este mod overhaul inteta añadir la mayor variedad posible con el poco contenido que ofrece el juego.",
+	german = "Die Gameplayvielfalt ist immer noch nicht genug und diese Überarbeitung versucht, noch mehr Vielfalt im beschränkten Format einzubringen.",
 	},
 	dependencies = {
 		"[nwpab]",
@@ -18,66 +20,21 @@ local module = DorHUDMod:new("PDTH++", { abbr = "PDTH++",
 		"[hitmarkers]",
 		"[Realistic Rof]",
 		"[shotgun pellets customization]",
+		"[wtfbm]",
+		"[M308_can_zoom]",
 	},
-	includes = { { "mod_localization", { type = "localization" } } },
+	includes = { 
+	{ "mod_localization", { type = "localization" } },
+	{ "mod_options", { type = "menu_options" } },
+	},
 })
---This binding function is for cable tie skill.
-module:add_menu_option("tie_yourself", {
-	type = "keybind",
-	name = {
-		english = "Tie/Untie yourself with skill",
-		chinese = "用技能把自己绑起来/解绑",
-	}
-})
-
-local next_allowed_tie_t = -100
-
-local cannot_tie = function()
-	--You cannot tie yourself if you don't have the skill.
-	if not managers.player._equipment.specials.extra_cable_tie then
-		return true
-	end
-	--A little delay on this function, otherwise player may trigger this too quickly so cable ties runs out too quick.
-	if TimerManager:game():time() < next_allowed_tie_t then
-		return true
-	end
-	return false
-end
-
-module:hook("OnKeyPressed", "tie_yourself", nil, "GAME", function(self)
-	--Check if player unit exists. If this check doesn't exist then game will crash.
-	if not managers.player:player_unit() then
-		return
-	end
-	if cannot_tie() then
-		return
-	end
-	--Get your state, so the function will only work while your state is standard or arrested.
-	--The function current_state_name() doesn't exist in vanilla game. I made it for convenientcy.
-	local state_name = managers.player:player_unit():movement():current_state_name()
-	if state_name == "arrested" then
-		managers.player:set_player_state("standard")
-		return
-	end
-	--No cable ties means you don't have anything to tie yourself.
-	if not managers.player._equipment.specials.cable_tie then
-		return
-	end
-	if state_name ~= "standard" then
-		return
-	end
-	managers.player:remove_special("cable_tie")
-	managers.player:player_unit():movement():on_disarmed()
-	next_allowed_tie_t = TimerManager:game():time() + 0.5
-	--The delay is always 0.5s for sure. I don't actually know how TimerManager works but this definitely does something.
-end)
 
 --sandbox
 module:hook_post_require("lib/managers/achievmentmanager.", "sandbox/achievmentmanager")
 module:hook_post_require("lib/network/matchmaking/networkaccountsteam", "sandbox/NetworkAccountSTEAM")
 module:hook_post_require("lib/network/matchmaking/networkmatchmakingsteam", "sandbox/NetworkMatchMakingSTEAM")
 module:hook_post_require("lib/managers/savefilemanager", "sandbox/savefile")
---player weapon
+--player weapon & NPC base weapon stats.
 module:hook_post_require("lib/tweak_data/playertweakdata", "weapon_stuff/playertweakdata")
 module:hook_post_require("lib/tweak_data/weapontweakdata", "weapon_stuff/weapontweakdata")
 module:hook_post_require("lib/units/weapons/raycastweaponbase", "weapon_stuff/shieldpiercing")
@@ -89,6 +46,7 @@ module:hook_post_require("lib/units/beings/player/states/playertased", "weapon_s
 module:hook_post_require("lib/units/weapons/raycastweaponbase", "weapon_stuff/fire_sound_fix")
 module:hook_post_require("lib/units/weapons/raycastweaponbase", "weapon_stuff/raycastweaponbase")
 module:register_post_override("lib/units/weapons/grenades/m79grenadebase", "weapon_stuff/m79grenadebase")
+module:hook_post_require("lib/managers/menumanager", "weapon_stuff/menumanager")
 --enemies
 module:hook_post_require("lib/tweak_data/charactertweakdata", "enemies/charactertweakdata")
 module:hook_post_require("core/lib/units/coreunitdamage", "enemies/coreunitdamage")
@@ -105,7 +63,7 @@ module:hook_post_require("lib/tweak_data/equipmentstweakdata", "deployables/equi
 module:hook_post_require("lib/units/pickups/ammoclip", "deployables/pickupdeployables")
 module:hook_post_require("lib/managers/playermanager", "deployables/pickupdeployables")
 module:hook_post_require("lib/units/equipment/ammo_bag/ammobagbase", "deployables/pickupdeployables")
---module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase")
+--module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase") unused but will be still here for future development.
 module:hook_post_require("lib/units/weapons/trip_mine/tripminebase", "deployables/tripminebase")
 --tweakdata
 module:hook_post_require("lib/tweak_data/upgradestweakdata","tweakdata/upgradestweakdata")
@@ -121,6 +79,7 @@ module:hook("OnModuleRegistered", "load_KO", function()
 	D:unregister_module("wtfbm")
 	D:unregister_module("shotgun pellets customization")
 	--This mod was totally a mistake.
+	D:unregister_module("M308_can_zoom")
 end)
 --some mutators will be fun.
 module:hook("OnModuleLoading", "load_mutators", function(module)
@@ -170,10 +129,8 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	
 	mutator_availability = { all = true }
 	if MutatorHelper.setup_mutator(module, "expert_mode", mutator_availability, nil, true) then
-		module:hook_post_require("lib/units/beings/player/playerdamage", "mutator/expert_mode/playerdamage")
 		module:hook_post_require("lib/tweak_data/playertweakdata", "mutator/expert_mode/playertweakdata")
 		module:hook_post_require("lib/tweak_data/weapontweakdata", "mutator/expert_mode/weapontweakdata")
-		module:hook_post_require("lib/units/weapons/raycastweaponbase", "mutator/expert_mode/raycastweaponbase")
 		module:hook_post_require("lib/tweak_data/charactertweakdata", "mutator/expert_mode/charactertweakdata")
 		module:hook_post_require("lib/units/enemies/spooc/actions/lower_body/actionspooc", "mutator/expert_mode/actionspooc")
 		module:hook_post_require("lib/units/beings/player/states/playertased", "mutator/expert_mode/playertased")
@@ -198,6 +155,14 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	mutator_availability = { all = { levels = { bank = true, heat_street = true, apartment = true, bridge = true, diamond_heist = true, slaughter_house = true, suburbia = true, secret_stash = true } } }
 	if MutatorHelper.setup_mutator(module, "stealth_marksman", mutator_availability, nil, true) then
 		module:hook_post_require("lib/units/enemies/cop/copbase", "mutator/stealth_marksman/copbase")
+	end
+	
+	mutator_availability = { overkill_193 = false, easy = {}, normal = {}, hard = {}, overkill = {}, overkill_145 = {}, _conflicts = { "zhouji", "no_time_for_searching", "kaboom", "exercised_cops", "combine_assault" } }
+	if MutatorHelper.setup_mutator(module, "agents_vs_fbi", mutator_availability, nil, true) then
+		module:hook_post_require("lib/tweak_data/groupaitweakdata", "mutator/agents_vs_fbi/groupaitweakdata")
+		module:hook_post_require("lib/tweak_data/weapontweakdata", "mutator/agents_vs_fbi/weapontweakdata")
+		module:hook_post_require("lib/tweak_data/charactertweakdata", "mutator/agents_vs_fbi/charactertweakdata")
+		module:hook_post_require("lib/managers/playermanager", "mutator/agents_vs_fbi/playermanager")
 	end
 	
 end, false)

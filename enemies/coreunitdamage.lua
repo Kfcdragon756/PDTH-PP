@@ -13,7 +13,7 @@ if RequiredScript == "core/lib/units/coreunitdamage" then
             and tablex.get(unit:base(), "_tweak_table") == "tank"
             and body:name() == ids_glass
         then
-            self._endurance["explosion"]["_endurance"]["damage"] = 54
+            self._endurance["explosion"]["_endurance"]["damage"] = tweak_data.character.tank.damage.visor_health
             CoreBodyDamage.dozer_visor_bs = true
         end
     end)
