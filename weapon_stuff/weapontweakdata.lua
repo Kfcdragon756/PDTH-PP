@@ -23,10 +23,10 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.r870_shotgun.CLIP_AMMO_MAX = 7
 	self.r870_shotgun.DAMAGE = 2
-	self.r870_shotgun.AMMO_PICKUP = { 0.3, 1.2 }
+	self.r870_shotgun.AMMO_PICKUP = { 0.5, 1.2 }
 	self.r870_shotgun.EXTRA_PICKUP = { 0.1, 0.5 }
 	self.r870_shotgun.single.fire_rate = 1
-	self.r870_shotgun.firerate_multiplier = 1.5
+	self.r870_shotgun.firerate_multiplier = 1.65
 	self.r870_shotgun.damage_near = 700
 	self.r870_shotgun.damage_far = 4800
 	self.r870_shotgun.spread.standing = 1.5
@@ -197,8 +197,8 @@ module:hook(WeaponTweakData, "_init_data_mp5", function(self)
 	self.mp5.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mp5.NR_CLIPS_MAX = 3
     self.mp5.DAMAGE = 1.5
-    self.mp5.AMMO_PICKUP = {2.2, 5.2}
-	self.mp5.EXTRA_PICKUP = {1, 0.6}
+    self.mp5.AMMO_PICKUP = {3.3, 5.9}
+	self.mp5.EXTRA_PICKUP = {0.7, 0.7}
 	self.mp5.auto.fire_rate = 0.0857
 	self.mp5.firerate_multiplier = 1
     self.mp5.spread.standing = 2.5
