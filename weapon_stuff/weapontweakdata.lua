@@ -536,5 +536,5 @@ module:post_hook(WeaponTweakData, "_init_data_player_weapons", function(self)
 	self:_init_notimeforsearch_data()
 	self:_init_agents_vs_fbi_data()
 	
-	self.trip_mines.damage = 40
+	self.trip_mines.damage = 60
 end, false)
