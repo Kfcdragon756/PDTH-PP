@@ -94,6 +94,7 @@ module:hook("OnKeyPressed", "change_308_fov_zoom", nil, "GAME", function(self)
 		if name ~= "m14" then
 			return
 		end
+		unit:base()._sound_fire:post_event(tweak_data.weapon[name].sounds.dryfire)
 		--So there's only M308s can change fov zoom.
 		local plr_state = managers.player:player_unit():movement():current_state()
 		local stance = plr_state._in_steelsight and "steelsight" or plr_state._ducking and "crouched" or "standard"
