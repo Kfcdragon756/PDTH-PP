@@ -110,3 +110,8 @@ module:hook(RaycastWeaponBase, "chbk_bodyshot_mul", function(self)
 	end
 	return multiplier
 end,true)
+
+module:hook(RaycastWeaponBase, "_is_shooting", function(self)
+	return self._shooting
+end,true)
+

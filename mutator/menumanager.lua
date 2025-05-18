@@ -1,9 +1,12 @@
 local module = ... or DorHUD:module("PDTH++")
 local MenuCallbackHandler = module:hook_class("MenuCallbackHandler")
 local imcompatible = {
-	["zhouji"] = { "kaboom", "no_time_for_searching", "reelism_mode" },
-	["no_time_for_searching"] = { "zhouji", "kaboom" },
-	["kaboom"] = { "zhouji", "no_time_for_searching", "reelism_mode" },
+	["zhouji"] = { "kaboom", "no_time_for_searching", "reelism_mode", "agents_vs_fbi" },
+	["no_time_for_searching"] = { "zhouji", "kaboom", "agents_vs_fbi" },
+	["kaboom"] = { "zhouji", "no_time_for_searching", "reelism_mode", "agents_vs_fbi" },
+	["agents_vs_fbi"] = { "zhouji", "no_time_for_searching", "kaboom", "exercised_cops", "combine_assault" },
+	["exercised_cops"] = { "agents_vs_fbi" },
+	["combine_assault"] = { "agents_vs_fbi" },
 }
 
 local function check_mutator_conflictions()

@@ -5,9 +5,13 @@ module:hook(PlayerStandard, "_get_walk_speed_multiplier", function(self)
 	local multiplier = 1
 
 	if alive(self._equipped_unit) then
+		local weapon_shooting = self._equipped_unit:base():_is_shooting()
 		local weapon_tdata = self._equipped_unit:base():weapon_tweak_data()
 		if weapon_tdata.movement_speed_multiplier then
 			multiplier = multiplier * weapon_tdata.movement_speed_multiplier
+			if weapon_tdata.lower_speed_on_shooting and weapon_shooting then 
+				multiplier = multiplier * weapon_tdata.movement_speed_multiplier * 0.7
+			end
 		end
 	end
 	
@@ -22,9 +26,13 @@ module:hook(PlayerStandard, "_get_run_speed_multiplier", function(self)
 	local multiplier = 1
 
 	if alive(self._equipped_unit) then
+		local weapon_shooting = self._equipped_unit:base():_is_shooting()
 		local weapon_tdata = self._equipped_unit:base():weapon_tweak_data()
 		if weapon_tdata.movement_speed_multiplier then
 			multiplier = multiplier * weapon_tdata.movement_speed_multiplier
+			if weapon_tdata.lower_speed_on_shooting and weapon_shooting then 
+				multiplier = multiplier * weapon_tdata.movement_speed_multiplier * 0.7
+			end
 		end
 	end
 	
@@ -58,6 +66,10 @@ module:hook(PlayerStandard, "_get_max_walk_speed", function(self, t)
 	return movement_speed.STANDARD_MAX * multiplier
 end)
 
+module:pre_hook(PlayerStandard, "_enter", function(self)
+	managers.upgrades:setup_current_weapon()
+end)
+
 function PlayerStandard:_stance_entered(unequipped)
 	local head_stance = self._ducking and tweak_data.player.stances.default.crouched.head
 		or tweak_data.player.stances.default.standard.head
@@ -76,6 +88,10 @@ function PlayerStandard:_stance_entered(unequipped)
 
 	local new_fov = self._in_steelsight and stances.steelsight.zoom_fov and managers.user:get_setting("fov_zoom")
 		or managers.user:get_setting("fov_standard")
+	if m308_fov_zoom == true and weapon_id == "m14" then
+		new_fov = self._in_steelsight and stances.steelsight.zoom_fov and D:conf("m308_fov_zoom_set")
+		or managers.user:get_setting("fov_standard")
+	end
 	self._camera_unit:base():clbk_stance_entered(
 		misc_attribs.shoulders,
 		head_stance,
@@ -88,4 +104,3 @@ function PlayerStandard:_stance_entered(unequipped)
 end
 
 --parts of script from B Dawg's Full Game overhaul.
-

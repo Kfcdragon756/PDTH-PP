@@ -6,6 +6,7 @@ module:post_hook(CharacterTweakData, "_init_swat", function(self, presets)
 	self.swat.headshot_dmg_mul = 1.5
 	self.swat.rescue_hostages = false
 	self.swat.dodge = presets.dodge.expert
+	self.swat.weapon = presets.weapon.swats
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_heavy_swat", function(self, presets)
@@ -56,14 +57,15 @@ module:post_hook(CharacterTweakData, "_init_fbi", function(self, presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_tank", function(self, presets)
-	self.tank.headshot_dmg_mul = 70
-	self.tank.HEALTH_INIT = 500
+	self.tank.headshot_dmg_mul = 80
+	self.tank.HEALTH_INIT = 750
 	self.tank.weapon.r870.FALLOFF[1].dmg_mul = 6
 	self.tank.weapon.r870.FALLOFF[2].dmg_mul = 5
 	self.tank.weapon.r870.FALLOFF[3].dmg_mul = 4
 	self.tank.weapon.mossberg.FALLOFF[1].dmg_mul = 6
 	self.tank.weapon.mossberg.FALLOFF[2].dmg_mul = 4
 	self.tank.weapon.mossberg.FALLOFF[3].dmg_mul = 2
+	self.tank.weapon_voice = "1" -- But what does this actually do? Idk.
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_cop", function(self,presets)
@@ -120,7 +122,8 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	presets.weapon.expert.mossberg = deep_clone(presets.weapon.expert.r870)
 	
 	presets.weapon.fbi = deep_clone(presets.weapon.expert)
-
+	presets.weapon.swats = deep_clone(presets.weapon.good)
+	
 	return presets
 end, false)
 
