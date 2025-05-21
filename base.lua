@@ -27,6 +27,7 @@ local module = DorHUDMod:new("PDTH++", { abbr = "PDTH++",
 	{ "mod_localization", { type = "localization" } },
 	{ "mod_options", { type = "menu_options" } },
 	},
+	update = { id = "49577", platform = "modworkshop" },
 })
 
 --sandbox
