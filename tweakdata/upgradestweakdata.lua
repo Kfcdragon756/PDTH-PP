@@ -72,7 +72,7 @@ end, false)
 module:hook(UpgradesTweakData, "init_crew_bonus_data", function(self)
 	self.values.crew_bonus.protector = {0.9}
 	self.values.crew_bonus.more_ammo = {1}
-	self.values.crew_bonus.more_blood_to_bleed = {1.5}
+	self.values.crew_bonus.more_blood_to_bleed = {2}
 	self.values.crew_bonus.aggressor = {1}
 	self.values.crew_bonus.speed_reloaders = {1.15}
 end, false)

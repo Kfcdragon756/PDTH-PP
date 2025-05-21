@@ -2,7 +2,7 @@ local module = DorHUDMod:new("PDTH++", { abbr = "PDTH++",
 	author = "kfcdragon756",
 	bundled = "standard", 
 	categories = "Gameplay-changing", 
-	version = "v1.35", 
+	version = "v1.35.1", 
 	description = {
 	chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
 	english = "The gameplay variety is still not enough, and this overhaul is just trying to add as much variety as possible in limited contents.",
@@ -27,6 +27,7 @@ local module = DorHUDMod:new("PDTH++", { abbr = "PDTH++",
 	{ "mod_localization", { type = "localization" } },
 	{ "mod_options", { type = "menu_options" } },
 	},
+	update = { id = "49577", platform = "modworkshop" },
 })
 
 --sandbox
@@ -78,8 +79,8 @@ module:hook("OnModuleRegistered", "load_KO", function()
 	D:unregister_module("Auto Fire Sound Fix")
 	D:unregister_module("wtfbm")
 	D:unregister_module("shotgun pellets customization")
-	D:unregister_module("M308_can_zoom")
 	--This mod was totally a mistake.
+	D:unregister_module("M308_can_zoom")
 end)
 --some mutators will be fun.
 module:hook("OnModuleLoading", "load_mutators", function(module)
@@ -129,10 +130,8 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	
 	mutator_availability = { all = true }
 	if MutatorHelper.setup_mutator(module, "expert_mode", mutator_availability, nil, true) then
-		module:hook_post_require("lib/units/beings/player/playerdamage", "mutator/expert_mode/playerdamage")
 		module:hook_post_require("lib/tweak_data/playertweakdata", "mutator/expert_mode/playertweakdata")
 		module:hook_post_require("lib/tweak_data/weapontweakdata", "mutator/expert_mode/weapontweakdata")
-		module:hook_post_require("lib/units/weapons/raycastweaponbase", "mutator/expert_mode/raycastweaponbase")
 		module:hook_post_require("lib/tweak_data/charactertweakdata", "mutator/expert_mode/charactertweakdata")
 		module:hook_post_require("lib/units/enemies/spooc/actions/lower_body/actionspooc", "mutator/expert_mode/actionspooc")
 		module:hook_post_require("lib/units/beings/player/states/playertased", "mutator/expert_mode/playertased")

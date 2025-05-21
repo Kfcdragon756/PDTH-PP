@@ -132,7 +132,7 @@ end
 
 function PlayerDamage:_damage_screen()
 	if managers.player._equipment.specials.thick_skin then
-		self._regenerate_timer = tweak_data.player.damage.REGENERATE_TIME + 1
+		self._regenerate_timer = tweak_data.player.damage.REGENERATE_TIME + 0.5
 	else
 		self._regenerate_timer = tweak_data.player.damage.REGENERATE_TIME
 	end

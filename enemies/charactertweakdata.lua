@@ -26,11 +26,11 @@ module:post_hook(CharacterTweakData, "_init_murky", function(self,presets)
 	self.murky.weapon = presets.weapon.fbi
 	self.murky.surrender_easy = false
 	self.murky.dodge = presets.dodge.ninja
-	self.murky.weapon.ak47.FALLOFF[1].dmg_mul = 1.5
-	self.murky.weapon.ak47.FALLOFF[2].dmg_mul = 1.5
-	self.murky.weapon.ak47.FALLOFF[3].dmg_mul = 1.5
-	self.murky.weapon.ak47.FALLOFF[4].dmg_mul = 1.5
-	--self.murky.weapon.ak47.FALLOFF[5].dmg_mul = 1.5
+	self.murky.weapon.ak47.FALLOFF[1].dmg_mul = 1.25
+	self.murky.weapon.ak47.FALLOFF[2].dmg_mul = 1.25
+	self.murky.weapon.ak47.FALLOFF[3].dmg_mul = 1.25
+	self.murky.weapon.ak47.FALLOFF[4].dmg_mul = 1.25
+	--self.murky.weapon.ak47.FALLOFF[5].dmg_mul = 1.25
 	self.murky.weapon.mp5.FALLOFF[1].dmg_mul = 1.5
 	self.murky.weapon.mp5.FALLOFF[2].dmg_mul = 1.5
 	self.murky.weapon.mp5.FALLOFF[3].dmg_mul = 1.5
@@ -62,8 +62,8 @@ module:post_hook(CharacterTweakData, "_init_tank", function(self, presets)
 	self.tank.weapon.r870.FALLOFF[1].dmg_mul = 6
 	self.tank.weapon.r870.FALLOFF[2].dmg_mul = 5
 	self.tank.weapon.r870.FALLOFF[3].dmg_mul = 4
-	self.tank.weapon.mossberg.FALLOFF[1].dmg_mul = 6
-	self.tank.weapon.mossberg.FALLOFF[2].dmg_mul = 4
+	self.tank.weapon.mossberg.FALLOFF[1].dmg_mul = 5
+	self.tank.weapon.mossberg.FALLOFF[2].dmg_mul = 3
 	self.tank.weapon.mossberg.FALLOFF[3].dmg_mul = 2
 	self.tank.weapon_voice = "1" -- But what does this actually do? Idk.
 end, false)

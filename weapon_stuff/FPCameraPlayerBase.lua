@@ -18,9 +18,12 @@ end)
 function FPCameraPlayerBase:set_stance_newfov_instant(stance_name, newfov)
 	local new_fov = tweak_data.player.stances.default[stance_name].zoom_fov and newfov or managers.user:get_setting("fov_standard")
 	if new_fov then
-		self._fov.transition = nil
-		self._fov.fov = new_fov
-		self._fov.dirty = true
+		local transition = {}
+		self._fov.transition = transition
+		transition.end_fov = new_fov
+		transition.start_fov = self._fov.fov
+		transition.start_t = TimerManager:game():time()
+		transition.duration = 0.1
 		if Application:paused() then
 			self._parent_unit:camera():set_FOV(self._fov.fov)
 		end

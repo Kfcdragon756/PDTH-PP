@@ -115,9 +115,9 @@ local replacements = {
 	spanish = "Armadura Robusta",
 	},
 	["des_thick_skin"] = {
-	chinese = "重型护甲为玩家增加100点血量与30点护甲。\n代价是行走速度减慢15%,奔跑速度减慢10%，护甲回复时间延长一秒。\n这种护甲能让你近距离硬抗防爆特警一枪而不倒地。",	
-	english = "Heavy armor provides 100 hp and 30 ap. \nFor what it costs, your walking speed is decreased by 15%, running speed decreased by 10%, and armor regen time is increased by 1 second. \nThis kind of armor can allow you to take a Bulldozer's shotgun shot without bleeding out.",
-	spanish = "Llevar la Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, la de correr un 10% y el tiempo de regeneración es incrementado por 1 segundo. \nEste tipo de armadura te permite aguantar un disparo de escopeta de los Bulldozers y seguir vivo.",
+	chinese = "重型护甲为玩家增加100点血量与30点护甲。\n代价是行走速度减慢15%,奔跑速度减慢10%，护甲回复时间延长0.5秒。\n这种护甲能让你近距离硬抗防爆特警一枪而不倒地。",	
+	english = "Heavy armor provides 100 hp and 30 ap. \nFor what it costs, your walking speed is decreased by 15%, running speed decreased by 10%, and armor regen time is increased by 0.5 second. \nThis kind of armor can allow you to take a Bulldozer's shotgun shot without bleeding out.",
+	spanish = "Llevar la Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, la de correr un 10% y el tiempo de regeneración es incrementado por 0.5 segundo. \nEste tipo de armadura te permite aguantar un disparo de escopeta de los Bulldozers y seguir vivo.",
 	},
 	["des_extra_start_out_ammo"] = {
 	chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。",
@@ -150,9 +150,9 @@ local replacements = {
 	spanish = "Aumenta la recogida de munición para tus compañeros de equipo.",
 	},
 	["des_more_blood_to_bleed"] = {
-	chinese = "使队友的倒地血量增加50%，并使队友的可被援助时间与倒地的援助时间惩罚增加50%。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
-	english = "Your teammates' down timer along with down timer penalty and health point on downed will be increased by 50%.",
-	spanish = "Aumenta el tiempo y la vida de tus compañeros de equipo en un 50% cuando están desangrándose.",
+	chinese = "使队友的倒地血量增加100%，并使队友的可被援助时间与倒地的援助时间惩罚增加100%。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
+	english = "Your teammates' down timer along with down timer penalty and health point on downed will be increased by 100%.",
+	spanish = "Aumenta el tiempo y la vida de tus compañeros de equipo en un 100% cuando están desangrándose.",
 	},
 	["debug_upgrade_aggressor"] = {
 	chinese = "穿甲弹药",
@@ -265,9 +265,9 @@ local replacements = {
 	spanish = "MODO EXPERTO",
 	},
 	["mutator_expert_mode_help"] = {
-	chinese = "专家模式仅供真正的专家游玩。\n\n\n\nGL40已禁用。\n\n\n换弹时会抛弃弹匣内剩余弹药，但换弹速度提高10%。\n\n\n泰瑟特警的电击不再自动换弹，且被电击到倒地的时间减少50%。\n\n\n携带霰弹枪的单位现在没有瞄准延迟了。\n\n\n幻影特工会在制服劫匪时留下烟雾弹。",
-	english = "THE EXPERT MODE is only provided for real experts. \n\n\n\nGl40 is disabled.\n\n\nYou will lost your round remaining in clip when reloaded, but reload speed is increased by 10%. \n\n\nTasers' eletric shock no longer auto-reload, and getting shocked will let you get downed 50% faster. \n\n\nNo aim-delay for shotgunners. \n\n\nCloaker will drop a smoke grneade when he cloaked a heister. ",
-	spanish = "EL MODO EXPERTO está diseñado para verdaderos jugadores. \n\n\n\nEl GL40 está deshabilitado.\n\n\nVas a perder las rondas restantes de tu cargador, pero tu velocidad de recarga incrementa un 10%. \n\n\nLos Tasers ya no recargan tu arma automáticamente cuando te electrocutan y te incapacitan un 50% más rápido. \n\n\nEl apuntado de los escopeteros es instantáneo. \n\n\nLos Cloakers sueltan una granada de humo cuando patean a un jugador.",
+	chinese = "专家模式仅供真正的专家游玩。\n\n\n\nGL40已禁用。\n\n\n泰瑟特警的电击不再自动换弹，且被电击到倒地的时间减少50%。\n\n\n携带霰弹枪的单位现在没有瞄准延迟了。\n\n\n幻影特工会在制服劫匪时留下烟雾弹。",
+	english = "THE EXPERT MODE is only provided for real experts. \n\n\n\nGl40 is disabled. \n\n\nTasers' eletric shock no longer auto-reload, and getting shocked will let you get downed 50% faster. \n\n\nNo aim-delay for shotgunners. \n\n\nCloaker will drop a smoke grneade when he cloaked a heister. ",
+	spanish = "EL MODO EXPERTO está diseñado para verdaderos jugadores. \n\n\n\nEl GL40 está deshabilitado.\n\n\nLos Tasers ya no recargan tu arma automáticamente cuando te electrocutan y te incapacitan un 50% más rápido. \n\n\nEl apuntado de los escopeteros es instantáneo. \n\n\nLos Cloakers sueltan una granada de humo cuando patean a un jugador.",
 	},
 	["mutator_expert_mode_motd"] = {
 	chinese = "突变模式‘专家模式’已开启。技术水平不过关的人不应该在这个大厅里呆着。",

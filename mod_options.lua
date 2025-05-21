@@ -84,6 +84,7 @@ m308_fov_zoom = false
 
 module:hook("OnKeyPressed", "change_308_fov_zoom", nil, "GAME", function(self)
 	if alive(managers.player:player_unit()) then
+		local fov
 		local inv = alive(managers.player:player_unit()) and managers.player:player_unit():inventory()
 		local unit = inv and inv:equipped_unit()
 		if not unit then
@@ -94,16 +95,18 @@ module:hook("OnKeyPressed", "change_308_fov_zoom", nil, "GAME", function(self)
 		if name ~= "m14" then
 			return
 		end
+		unit:base()._sound_fire:post_event(tweak_data.weapon[name].sounds.dryfire)
 		--So there's only M308s can change fov zoom.
 		local plr_state = managers.player:player_unit():movement():current_state()
 		local stance = plr_state._in_steelsight and "steelsight" or plr_state._ducking and "crouched" or "standard"
 		if m308_fov_zoom == true then
 			m308_fov_zoom = false
-			plr_state._camera_unit:base():set_stance_fov_instant(stance)
+			fov = managers.user:get_setting("fov_zoom")
+			plr_state._camera_unit:base():set_stance_newfov_instant(stance, fov)
 			managers.menu:set_mouse_sensitivity(plr_state._in_steelsight and stances.steelsight.zoom_fov)
 			return
 		end
-		local fov = D:conf("m308_fov_zoom_set")
+		fov = D:conf("m308_fov_zoom_set")
 		plr_state._camera_unit:base():set_stance_newfov_instant(stance, fov)
 		m308_fov_zoom = true
 		managers.menu:set_mouse_sensitivity(plr_state._in_steelsight and stances.steelsight.zoom_fov)
