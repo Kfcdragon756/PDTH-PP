@@ -93,7 +93,7 @@ module:hook(RaycastWeaponBase, "fire_rate_multiplier", function(self)
 end,true)
 
 module:hook(RaycastWeaponBase,"reload_speed_multiplier", function(self)
-	local multiplier = self:weapon_tweak_data()..reload_speed
+	local multiplier = self:weapon_tweak_data().reload_speed
 	multiplier = multiplier * managers.player:synced_crew_bonus_upgrade_value("speed_reloaders", 1)
 	return multiplier
 end,true)
