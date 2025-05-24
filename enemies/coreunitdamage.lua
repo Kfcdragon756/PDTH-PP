@@ -1,3 +1,4 @@
+local module = ... or D:module("PDTH++")
 if RequiredScript == "core/lib/units/coreunitdamage" then
     local CoreBodyDamage = module:hook_class("CoreBodyDamage")
     CoreBodyDamage.dozer_visor_bs = false

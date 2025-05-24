@@ -1,3 +1,4 @@
+local module = ... or D:module("PDTH++")
 local CivilianLogicEscort = module:hook_class("CivilianLogicEscort")
 function CivilianLogicEscort.too_scared_to_move(data)
     local nobody_close = true

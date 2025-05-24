@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local CopDamage = module:hook_class("CopDamage")
 
 function CopDamage:die(variant)

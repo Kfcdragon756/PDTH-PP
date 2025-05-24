@@ -1,5 +1,6 @@
 --this path was just for test purpose.
 --local path = "L:/SteamLibrary/steamapps/common/PAYDAY The Heist/logs/spread.txt"
+local module = ... or D:module("PDTH++")
 if RequiredScript == "lib/managers/playermanager" then
 local PlayerManager = module:hook_class("PlayerManager")
 

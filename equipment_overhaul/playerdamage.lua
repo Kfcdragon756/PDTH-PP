@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local PlayerDamage = module:hook_class("PlayerDamage")
 --overhaul thick skin and protector
 

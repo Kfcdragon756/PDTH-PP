@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local PlayerTased = module:hook_class("PlayerTased")
 
 module:hook(PlayerTased, "enter", function(self, enter_data)

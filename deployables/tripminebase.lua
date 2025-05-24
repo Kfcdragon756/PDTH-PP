@@ -1,3 +1,4 @@
+local module = ... or D:module("PDTH++")
 local TripMineBase = module:hook_class("TripMineBase")
 
 function TripMineBase:_explode(col_ray)

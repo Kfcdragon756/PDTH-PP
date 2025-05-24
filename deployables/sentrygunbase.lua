@@ -1,4 +1,5 @@
 --unused
+local module = ... or D:module("PDTH++")
 local SentryGunBase = module:hook_class("SentryGunBase")
 
 local spawn_interaction = function(position, rotation, text, func, sentrygun_unit)

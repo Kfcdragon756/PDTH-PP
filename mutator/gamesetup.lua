@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local GameSetup = module:hook_class("GameSetup")
 
 module:post_hook(50, GameSetup, "unload_packages", function(self)

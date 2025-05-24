@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local UpgradesTweakData = module:hook_class("UpgradesTweakData")
 
 module:hook(UpgradesTweakData, "init_weapon_upgrade_data", function(self)

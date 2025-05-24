@@ -1,3 +1,4 @@
+local module = ... or D:module("PDTH++")
 local EquipmentsTweakData = module:hook_class("EquipmentsTweakData")
 
 module:post_hook(EquipmentsTweakData, "init", function (self)

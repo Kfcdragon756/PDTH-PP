@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local RaycastWeaponBase = module:hook_class("RaycastWeaponBase")
 
 

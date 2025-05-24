@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local ActionSpooc = module:hook_class("ActionSpooc")
 
 module:hook(ActionSpooc, "_upd_strike_first_frame", function(self, t)

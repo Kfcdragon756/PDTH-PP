@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local ShotgunBase = module:hook_class("ShotgunBase")
 --Now we got per-pellet damage shotguns. For this sake, I think customize pellet each shot is important for rebalancing 2 shotguns in this game.
 --So each shotgun will feel unique, and it will be good for playing experience.

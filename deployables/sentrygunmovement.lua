@@ -1,4 +1,5 @@
 --unused
+local module = ... or D:module("PDTH++")
 local SentryGunMovement = module:hook_class("SentryGunMovement")
 
 module:hook(SentryGunMovement, "stop_sound_on_pickup", function(self,sentrygun_unit)

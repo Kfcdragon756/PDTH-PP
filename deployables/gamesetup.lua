@@ -1,3 +1,4 @@
+local module = ... or D:module("PDTH++")
 --unused
 local GameSetup = module:hook_class("GameSetup")
 module:post_hook(50, GameSetup, "init_finalize", function(self)

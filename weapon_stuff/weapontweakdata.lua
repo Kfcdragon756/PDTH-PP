@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local WeaponTweakData = module:hook_class("WeaponTweakData")
 local damage_melee_low = 2.5
 local damage_melee_medium = 5

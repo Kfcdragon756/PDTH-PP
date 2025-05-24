@@ -1,4 +1,4 @@
-local module = DorHUDMod:new("PDTH++", { abbr = "PDTH++",
+local module = DMod:new("PDTH++", { abbr = "PDTH++",
 	author = "kfcdragon756",
 	bundled = "standard", 
 	categories = "Gameplay-changing", 
