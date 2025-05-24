@@ -36,7 +36,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.spread.moving_crouching = 1.5
 	self.r870_shotgun.pellet_amount = 6
 	self.r870_shotgun.NR_CLIPS_MAX = 4
-	self.r870_shotgun.hs_mul = 1.15
+	self.r870_shotgun.headshot_multiplier = 1.15
 	self.r870_shotgun.ads_speed = 1
 	self.r870_shotgun.reload_speed = 1.15
 	self.r870_shotgun.DAMAGE_EFFECT = 5
@@ -46,7 +46,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
     self.r870_shotgun.crosshair.crouching.offset = 0.15
     self.r870_shotgun.crosshair.crouching.moving_offset = 0.15
     self.r870_shotgun.crosshair.crouching.kick_offset = 0.3
-	self.r870_shotgun.extra_damage = 0.4
+	self.r870_shotgun.bodyshot_multiplier = 0.4
 end)
 
 module:hook(WeaponTweakData, "_init_data_ak47", function(self)
@@ -77,10 +77,10 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
     self.ak47.kick.h.standing = 2
     self.ak47.kick.h.crouching = 1.5
     self.ak47.kick.h.steelsight = 0.6
-	self.ak47.hs_mul = 0.9
+	self.ak47.headshot_multiplier = 0.9
 	self.ak47.ads_speed = 1
 	self.ak47.reload_speed = 1.12
-	self.ak47.extra_damage = 0.5
+	self.ak47.bodyshot_multiplier = 0.5
 end)
 
 module:hook(WeaponTweakData, "_init_data_m4", function(self)
@@ -111,10 +111,10 @@ module:hook(WeaponTweakData, "_init_data_m4", function(self)
 	self.test_raycast_weapon.kick.h.standing = 0.2
 	self.test_raycast_weapon.kick.h.crouching = 0.15
 	self.test_raycast_weapon.kick.h.steelsight = 0.09
-	self.test_raycast_weapon.hs_mul = 1.05
+	self.test_raycast_weapon.headshot_multiplier = 1.05
 	self.test_raycast_weapon.ads_speed = 1.12
 	self.test_raycast_weapon.reload_speed = 0.85
-	self.test_raycast_weapon.extra_damage = 0.6
+	self.test_raycast_weapon.bodyshot_multiplier = 0.6
 	
 	self.m4 = deep_clone(self.test_raycast_weapon)
 end)
@@ -147,11 +147,11 @@ module:hook(WeaponTweakData, "_init_data_m308", function(self)
 	self.m14.kick.h.standing = 0.45
 	self.m14.kick.h.crouching = 0.35
 	self.m14.kick.h.steelsight = 0.2
-	self.m14.hs_mul = 2
+	self.m14.headshot_multiplier = 2
 	self.m14.ads_speed = 1
 	self.m14.reload_speed = 0.95
 	self.m14.movement_speed_multiplier = 1
-	self.m14.extra_damage = 3
+	self.m14.bodyshot_multiplier = 3
 end)
 
 module:hook(WeaponTweakData, "_init_data_hk21", function(self)
@@ -182,12 +182,12 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.crosshair.crouching.offset = 0.2284
     self.hk21.crosshair.crouching.moving_offset = 0.2855
     self.hk21.crosshair.crouching.kick_offset = 0.3426
-	self.hk21.hs_mul = 1.2
+	self.hk21.headshot_multiplier = 1.2
 	self.hk21.ads_speed = 1
 	self.hk21.movement_speed_multiplier = 0.80 --80% movement speed
 	self.hk21.lower_speed_on_shooting = true
 	self.hk21.reload_speed = 1.2
-	self.hk21.extra_damage = 1.5
+	self.hk21.bodyshot_multiplier = 1.5
 	
 end)
 
@@ -218,7 +218,7 @@ module:hook(WeaponTweakData, "_init_data_mp5", function(self)
     self.mp5.crosshair.crouching.offset = 0.1138
 	self.mp5.crosshair.crouching.moving_offset = 0.3111
 	self.mp5.crosshair.crouching.kick_offset = 0.08
-	self.mp5.hs_mul = 1.3
+	self.mp5.headshot_multiplier = 1.3
 	self.mp5.ads_speed = 1.3
 	self.mp5.reload_speed = 1.4
 end)
@@ -247,10 +247,10 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.crosshair.crouching.offset = 0.3
 	self.mac11.crosshair.crouching.moving_offset = 0.5
 	self.mac11.crosshair.crouching.kick_offset = 0.1
-	self.mac11.hs_mul = 0.65
+	self.mac11.headshot_multiplier = 0.65
 	self.mac11.ads_speed = 1.5
 	self.mac11.reload_speed = 1
-	self.mac11.extra_damage = 1.5
+	self.mac11.bodyshot_multiplier = 1.5
 end)
 
 module:hook(WeaponTweakData, "_init_data_locomotive", function(self)
@@ -294,7 +294,7 @@ module:hook(WeaponTweakData, "_init_data_locomotive", function(self)
 	self.mossberg.crosshair.steelsight.moving_offset = 0.6
 	self.mossberg.crosshair.steelsight.kick_offset = 0.4
     self.mossberg.pellet_amount = 14
-	self.mossberg.hs_mul = 0.7
+	self.mossberg.headshot_multiplier = 0.7
 	self.mossberg.ads_speed = 1.5
 	self.mossberg.reload_speed = 1.45
 	self.mossberg.movement_speed_multiplier = 1.05 --105% movement speed
@@ -314,8 +314,8 @@ module:hook(WeaponTweakData, "_init_data_gl40", function(self)
 	self.m79.timers.reload_empty = 4
 	self.m79.DAMAGE_CURVE_POW = 0
 	self.m79.EXPLOSION_RANGE = 1000
-	self.m79.cant_pick_ammo = true
-	self.m79.hs_mul = 1
+	self.m79.pickup_disabled = true
+	self.m79.headshot_multiplier = 1
 	self.m79.ads_speed = 0.8
 	self.m79.reload_speed = 0.89
 end)
@@ -345,10 +345,10 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
     self.beretta92.crosshair.crouching.offset = 0.05
     self.beretta92.crosshair.crouching.moving_offset = 0.05
     self.beretta92.crosshair.crouching.kick_offset = 0.3
-	self.beretta92.hs_mul = 1.2
+	self.beretta92.headshot_multiplier = 1.2
 	self.beretta92.ads_speed = 1.6
 	self.beretta92.reload_speed = 1.4
-	self.beretta92.extra_damage = 0.7
+	self.beretta92.bodyshot_multiplier = 0.7
 end)
 
 module:hook(WeaponTweakData, "_init_data_c45", function(self)
@@ -379,10 +379,10 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
     self.c45.crosshair.crouching.offset = 0.1
     self.c45.crosshair.crouching.moving_offset = 0.2
     self.c45.crosshair.crouching.kick_offset = 0.4
-	self.c45.hs_mul = 1.2
+	self.c45.headshot_multiplier = 1.2
 	self.c45.ads_speed = 1.42
 	self.c45.reload_speed = 1.5
-	self.c45.extra_damage = 1
+	self.c45.bodyshot_multiplier = 1
 end)
 
 module:hook(WeaponTweakData, "_init_data_bronco", function(self)
@@ -394,7 +394,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
     self.raging_bull.AMMO_PICKUP = { -0.1, 0.9 }
 	self.raging_bull.EXTRA_PICKUP = { 0.1, 0.3 }
     self.raging_bull.DAMAGE = 13
-	self.raging_bull.extra_damage = 5
+	self.raging_bull.bodyshot_multiplier = 5
     self.raging_bull.single.fire_rate = 0.52
     self.raging_bull.spread.standing = 1.5
     self.raging_bull.spread.crouching = 0.5
@@ -415,7 +415,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
     self.raging_bull.crosshair.crouching.offset = 0.085
     self.raging_bull.crosshair.crouching.moving_offset = 0.1
     self.raging_bull.crosshair.crouching.kick_offset = 0.1
-	self.raging_bull.hs_mul = 0.9
+	self.raging_bull.headshot_multiplier = 0.9
 	self.raging_bull.ads_speed = 1.2
 	self.raging_bull.reload_speed = 1.3
 end)
@@ -448,10 +448,10 @@ module:hook(WeaponTweakData, "_init_data_stryk", function(self)
     self.glock.crosshair.crouching.offset = 0.2
     self.glock.crosshair.crouching.moving_offset = 0.24
     self.glock.crosshair.crouching.kick_offset = 0.1
-	self.glock.hs_mul = 0.9
+	self.glock.headshot_multiplier = 0.9
 	self.glock.ads_speed = 1.42
 	self.glock.reload_speed = 1.3
-	self.glock.extra_damage = 0.5
+	self.glock.bodyshot_multiplier = 0.5
 end)
 
 module:post_hook(WeaponTweakData, "_init_data_glock_18_npc", function(self)

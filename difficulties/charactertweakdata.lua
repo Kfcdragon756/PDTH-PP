@@ -1,7 +1,8 @@
 local module = ... or D:module("PDTH++")
+
 local CharacterTweakData = module:hook_class("CharacterTweakData")
 
-function CharacterTweakData:_set_easy()
+module:hook(CharacterTweakData, "_set_easy", function(self)
 	self:_multiply_all_hp(1.5, 1.55)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 2)
 	self:_multiply_weapon_delay(self.presets.weapon.swats, 1.25)
@@ -16,9 +17,9 @@ function CharacterTweakData:_set_easy()
 	self.presets.gang_member_damage.HEALTH_INIT = 70
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 40
-end
+end)
 
-function CharacterTweakData:_set_normal()
+module:hook(CharacterTweakData, "_set_normal", function(self)
 	self:_multiply_all_hp(1.5, 1.55)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 2)
 	self:_multiply_weapon_delay(self.presets.weapon.swats, 1)
@@ -33,9 +34,9 @@ function CharacterTweakData:_set_normal()
 	self.presets.gang_member_damage.HEALTH_INIT = 70
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 45
-end
+end)
 
-function CharacterTweakData:_set_hard()
+module:hook(CharacterTweakData, "_set_hard", function(self)
 	self:_multiply_all_hp(2, 1.55)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 1.5)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0.5)
@@ -50,9 +51,9 @@ function CharacterTweakData:_set_hard()
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 69
-end
+end)
 
-function CharacterTweakData:_set_overkill()
+module:hook(CharacterTweakData, "_set_overkill", function(self)
 	self:_multiply_all_hp(2, 1.55)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 1)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0.3)
@@ -67,9 +68,9 @@ function CharacterTweakData:_set_overkill()
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 82
-end
+end)
 
-function CharacterTweakData:_set_overkill_145()
+module:hook(CharacterTweakData, "_set_overkill_145", function(self)
 	self:_multiply_all_hp(2, 1.55)
 	self:_multiply_all_speeds(1.1, 1.15)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0.75)
@@ -85,4 +86,4 @@ function CharacterTweakData:_set_overkill_145()
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 92
-end
+end)

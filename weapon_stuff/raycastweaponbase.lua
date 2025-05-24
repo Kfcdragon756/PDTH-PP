@@ -7,7 +7,7 @@ module:hook(RaycastWeaponBase, "replenish", function(self)
 	local ammo_max_multiplier = managers.player:equipped_upgrade_value("extra_start_out_ammo", "player", "extra_ammo_multiplier")
 	self._ammo_max_per_clip = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + managers.player:upgrade_value(self._name_id, "clip_ammo_increase")
 	--GOD HATE YOU GL40
-	if not self:cant_pick_ammo() then
+	if not self:pickup_disabled() then
 		self._clip_amount_max = tweak_data.weapon[self._name_id].NR_CLIPS_MAX + managers.player:upgrade_value(self._name_id, "clip_amount_increase") + ammo_max_multiplier
 	else
 		self._clip_amount_max = tweak_data.weapon[self._name_id].NR_CLIPS_MAX + managers.player:upgrade_value(self._name_id, "clip_amount_increase")
@@ -22,12 +22,10 @@ end, true)
 
 
 module:hook(RaycastWeaponBase, "add_ammo", function(self)
-	if self:ammo_max() then
+	if self:ammo_max() or self:pickup_disabled() then
 		return false
 	end	
-	if self:cant_pick_ammo() then
-		return false
-	end
+
 	--for new bgh.
 	local switch = managers.player:synced_crew_bonus_upgrade_value("more_ammo", 0)
 	local add_amount = math.max(0, math.round(math.lerp(self._ammo_pickup[1] + self._extra_pickup[1] * switch, self._ammo_pickup[2] + self._extra_pickup[2] * switch, math.random())))
@@ -47,13 +45,13 @@ module:hook(RaycastWeaponBase, "add_ammo_from_bag", function(self,availible)
 		return 0
 	end
 	local wanted
-	if self:cant_pick_ammo() then
+	if self:pickup_disabled() then
 		wanted = (self._ammo_max - self._ammo_total) * gl40_add
 	else
 		wanted = 1 - self._ammo_total / self._ammo_max
 	end
 	local can_have 
-	if self:cant_pick_ammo() then
+	if self:pickup_disabled() then
 		if availible > gl40_add then
 			can_have = wanted
 		elseif availible == gl40_add then
@@ -70,46 +68,37 @@ module:hook(RaycastWeaponBase, "add_ammo_from_bag", function(self,availible)
 	return can_have
 end, true)
 
-module:hook(RaycastWeaponBase, "cant_pick_ammo", function(self)
-	return tweak_data.weapon[self._name_id].cant_pick_ammo
+module:hook(RaycastWeaponBase, "pickup_disabled", function(self)
+	return self:weapon_tweak_data().pickup_disabled
 end, true)
 
-module:hook(RaycastWeaponBase, "check_hs_mul", function(self)
-	return tweak_data.weapon[self._name_id].hs_mul
+module:hook(RaycastWeaponBase, "headshot_multiplier", function(self)
+	return self:weapon_tweak_data().headshot_multiplier or 0
 end, true)
+
+module:hook(RaycastWeaponBase, "bodyshot_multiplier", function(self)
+	return self:weapon_tweak_data().bodyshot_multiplier or 0
+end,true)
 
 module:hook(RaycastWeaponBase, "check_effect_mul", function(self)
-	if tweak_data.weapon[self._name_id].DAMAGE_EFFECT then
-		return tweak_data.weapon[self._name_id].DAMAGE_EFFECT
-	else
-		return 1
-	end
+	return self:weapon_tweak_data().DAMAGE_EFFECT or 1
 end, true)
 
 module:hook(RaycastWeaponBase, "damage_multiplier", function()
-	local multiplier = 1
-	return multiplier
+	return 1
 end, true)
 
 module:hook(RaycastWeaponBase, "fire_rate_multiplier", function(self)
-	return tweak_data.weapon[self._name_id].firerate_multiplier
+	return self:weapon_tweak_data().firerate_multiplier
 end,true)
 
 module:hook(RaycastWeaponBase,"reload_speed_multiplier", function(self)
-	local multiplier = tweak_data.weapon[self._name_id].reload_speed
+	local multiplier = self:weapon_tweak_data()..reload_speed
 	multiplier = multiplier * managers.player:synced_crew_bonus_upgrade_value("speed_reloaders", 1)
 	return multiplier
 end,true)
 
-module:hook(RaycastWeaponBase, "chbk_bodyshot_mul", function(self)
-	local multiplier
-	if tweak_data.weapon[self._name_id].extra_damage then
-		multiplier = tweak_data.weapon[self._name_id].extra_damage
-	else
-		multiplier = 0
-	end
-	return multiplier
-end,true)
+
 
 module:hook(RaycastWeaponBase, "_is_shooting", function(self)
 	return self._shooting
