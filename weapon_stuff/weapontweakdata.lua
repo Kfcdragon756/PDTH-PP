@@ -6,6 +6,7 @@ local damage_melee_high = 7
 local damage_melee_effect_multiplier_low = 2
 local damage_melee_effect_multiplier_medium = 6
 local damage_melee_effect_multiplier_high = 15
+--Weapon rebalancing is just PAIN, do not try to do it if you reading this.
 
 module:pre_hook(WeaponTweakData, "init", function(self)
 	self.weapon_list = { "beretta92", "c45", "raging_bull", "glock", "r870_shotgun", "m4", "m14", "hk21", "ak47", "mossberg", "mp5", "mac11", "m79" }
@@ -358,7 +359,7 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
 	self.c45.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.c45.NR_CLIPS_MAX = 4
 	self.c45.CLIP_AMMO_MAX = 8
-    self.c45.AMMO_PICKUP = { -0.3, 2.4 }
+    self.c45.AMMO_PICKUP = { 0, 2.4 }
 	self.c45.EXTRA_PICKUP = { 0.2, 0.6 }
     self.c45.DAMAGE = 4
 	self.c45.single.fire_rate = 0.18
