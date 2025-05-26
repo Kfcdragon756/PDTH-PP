@@ -17,6 +17,7 @@ module:hook(CharacterTweakData, "_set_easy", function(self)
 	self.presets.gang_member_damage.HEALTH_INIT = 70
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 40
+	self.tank.damage.visor_explosion_health = 1000 -- tweak me
 end)
 
 module:hook(CharacterTweakData, "_set_normal", function(self)
@@ -34,6 +35,7 @@ module:hook(CharacterTweakData, "_set_normal", function(self)
 	self.presets.gang_member_damage.HEALTH_INIT = 70
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 45
+	self.tank.damage.visor_explosion_health = 1000 -- tweak me
 end)
 
 module:hook(CharacterTweakData, "_set_hard", function(self)
@@ -51,6 +53,7 @@ module:hook(CharacterTweakData, "_set_hard", function(self)
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 69
+	self.tank.damage.visor_explosion_health = 1000 -- tweak me
 end)
 
 module:hook(CharacterTweakData, "_set_overkill", function(self)
@@ -68,6 +71,7 @@ module:hook(CharacterTweakData, "_set_overkill", function(self)
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 82
+	self.tank.damage.visor_explosion_health = 1000 -- tweak me
 end)
 
 module:hook(CharacterTweakData, "_set_overkill_145", function(self)
@@ -86,4 +90,5 @@ module:hook(CharacterTweakData, "_set_overkill_145", function(self)
 	self.presets.gang_member_damage.HEALTH_INIT = 50
 	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 100
 	self.tank.damage.visor_health = 92
+	self.tank.damage.visor_explosion_health = 1000 -- tweak me
 end)

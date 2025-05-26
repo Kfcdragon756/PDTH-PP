@@ -12,6 +12,7 @@ module:post_hook(CoreBodyDamage, "init", function(self, unit, unit_extension, bo
 
 	if tablex.get(unit:base(), "_tweak_table") == "tank" and body:name() == ids_glass then
 		self._endurance["explosion"]["_endurance"]["damage"] = tweak_data.character.tank.damage.visor_health
+		self._endurance["explosion"]["_endurance"]["explosion"] = tweak_data.character.tank.damage.visor_explosion_health
 
 		CoreBodyDamage.dozer_visor_bs = true
 	end
