@@ -63,7 +63,7 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.EXTRA_PICKUP = { 0.3, 0.6 }
 	self.ak47.spread.standing = 2
 	self.ak47.spread.crouching = 1.6
-	self.ak47.spread.steelsight = 0.5
+	self.ak47.spread.steelsight = 0.36
 	self.ak47.spread.moving_standing = 2.4
 	self.ak47.spread.moving_crouching = 1.7
 	self.ak47.crosshair.standing.offset = 0.16
@@ -74,7 +74,7 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.crosshair.crouching.kick_offset = 0.125
     self.ak47.kick.v.standing = 2
     self.ak47.kick.v.crouching = 1.5
-    self.ak47.kick.v.steelsight = 0.8
+    self.ak47.kick.v.steelsight = 0.73
     self.ak47.kick.h.standing = 2
     self.ak47.kick.h.crouching = 1.5
     self.ak47.kick.h.steelsight = 0.6
@@ -163,7 +163,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
 	self.hk21.firerate_multiplier = 1
     self.hk21.spread.standing = 2
     self.hk21.spread.crouching = 2
-    self.hk21.spread.steelsight = 0.8
+    self.hk21.spread.steelsight = 0.5
     self.hk21.spread.moving_standing = 4
     self.hk21.spread.moving_crouching = 3
     self.hk21.kick.v.standing = 1.75
@@ -176,7 +176,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
 	self.hk21.CLIP_AMMO_MAX = 80
     self.hk21.AMMO_PICKUP = {4, 6}
 	self.hk21.EXTRA_PICKUP = {1, 1}
-	self.hk21.DAMAGE = 3.5
+	self.hk21.DAMAGE = 4
     self.hk21.crosshair.standing.offset = 0.2855
     self.hk21.crosshair.standing.moving_offset = 0.3426
     self.hk21.crosshair.standing.kick_offset = 0.3997
@@ -185,7 +185,8 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.crosshair.crouching.kick_offset = 0.3426
 	self.hk21.headshot_multiplier = 1.2
 	self.hk21.ads_speed = 1
-	self.hk21.movement_speed_multiplier = 0.80 --80% movement speed
+	self.hk21.movement_speed_multiplier = 0.85 --85% movement speed
+	self.hk21.muzzleflash = "effects/particles/weapons/rifle/muzzleflash"
 	self.hk21.lower_speed_on_shooting = true
 	self.hk21.reload_speed = 1.2
 	self.hk21.bodyshot_multiplier = 1.5
@@ -230,7 +231,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mac11.NR_CLIPS_MAX = 2
 	self.mac11.CLIP_AMMO_MAX = 32
-    self.mac11.DAMAGE = 3.5
+    self.mac11.DAMAGE = 4
 	self.mac11.spread.steelsight = 1.1
     self.mac11.AMMO_PICKUP = { 1.2, 3.6 }
 	self.mac11.EXTRA_PICKUP = { 0.2, 0.6 }
@@ -248,7 +249,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.crosshair.crouching.offset = 0.3
 	self.mac11.crosshair.crouching.moving_offset = 0.5
 	self.mac11.crosshair.crouching.kick_offset = 0.1
-	self.mac11.headshot_multiplier = 0.65
+	self.mac11.headshot_multiplier = 1
 	self.mac11.ads_speed = 1.5
 	self.mac11.reload_speed = 1
 	self.mac11.bodyshot_multiplier = 1.5
@@ -392,7 +393,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
 	self.raging_bull.damage_melee = damage_melee_high
 	self.raging_bull.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.raging_bull.NR_CLIPS_MAX = 4
-    self.raging_bull.AMMO_PICKUP = { -0.1, 0.9 }
+    self.raging_bull.AMMO_PICKUP = { -0.2, 0.7 }
 	self.raging_bull.EXTRA_PICKUP = { 0.1, 0.3 }
     self.raging_bull.DAMAGE = 13
 	self.raging_bull.bodyshot_multiplier = 5
