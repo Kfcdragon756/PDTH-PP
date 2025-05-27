@@ -40,6 +40,7 @@ module:hook_post_require("lib/tweak_data/weapontweakdata", "weapon_stuff/weapont
 module:hook_post_require("lib/units/weapons/raycastweaponbase", "weapon_stuff/shieldpiercing")
 module:hook_post_require("lib/units/weapons/shotgun/shotgunbase", "weapon_stuff/shotgunbase")
 module:hook_post_require("lib/managers/gameplaycentralmanager", "weapon_stuff/shieldpiercing")
+module:hook_post_require("lib/managers/playermanager", "weapon_stuff/playermanager")
 module:hook_post_require("lib/units/cameras/fpcameraplayerbase", "weapon_stuff/FPCameraPlayerBase")
 module:hook_post_require("lib/units/beings/player/states/playerstandard", "weapon_stuff/playerstandard")
 module:hook_post_require("lib/units/beings/player/states/playertased", "weapon_stuff/playertased")
