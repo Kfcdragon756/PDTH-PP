@@ -63,7 +63,7 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.EXTRA_PICKUP = { 0.3, 0.6 }
 	self.ak47.spread.standing = 2
 	self.ak47.spread.crouching = 1.6
-	self.ak47.spread.steelsight = 0.36
+	self.ak47.spread.steelsight = 0.42
 	self.ak47.spread.moving_standing = 2.4
 	self.ak47.spread.moving_crouching = 1.7
 	self.ak47.crosshair.standing.offset = 0.16
@@ -74,7 +74,7 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.crosshair.crouching.kick_offset = 0.125
     self.ak47.kick.v.standing = 2
     self.ak47.kick.v.crouching = 1.5
-    self.ak47.kick.v.steelsight = 0.73
+    self.ak47.kick.v.steelsight = 0.68
     self.ak47.kick.h.standing = 2
     self.ak47.kick.h.crouching = 1.5
     self.ak47.kick.h.steelsight = 0.6
@@ -163,7 +163,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
 	self.hk21.firerate_multiplier = 1
     self.hk21.spread.standing = 2
     self.hk21.spread.crouching = 2
-    self.hk21.spread.steelsight = 0.5
+    self.hk21.spread.steelsight = 0.64
     self.hk21.spread.moving_standing = 4
     self.hk21.spread.moving_crouching = 3
     self.hk21.kick.v.standing = 1.75
