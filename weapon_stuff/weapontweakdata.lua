@@ -364,7 +364,7 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
 	self.c45.EXTRA_PICKUP = { 0.2, 0.6 }
     self.c45.DAMAGE = 4
 	self.c45.single.fire_rate = 0.18
-    self.c45.spread.standing = 2.6
+    self.c45.spread.standing = 2
     self.c45.spread.crouching = 1.7
     self.c45.spread.steelsight = 0.65
     self.c45.spread.moving_standing = 3
@@ -375,7 +375,7 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
 	self.c45.kick.h.standing = 1
 	self.c45.kick.h.crouching = 1
 	self.c45.kick.h.steelsight = 0.7
-    self.c45.crosshair.standing.offset = 0.23
+    self.c45.crosshair.standing.offset = 0.15
     self.c45.crosshair.standing.moving_offset = 0.4
     self.c45.crosshair.standing.kick_offset = 0.3
     self.c45.crosshair.crouching.offset = 0.1
