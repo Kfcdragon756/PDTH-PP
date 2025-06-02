@@ -231,7 +231,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mac11.NR_CLIPS_MAX = 2
 	self.mac11.CLIP_AMMO_MAX = 32
-    self.mac11.DAMAGE = 4
+    self.mac11.DAMAGE = 3.5
 	self.mac11.spread.steelsight = 1.1
     self.mac11.AMMO_PICKUP = { 1.2, 3.6 }
 	self.mac11.EXTRA_PICKUP = { 0.2, 0.6 }
@@ -249,7 +249,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.crosshair.crouching.offset = 0.3
 	self.mac11.crosshair.crouching.moving_offset = 0.5
 	self.mac11.crosshair.crouching.kick_offset = 0.1
-	self.mac11.headshot_multiplier = 1
+	self.mac11.headshot_multiplier = 0.65
 	self.mac11.ads_speed = 1.5
 	self.mac11.reload_speed = 1
 	self.mac11.bodyshot_multiplier = 1.5
