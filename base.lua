@@ -54,6 +54,9 @@ module:hook_post_require("core/lib/units/coreunitdamage", "enemies/coreunitdamag
 module:hook_post_require("lib/units/enemies/cop/copdamage", "enemies/copdamage")
 module:hook_post_require("lib/units/enemies/cop/copbase", "enemies/copbase")
 module:hook_post_require("lib/units/civilians/logics/civilianlogicescort", "enemies/civilianlogicescort")
+module:hook_post_require("lib/units/player_team/logics/teamailogicassault", "enemies/teamailogicassault")
+module:hook_post_require("lib/units/player_team/logics/teamailogicidle", "enemies/teamailogicidle")
+module:hook_post_require("lib/units/player_team/logics/teamailogictravel", "enemies/teamailogictravel")
 --difficulty
 module:hook_post_require("lib/tweak_data/groupaitweakdata", "difficulties/groupaitweakdata")
 module:hook_post_require("lib/tweak_data/charactertweakdata", "difficulties/charactertweakdata")
