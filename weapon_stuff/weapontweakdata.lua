@@ -63,7 +63,7 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.EXTRA_PICKUP = { 0.3, 0.6 }
 	self.ak47.spread.standing = 2
 	self.ak47.spread.crouching = 1.6
-	self.ak47.spread.steelsight = 0.42
+	self.ak47.spread.steelsight = 0.45
 	self.ak47.spread.moving_standing = 2.4
 	self.ak47.spread.moving_crouching = 1.7
 	self.ak47.crosshair.standing.offset = 0.16
@@ -171,7 +171,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.kick.v.steelsight = 1
     self.hk21.kick.h.standing = 1.5
     self.hk21.kick.h.crouching = 1
-    self.hk21.kick.h.steelsight = 0.5
+    self.hk21.kick.h.steelsight = 0.6
     self.hk21.NR_CLIPS_MAX = 3
 	self.hk21.CLIP_AMMO_MAX = 80
     self.hk21.AMMO_PICKUP = {4, 6}
@@ -185,7 +185,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.crosshair.crouching.kick_offset = 0.3426
 	self.hk21.headshot_multiplier = 1.2
 	self.hk21.ads_speed = 1
-	self.hk21.movement_speed_multiplier = 0.85 --85% movement speed
+	self.hk21.movement_speed_multiplier = 0.80 --80% movement speed
 	self.hk21.muzzleflash = "effects/particles/weapons/rifle/muzzleflash"
 	self.hk21.lower_speed_on_shooting = true
 	self.hk21.reload_speed = 1.2

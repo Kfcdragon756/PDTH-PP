@@ -6,7 +6,7 @@ local PlayerDamage = module:hook_class("PlayerDamage")
 module:hook(PlayerDamage, "_damage_screen", function(self)
 	self._regenerate_timer = tweak_data.player.damage.REGENERATE_TIME
 	if managers.player:has_category_upgrade("player", "thick_skin") then
-		self._regenerate_timer = self._regenerate_timer + 0.5
+		self._regenerate_timer = self._regenerate_timer + 0.8
 	end
 
 	self._hurt_value = 1 - math.clamp(0.8 - math.pow(self._armor / self:_max_armor(), 2), 0, 1)
