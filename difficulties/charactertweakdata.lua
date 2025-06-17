@@ -15,7 +15,7 @@ module:hook(CharacterTweakData, "_set_easy", function(self)
 	self.presets.gang_member_damage.REGENERATE_TIME = 2
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.35
 	self.presets.gang_member_damage.HEALTH_INIT = 70
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 70
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 35
 	self.tank.damage.visor_health = 45
 	self.tank.damage.visor_explosion_health = 45 -- tweak me
 end)
@@ -33,7 +33,7 @@ module:hook(CharacterTweakData, "_set_normal", function(self)
 	self.presets.gang_member_damage.REGENERATE_TIME = 2
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.35
 	self.presets.gang_member_damage.HEALTH_INIT = 70
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 70
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 35
 	self.tank.damage.visor_health = 50
 	self.tank.damage.visor_explosion_health = 50 -- tweak me
 end)
@@ -51,7 +51,7 @@ module:hook(CharacterTweakData, "_set_hard", function(self)
 	self.presets.gang_member_damage.REGENERATE_TIME = 2
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.35
 	self.presets.gang_member_damage.HEALTH_INIT = 70
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 70
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 35
 	self.tank.damage.visor_health = 65
 	self.tank.damage.visor_explosion_health = 65 -- tweak me
 end)
@@ -69,7 +69,7 @@ module:hook(CharacterTweakData, "_set_overkill", function(self)
 	self.presets.gang_member_damage.REGENERATE_TIME = 3
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.35
 	self.presets.gang_member_damage.HEALTH_INIT = 65
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 65
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 32.5
 	self.tank.damage.visor_health = 70
 	self.tank.damage.visor_explosion_health = 70 -- tweak me
 end)
@@ -88,7 +88,7 @@ module:hook(CharacterTweakData, "_set_overkill_145", function(self)
 	self.presets.gang_member_damage.REGENERATE_TIME = 3
 	self.presets.gang_member_damage.REGENERATE_TIME_AWAY = 0.35
 	self.presets.gang_member_damage.HEALTH_INIT = 60
-	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 60
+	self.presets.gang_member_damage.BLEED_OUT_HEALTH_INIT = 30
 	self.tank.damage.visor_health = 75
 	self.tank.damage.visor_explosion_health = 75 -- tweak me
 end)

@@ -140,7 +140,7 @@ module:hook(GroupAITweakData, "_set_overkill", function(self)
 	self.besiege.assault.units = {
 		cop = { 0.5, 0.1, 0 },
 		swat = { 0.7, 0.7, 0.8 },
-		swat_kevlar = { 0.25, 0.5, 0.6 },
+		swat_kevlar = { 0.25, 0.6, 0.6 },
 		shield = { 0.5, 0.7, 0.9 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.2, 0.7, 1 },
