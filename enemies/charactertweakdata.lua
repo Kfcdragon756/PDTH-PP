@@ -73,23 +73,23 @@ module:post_hook(CharacterTweakData, "_init_cop", function(self,presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_spanish", function(self, presets)
-	self.spanish.SPEED_WALK = 250
-	self.spanish.SPEED_RUN = 450
+	self.spanish.SPEED_WALK = 320
+	self.spanish.SPEED_RUN = 500
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_german", function(self, presets)
-	self.german.SPEED_WALK = 250
-	self.german.SPEED_RUN = 450
+	self.german.SPEED_WALK = 320
+	self.german.SPEED_RUN = 500
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_russian", function(self, presets)
-	self.russian.SPEED_WALK = 250
-	self.russian.SPEED_RUN = 450
+	self.russian.SPEED_WALK = 320
+	self.russian.SPEED_RUN = 500
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_american", function(self, presets)
-	self.american.SPEED_WALK = 250
-	self.american.SPEED_RUN = 450
+	self.american.SPEED_WALK = 320
+	self.american.SPEED_RUN = 500
 end, false)
 
 module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
