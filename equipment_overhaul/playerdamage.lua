@@ -5,7 +5,7 @@ local PlayerDamage = module:hook_class("PlayerDamage")
 --overhaul thick skin and protector
 module:hook(PlayerDamage, "_damage_screen", function(self)
 	self._regenerate_timer = tweak_data.player.damage.REGENERATE_TIME
-	if managers.player:has_category_upgrade("player", "thick_skin") then
+	if managers.player._equipment.specials.thick_skin then
 		self._regenerate_timer = self._regenerate_timer + 0.8
 	end
 
