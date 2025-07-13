@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local CharacterTweakData = module:hook_class("CharacterTweakData")
 
 module:post_hook(CharacterTweakData, "_init_swat", function(self, presets)
@@ -73,23 +73,23 @@ module:post_hook(CharacterTweakData, "_init_cop", function(self,presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_spanish", function(self, presets)
-	self.spanish.SPEED_WALK = 220
-	self.spanish.SPEED_RUN = 420
+	self.spanish.SPEED_WALK = 320
+	self.spanish.SPEED_RUN = 500
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_german", function(self, presets)
-	self.german.SPEED_WALK = 220
-	self.german.SPEED_RUN = 420
+	self.german.SPEED_WALK = 320
+	self.german.SPEED_RUN = 500
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_russian", function(self, presets)
-	self.russian.SPEED_WALK = 220
-	self.russian.SPEED_RUN = 420
+	self.russian.SPEED_WALK = 320
+	self.russian.SPEED_RUN = 500
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_american", function(self, presets)
-	self.american.SPEED_WALK = 220
-	self.american.SPEED_RUN = 420
+	self.american.SPEED_WALK = 320
+	self.american.SPEED_RUN = 500
 end, false)
 
 module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)

@@ -1,3 +1,4 @@
+local module = ... or D:module("PDTH++")
 local SavefileManager = module:hook_class("SavefileManager")
 
 if Global._current_save_slot then
