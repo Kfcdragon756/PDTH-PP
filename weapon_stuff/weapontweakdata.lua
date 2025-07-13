@@ -186,7 +186,6 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
 	self.hk21.headshot_multiplier = 1.2
 	self.hk21.ads_speed = 1
 	self.hk21.movement_speed_multiplier = 0.80 --80% movement speed
-	self.hk21.muzzleflash = "effects/particles/weapons/rifle/muzzleflash"
 	self.hk21.lower_speed_on_shooting = true
 	self.hk21.reload_speed = 1.2
 	self.hk21.bodyshot_multiplier = 1.5
