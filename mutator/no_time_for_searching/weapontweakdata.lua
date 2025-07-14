@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local WeaponTweakData = module:hook_class("WeaponTweakData")
 
 module:hook(WeaponTweakData, "_init_notimeforsearch_data", function(self)

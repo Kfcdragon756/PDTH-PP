@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local GroupAITweakData = module:hook_class("GroupAITweakData")
 
 function GroupAITweakData:_set_overkill()

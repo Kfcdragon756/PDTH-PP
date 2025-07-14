@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local WeaponTweakData = module:hook_class("WeaponTweakData")
 
 module:post_hook(WeaponTweakData, "_init_data_hk21_npc", function(self)

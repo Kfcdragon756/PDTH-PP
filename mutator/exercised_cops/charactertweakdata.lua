@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local CharacterTweakData = module:hook_class("CharacterTweakData")
 
 module:post_hook(CharacterTweakData, "_init_heavy_swat", function(self, presets)

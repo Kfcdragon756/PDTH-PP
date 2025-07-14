@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local FPCameraPlayerBase = module:hook_class("FPCameraPlayerBase")
 
 module:hook(FPCameraPlayerBase, "stop_shooting", function(self)

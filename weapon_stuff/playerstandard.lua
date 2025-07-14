@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local PlayerStandard = module:hook_class("PlayerStandard")
 
 module:hook(PlayerStandard, "_get_walk_speed_multiplier", function(self)

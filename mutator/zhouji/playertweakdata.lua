@@ -1,4 +1,3 @@
-local module = ... or D:module("PDTH++")
 local PlayerTweakData = module:hook_class("PlayerTweakData")
 
 function PlayerTweakData:_set_easy()

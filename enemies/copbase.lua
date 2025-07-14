@@ -35,8 +35,6 @@ local function get_weapon(data)
 	return result
 end
 
-local module = ... or D:module("PDTH++")
-
 -- credits: Dorentuz` for the template
 local CopBase = module:hook_class("CopBase")
 module:pre_hook(60, CopBase, "init", function(self, unit)

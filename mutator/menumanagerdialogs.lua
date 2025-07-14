@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local MenuManager = module:hook_class("MenuManager")
 
 function MenuManager:show_mutaotor_conflictions()

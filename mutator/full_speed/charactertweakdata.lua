@@ -1,4 +1,4 @@
-local module = ... or D:module("PDTH++")
+local module = ... or DorHUD:module("PDTH++")
 local CharacterTweakData = module:hook_class("CharacterTweakData")
 
 module:hook(CharacterTweakData, "_multiply_gang_speeds", function(self, walk_mul, run_mul)

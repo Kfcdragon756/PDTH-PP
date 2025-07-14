@@ -1,4 +1,3 @@
-local module = ... or D:module("PDTH++")
 local PlayerTased = module:hook_class("PlayerTased")
 
 function PlayerTased:_update_check_actions(t, dt)

@@ -115,9 +115,9 @@ local replacements = {
 	spanish = "Armadura Robusta",
 	},
 	["des_thick_skin"] = {
-	chinese = "重型护甲为玩家增加100点血量与30点护甲。\n代价是行走速度减慢15%,奔跑速度减慢10%，护甲回复时间延长0.8秒。\n这种护甲能让你近距离硬抗防爆特警一枪而不倒地。",	
-	english = "Heavy armor provides 100 hp and 30 ap. \nFor what it costs, your walking speed is decreased by 15%, running speed decreased by 10%, and armor regen time is increased by 0.8 second. \nThis kind of armor can allow you to take a Bulldozer's shotgun shot without bleeding out.",
-	spanish = "Llevar la Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, la de correr un 10% y el tiempo de regeneración es incrementado por 0.8 segundo. \nEste tipo de armadura te permite aguantar un disparo de escopeta de los Bulldozers y seguir vivo.",
+	chinese = "重型护甲为玩家增加100点血量与30点护甲。\n代价是行走速度减慢15%,奔跑速度减慢10%，护甲回复时间延长0.5秒。\n这种护甲能让你近距离硬抗防爆特警一枪而不倒地。",	
+	english = "Heavy armor provides 100 hp and 30 ap. \nFor what it costs, your walking speed is decreased by 15%, running speed decreased by 10%, and armor regen time is increased by 0.5 second. \nThis kind of armor can allow you to take a Bulldozer's shotgun shot without bleeding out.",
+	spanish = "Llevar la Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, la de correr un 10% y el tiempo de regeneración es incrementado por 0.5 segundo. \nEste tipo de armadura te permite aguantar un disparo de escopeta de los Bulldozers y seguir vivo.",
 	},
 	["des_extra_start_out_ammo"] = {
 	chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。",

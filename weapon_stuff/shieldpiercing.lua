@@ -1,5 +1,3 @@
-local module = ... or D:module("PDTH++")
-
 if RequiredScript == "lib/managers/gameplaycentralmanager" then
 	local GamePlayCentralManager = module:hook_class("GamePlayCentralManager")
 
