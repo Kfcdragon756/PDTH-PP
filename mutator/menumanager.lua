@@ -1,4 +1,4 @@
-local module = ... or DorHUD:module("PDTH++")
+local module = ... or D:module("PDTH++")
 local MenuCallbackHandler = module:hook_class("MenuCallbackHandler")
 local imcompatible = {
 	["zhouji"] = { "kaboom", "no_time_for_searching", "reelism_mode", "agents_vs_fbi" },
