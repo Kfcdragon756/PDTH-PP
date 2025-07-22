@@ -1,6 +1,6 @@
 local module = DMod:new("PDTH++", {
 	author = "kfcdragon756",
-	version = "v1.35.2",
+	version = "v1.35.2.1",
 	categories = { "gameplay", "overhaul" },
 	description = {
 		chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
