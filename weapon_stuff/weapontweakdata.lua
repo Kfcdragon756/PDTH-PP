@@ -172,10 +172,10 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.kick.h.standing = 1.5
     self.hk21.kick.h.crouching = 1
     self.hk21.kick.h.steelsight = 0.6
-    self.hk21.NR_CLIPS_MAX = 3
+    self.hk21.NR_CLIPS_MAX = 2
 	self.hk21.CLIP_AMMO_MAX = 80
-    self.hk21.AMMO_PICKUP = {4, 6}
-	self.hk21.EXTRA_PICKUP = {1, 1}
+    self.hk21.AMMO_PICKUP = {1.3, 4.2}
+	self.hk21.EXTRA_PICKUP = {0.3, 0.4}
 	self.hk21.DAMAGE = 4
     self.hk21.crosshair.standing.offset = 0.2855
     self.hk21.crosshair.standing.moving_offset = 0.3426
