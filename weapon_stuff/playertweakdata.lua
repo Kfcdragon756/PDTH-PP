@@ -6,5 +6,3 @@ module:post_hook(PlayerTweakData, "init", function(self)
 	self.damage.BLEED_OUT_HEALTH_INIT = 15
 	self.stances.glock.steelsight.zoom_fov = false
 end)
-
-
