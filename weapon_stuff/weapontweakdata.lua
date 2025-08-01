@@ -24,7 +24,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.r870_shotgun.CLIP_AMMO_MAX = 7
 	self.r870_shotgun.DAMAGE = 2
-	self.r870_shotgun.AMMO_PICKUP = { 0.5, 1.2 }
+	self.r870_shotgun.AMMO_PICKUP = { 0.7, 1.2 }
 	self.r870_shotgun.EXTRA_PICKUP = { 0.1, 0.5 }
 	self.r870_shotgun.single.fire_rate = 1
 	self.r870_shotgun.firerate_multiplier = 1.65
@@ -89,7 +89,7 @@ module:hook(WeaponTweakData, "_init_data_m4", function(self)
 	self.test_raycast_weapon.DAMAGE = 2.4
 	self.test_raycast_weapon.damage_melee = damage_melee_medium
 	self.test_raycast_weapon.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
-    self.test_raycast_weapon.AMMO_PICKUP = { 2.4, 4.6 }
+    self.test_raycast_weapon.AMMO_PICKUP = { 2.4, 5.1 }
 	self.test_raycast_weapon.EXTRA_PICKUP = { 0.3, 0.7 }
 	self.test_raycast_weapon.CLIP_AMMO_MAX = 30
 	self.test_raycast_weapon.NR_CLIPS_MAX = 4
@@ -125,7 +125,7 @@ module:hook(WeaponTweakData, "_init_data_m308", function(self)
 	self.m14.damage_melee = damage_melee_medium
 	self.m14.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.m14.NR_CLIPS_MAX = 6
-    self.m14.AMMO_PICKUP = { 0.3, 1.7 }
+    self.m14.AMMO_PICKUP = { 0.5, 1.7 }
 	self.m14.EXTRA_PICKUP = { 0.1, 0.7 }
 	self.m14.DAMAGE = 4
 	self.m14.CLIP_AMMO_MAX = 12
@@ -260,7 +260,7 @@ module:hook(WeaponTweakData, "_init_data_locomotive", function(self)
 	self.mossberg.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
 	self.mossberg.CLIP_AMMO_MAX = 4
     self.mossberg.NR_CLIPS_MAX = 4
-    self.mossberg.AMMO_PICKUP = { 0.2, 1.1 }
+    self.mossberg.AMMO_PICKUP = { 0.3, 1.1 }
 	self.mossberg.EXTRA_PICKUP = { 0.1, 0.3 }
     self.mossberg.DAMAGE = 1
 	self.mossberg.firerate_multiplier = 2
@@ -359,7 +359,7 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
 	self.c45.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.c45.NR_CLIPS_MAX = 4
 	self.c45.CLIP_AMMO_MAX = 8
-    self.c45.AMMO_PICKUP = { 0, 2.4 }
+    self.c45.AMMO_PICKUP = { 0.3, 2.4 }
 	self.c45.EXTRA_PICKUP = { 0.2, 0.6 }
     self.c45.DAMAGE = 4
 	self.c45.single.fire_rate = 0.18
@@ -392,7 +392,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
 	self.raging_bull.damage_melee = damage_melee_high
 	self.raging_bull.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.raging_bull.NR_CLIPS_MAX = 4
-    self.raging_bull.AMMO_PICKUP = { -0.2, 0.7 }
+    self.raging_bull.AMMO_PICKUP = { 0.1, 0.5 }
 	self.raging_bull.EXTRA_PICKUP = { 0.1, 0.3 }
     self.raging_bull.DAMAGE = 13
 	self.raging_bull.bodyshot_multiplier = 5
@@ -416,7 +416,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
     self.raging_bull.crosshair.crouching.offset = 0.03
     self.raging_bull.crosshair.crouching.moving_offset = 0.085
     self.raging_bull.crosshair.crouching.kick_offset = 0.1
-	self.raging_bull.headshot_multiplier = 0.9
+	self.raging_bull.headshot_multiplier = 1.15
 	self.raging_bull.ads_speed = 1.2
 	self.raging_bull.reload_speed = 1.3
 end)

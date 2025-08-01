@@ -21,6 +21,7 @@ module:hook(RaycastWeaponBase, "replenish", function(self)
 	self._ammo_remaining_in_clip = self._ammo_max_per_clip
 	self._ammo_pickup = weapon_tdata.AMMO_PICKUP
 	self._extra_pickup = weapon_tdata.EXTRA_PICKUP or { 0, 0 }
+	self._picked_up = 0
 	self:update_damage()
 end, true)
 
@@ -31,7 +32,22 @@ module:hook(RaycastWeaponBase, "add_ammo", function(self)
 
 	--for new bgh.
 	local switch = managers.player:synced_crew_bonus_upgrade_value("more_ammo", 0)
-	local add_amount = math.max(
+	self._picked_up = self._picked_up + math.max(
+		0,
+		math.lerp(
+				self._ammo_pickup[1] + self._extra_pickup[1] * switch,
+				self._ammo_pickup[2] + self._extra_pickup[2] * switch,
+				math.random()
+		)
+	)
+	local add_amount = 0
+	while ( self._picked_up >= 1 )
+		do
+		self._picked_up = self._picked_up - 1
+		add_amount = add_amount + 1
+	end
+	--This allows you pickup 1 ammo while you picked up 2 0.5s.
+	--[[local add_amount = math.max(
 		0,
 		math.round(
 			math.lerp(
@@ -40,7 +56,7 @@ module:hook(RaycastWeaponBase, "add_ammo", function(self)
 				math.random()
 			)
 		)
-	)
+	)]]
 	--[[	local add_amount
 	if self._ammo_pickup[1] > 1 then
 		add_amount = add_amount_o + math.max(math.round(self._ammo_pickup[1] * multiplier),2 * multiplier)
