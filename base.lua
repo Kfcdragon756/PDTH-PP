@@ -23,8 +23,9 @@ local module = DMod:new("PDTH++", {
 		"[M308_can_zoom]",
 	},
 	includes = {
-		{ "mod_localization", { type = "localization" } },
-		{ "mod_options", { type = "menu_options" } },
+		{ "modlocalization", { type = "localization" } },
+		{ "modoptions", { type = "menu_options" } },
+		{ "modhooks" },
 	},
 	update = { id = "49577", platform = "modworkshop" },
 })
@@ -98,7 +99,7 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	if not ovk_193 or (ovk_193 and not ovk_193:enabled()) then
 		return
 	end
-	
+
 	--unload mutator packages.
 	module:hook_post_require("lib/setups/gamesetup", "mutator/gamesetup")
 
