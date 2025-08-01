@@ -30,18 +30,11 @@ module:hook(PlayerManager, "aquire_default_upgrades", function(self)
 	}) do
 		managers.upgrades:aquire_default(item)
 	end
-	
+
 	if managers.dlc:has_dlc1() then
-	for _, item in pairs({
-		"ak47",
-		"glock",
-		"m79",
-		"sentry_gun",
-		"toolset",
-		"more_ammo",
-	}) do
-		managers.upgrades:aquire_default(item)
-	end
+		for _, item in pairs({ "ak47", "glock", "m79", "sentry_gun", "toolset", "more_ammo" }) do
+			managers.upgrades:aquire_default(item)
+		end
 	end
 
 	for i = 1, PlayerManager.WEAPON_SLOTS do

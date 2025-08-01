@@ -54,10 +54,9 @@ if RequiredScript == "lib/units/weapons/raycastweaponbase" then
 
 	local mvec_to = Vector3()
 	local mvec_spread_direction = Vector3()
-	local orig_fire_raycast = RaycastWeaponBase._fire_raycast
-	function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
+	module:hook(RaycastWeaponBase, "_fire_raycast", function(self,user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
 		if not self._can_shoot_through_shield or not user_unit:base().is_local_player then
-			return orig_fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
+			return module:call_orig(RaycastWeaponBase, "orig_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, shoot_through_data)
 		end
 
 		local result = {}
@@ -184,5 +183,5 @@ if RequiredScript == "lib/units/weapons/raycastweaponbase" then
 			self._shoot_through_data
 		)
 		return result
-	end
+	end)
 end
