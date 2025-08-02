@@ -59,7 +59,7 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
     self.ak47.DAMAGE = 4.5
 	self.ak47.CLIP_AMMO_MAX = 30
     self.ak47.NR_CLIPS_MAX = 4
-    self.ak47.AMMO_PICKUP = { 1.1, 3.4 }
+    self.ak47.AMMO_PICKUP = { 0.7, 3.1 }
 	self.ak47.EXTRA_PICKUP = { 0.3, 0.6 }
 	self.ak47.spread.standing = 2
 	self.ak47.spread.crouching = 1.6
@@ -125,7 +125,7 @@ module:hook(WeaponTweakData, "_init_data_m308", function(self)
 	self.m14.damage_melee = damage_melee_medium
 	self.m14.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.m14.NR_CLIPS_MAX = 6
-    self.m14.AMMO_PICKUP = { 0.5, 1.7 }
+    self.m14.AMMO_PICKUP = { 0.4, 1.2 }
 	self.m14.EXTRA_PICKUP = { 0.1, 0.7 }
 	self.m14.DAMAGE = 4
 	self.m14.CLIP_AMMO_MAX = 12
@@ -198,7 +198,7 @@ module:hook(WeaponTweakData, "_init_data_mp5", function(self)
 	self.mp5.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mp5.NR_CLIPS_MAX = 3
     self.mp5.DAMAGE = 1.5
-    self.mp5.AMMO_PICKUP = {3.3, 5.9}
+    self.mp5.AMMO_PICKUP = {2.8, 4.9}
 	self.mp5.EXTRA_PICKUP = {0.7, 0.7}
 	self.mp5.auto.fire_rate = 0.0857
 	self.mp5.firerate_multiplier = 1
@@ -232,7 +232,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.CLIP_AMMO_MAX = 32
     self.mac11.DAMAGE = 3.5
 	self.mac11.spread.steelsight = 1.1
-    self.mac11.AMMO_PICKUP = { 1.2, 3.6 }
+    self.mac11.AMMO_PICKUP = { 1.2, 2.9 }
 	self.mac11.EXTRA_PICKUP = { 0.2, 0.6 }
     self.mac11.auto.fire_rate = 0.05
 	self.mac11.firerate_multiplier = 1
@@ -327,7 +327,7 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
 	self.beretta92.damage_melee = damage_melee_high
 	self.beretta92.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.beretta92.NR_CLIPS_MAX = 4
-    self.beretta92.AMMO_PICKUP = { 2.5, 4.8 }
+    self.beretta92.AMMO_PICKUP = { 1.5, 4.1 }
 	self.beretta92.EXTRA_PICKUP = { 0.4, 1 }
     self.beretta92.DAMAGE = 1.8
 	self.beretta92.CLIP_AMMO_MAX = 15
@@ -359,7 +359,7 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
 	self.c45.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.c45.NR_CLIPS_MAX = 4
 	self.c45.CLIP_AMMO_MAX = 8
-    self.c45.AMMO_PICKUP = { 0.3, 2.4 }
+    self.c45.AMMO_PICKUP = { 0.32, 1.4 }
 	self.c45.EXTRA_PICKUP = { 0.2, 0.6 }
     self.c45.DAMAGE = 4
 	self.c45.single.fire_rate = 0.18
@@ -428,7 +428,7 @@ module:hook(WeaponTweakData, "_init_data_stryk", function(self)
 	self.glock.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.glock.NR_CLIPS_MAX = 2
 	self.glock.CLIP_AMMO_MAX = 33
-	self.glock.AMMO_PICKUP = { 2.3, 3.8 }
+	self.glock.AMMO_PICKUP = { 2.3, 3.1 }
 	self.glock.EXTRA_PICKUP = { 0.2, 0.6 }
     self.glock.DAMAGE = 2
 	self.glock.auto.fire_rate = 0.05
