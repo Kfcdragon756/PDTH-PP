@@ -24,7 +24,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.r870_shotgun.CLIP_AMMO_MAX = 7
 	self.r870_shotgun.DAMAGE = 2
-	self.r870_shotgun.AMMO_PICKUP = { 0.7, 1.2 }
+	self.r870_shotgun.AMMO_PICKUP = { 0.75, 1.2 }
 	self.r870_shotgun.EXTRA_PICKUP = { 0.1, 0.5 }
 	self.r870_shotgun.single.fire_rate = 1
 	self.r870_shotgun.firerate_multiplier = 1.65
@@ -37,7 +37,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.spread.moving_crouching = 1.5
 	self.r870_shotgun.pellet_amount = 6
 	self.r870_shotgun.NR_CLIPS_MAX = 4
-	self.r870_shotgun.headshot_multiplier = 1.15
+	self.r870_shotgun.headshot_multiplier = 1.35
 	self.r870_shotgun.ads_speed = 1
 	self.r870_shotgun.reload_speed = 1.15
 	self.r870_shotgun.DAMAGE_EFFECT = 5
@@ -124,9 +124,9 @@ module:hook(WeaponTweakData, "_init_data_m308", function(self)
 -- m308 overhaul m308大修
 	self.m14.damage_melee = damage_melee_medium
 	self.m14.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
-    self.m14.NR_CLIPS_MAX = 6
-    self.m14.AMMO_PICKUP = { 0.4, 1.2 }
-	self.m14.EXTRA_PICKUP = { 0.1, 0.7 }
+    self.m14.NR_CLIPS_MAX = 5
+    self.m14.AMMO_PICKUP = { 0.3, 1.3 }
+	self.m14.EXTRA_PICKUP = { 0.1, 0.3 }
 	self.m14.DAMAGE = 4
 	self.m14.CLIP_AMMO_MAX = 12
 	self.m14.spread.steelsight = 0.01
@@ -174,7 +174,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.kick.h.steelsight = 0.6
     self.hk21.NR_CLIPS_MAX = 2
 	self.hk21.CLIP_AMMO_MAX = 80
-    self.hk21.AMMO_PICKUP = {1.3, 4.2}
+    self.hk21.AMMO_PICKUP = {2.7, 4.5}
 	self.hk21.EXTRA_PICKUP = {0.3, 0.4}
 	self.hk21.DAMAGE = 4
     self.hk21.crosshair.standing.offset = 0.2855
