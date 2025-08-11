@@ -21,6 +21,9 @@ local module = DMod:new("PDTH++", {
 		"[shotgun pellets customization]",
 		"[wtfbm]",
 		"[M308_can_zoom]",
+		"[smart_weapon_switch]",
+		"[Auto Fire Sound Fix]",
+		"[interact_toggle]", -- Optional dependency of smart weapon switch.
 	},
 	includes = {
 		{ "modlocalization", { type = "localization" } },
@@ -68,7 +71,7 @@ module:hook_post_require("lib/tweak_data/equipmentstweakdata", "deployables/equi
 module:hook_post_require("lib/units/pickups/ammoclip", "deployables/pickupdeployables")
 module:hook_post_require("lib/managers/playermanager", "deployables/pickupdeployables")
 module:hook_post_require("lib/units/equipment/ammo_bag/ammobagbase", "deployables/pickupdeployables")
---module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase") unused but will be still here for future development.
+--module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase") - Currently unused but will be still here for future development.
 module:hook_post_require("lib/units/weapons/trip_mine/tripminebase", "deployables/tripminebase")
 --tweakdata
 module:hook_post_require("lib/tweak_data/upgradestweakdata", "tweakdata/upgradestweakdata")
@@ -83,6 +86,7 @@ local conflicting_mods = {
 	"wtfbm",
 	"shotgun pellets customization", --// This mod was totally a mistake. - KF
 	"M308_can_zoom",
+	"smart_weapon_switch", -- Their functions already exist in this mod.
 }
 
 --disable some mods that may conflict with this mod.

@@ -37,6 +37,34 @@ module:add_menu_option("m308_fov_zoom_sens", {
 	help_id = "m308_fov_zoom_sens_help",
 })
 
+--Ported from mod "smart_weapon_switch".
+module:add_menu_option("sws_show_queue_hints", {
+	type = "boolean",
+	default_value = true,
+	text_id = "sws_show_queue_hints",
+	help_id = "sws_show_queue_hints_help",
+})
+
+module:add_menu_option("sws_min_reload_remaining_pct", {
+	type = "slider",
+	min = 1,
+	max = 100,
+	step = 1,
+	default_value = 25,
+	value_accuracy = 0,
+	text_id = "sws_min_reload_remaining_pct",
+	help_id = "sws_min_reload_remaining_pct_help",
+})
+
+module:add_menu_option("sws_force_switch_after_loading_shell", {
+	type = "boolean",
+	default_value = true,
+	text_id = "sws_force_switch_after_loading_shell",
+	help_id = "sws_force_switch_after_loading_shell_help",
+})
+
+
+
 module:hook("OnModulePostBuildOptions", "OnModulePostBuildOptions_DefaultFOVsettings", function(node)
 	node = node or managers.menu:active_menu().logic:selected_node()
 

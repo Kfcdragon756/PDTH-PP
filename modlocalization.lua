@@ -39,6 +39,39 @@ local replacements = {
         chinese = "M308开镜时的灵敏度",
         spanish = "La sensibilidad que tienes cuando haces zoom con el M308.",
     },
+	--Added smart weapon switch stuffs here.
+	["sws_show_queue_hints"] = {
+		english = "Show hints on switch queue",
+		chinese = "在切换武器延迟时显示提示",
+	},
+	["sws_show_queue_hints_help"] = {
+		english = "Show screen hints about the queue system while reloading.",
+		chinese = "在武器换弹时间百分比小于设定数值时，换弹切枪时将会显示切换武器延时的提示。\n\n\n不影响实际延迟切换机制。",
+	},
+	["sws_min_reload_remaining_pct"] = {
+		english = "Force weapon switch threshold (%)",
+		chinese = "切换武器延迟时最低换弹时间百分比",
+	},
+	["sws_min_reload_remaining_pct_help"] = {
+		english = "When attempting to switch weapons during a reload, if the current reload has this much or more remaining (in percent), the switch will be forced immediately. Value is the percent of reload left (1-100).",
+		chinese = "在武器换弹时切换武器，倘若剩余换弹时间的百分比值高于该设置的值，那么就会像原版一样立刻开始切换武器，反之，则会在武器换弹完成之后才切换武器。\n\n该值的设置区间为1%-100%，设置为1%将在实质上关闭该功能。",
+	},
+	["sws_force_switch_after_loading_shell"] = {
+		english = "Force weapon switch after loading a shell",
+		chinese = "单发装填武器延迟切换优化",
+	},
+	["sws_force_switch_after_loading_shell_help"] = {
+		english = "When enabled, if a weapon switch is queued while reloading a shotgun (shell-by-shell reload), the switch will be performed immediately after the next shell is loaded, without waiting for the full reload to finish.",
+		chinese = "开启以后，倘若单发装填的武器触发了切换武器延迟，那么将会在装填完毕下一颗弹药以后立刻切换武器，而不是必须等到换弹完成以后。",
+	},
+	["sws_hint_doubletap_to_force_switch"] = {
+		english = "Weapon switch queued; double-tap to force switching weapons.",
+		chinese = "武器切换已延迟，双击武器槽位对应按键以强制切换武器。",
+	},
+	["sws_hint_switching_after_shell_load"] = {
+		english = "Weapon switch queued; switching weapons after finishing loading the next shell.",
+		chinese = "武器切换已延迟，将在填装下一颗弹药以后切换武器。",
+	},
 	["des_m4"] = {
 	chinese = "数据：控制性高：高精度：高射速：增伤6点： \n高射速，容易操控，精度高使得即使是略低一点的伤害也不妨碍其成为专业人员的第一选择。\n即使是没经过训练的菜鸟也能轻松使用。",
 	english = "stats:high control:high accuracy:high firerate:gain 6 extra-damagee:\nHigh firerate,easy to control and high accuracy makes it a professional's priority one, although it has a little low damagee for its downside. \nEven an un-trained rookie can handle it easily.",
@@ -161,7 +194,7 @@ local replacements = {
 	},
 	["des_aggressor"] = {
 	chinese = "队友的武器非爆头伤害增加。具体数值请见武器介绍，且增加的伤害不会影响对防爆特警面甲的伤害。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
-	english = "Your teammates' non-headshot damagee will be increased and the extra damagee will not affect the actual damagee against bulldozer's visor.",
+	english = "Your teammates' non-headshot damagee will be increased and the extra damage will not affect the actual damagee against bulldozer's visor.",
 	spanish = "Tus compañeros de equipo infligen más daño al cuerpo de los enemigos, NO aplica al daño a la cabeza ni al visor de los bulldozers. \n\nEl daño adicional que ofrece este perk está en las descripciones de las armas.",
 	},
 	["des_speed_reloaders"] = {

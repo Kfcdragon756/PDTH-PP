@@ -125,8 +125,8 @@ module:hook(WeaponTweakData, "_init_data_m308", function(self)
 	self.m14.damage_melee = damage_melee_medium
 	self.m14.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.m14.NR_CLIPS_MAX = 5
-    self.m14.AMMO_PICKUP = { 0.3, 1.3 }
-	self.m14.EXTRA_PICKUP = { 0.1, 0.3 }
+    self.m14.AMMO_PICKUP = { 0.5, 0.8 }
+	self.m14.EXTRA_PICKUP = { 0, 0.1 }
 	self.m14.DAMAGE = 4
 	self.m14.CLIP_AMMO_MAX = 12
 	self.m14.spread.steelsight = 0.01
@@ -175,7 +175,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.NR_CLIPS_MAX = 2
 	self.hk21.CLIP_AMMO_MAX = 80
     self.hk21.AMMO_PICKUP = {2.7, 4.5}
-	self.hk21.EXTRA_PICKUP = {0.3, 0.4}
+	self.hk21.EXTRA_PICKUP = {0.3, 0.6}
 	self.hk21.DAMAGE = 4
     self.hk21.crosshair.standing.offset = 0.2855
     self.hk21.crosshair.standing.moving_offset = 0.3426
@@ -183,11 +183,11 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.crosshair.crouching.offset = 0.2284
     self.hk21.crosshair.crouching.moving_offset = 0.2855
     self.hk21.crosshair.crouching.kick_offset = 0.3426
-	self.hk21.headshot_multiplier = 1.2
+	self.hk21.headshot_multiplier = 0.8
 	self.hk21.ads_speed = 1
 	self.hk21.movement_speed_multiplier = 0.80 --80% movement speed
 	self.hk21.movement_penalty_while_shooting = true
-	self.hk21.reload_speed = 1.2
+	self.hk21.reload_speed = 1.25
 	self.hk21.bodyshot_multiplier = 1.5
 	
 end)
@@ -198,7 +198,7 @@ module:hook(WeaponTweakData, "_init_data_mp5", function(self)
 	self.mp5.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mp5.NR_CLIPS_MAX = 3
     self.mp5.DAMAGE = 1.5
-    self.mp5.AMMO_PICKUP = {2.8, 4.9}
+    self.mp5.AMMO_PICKUP = {2.8, 5.3}
 	self.mp5.EXTRA_PICKUP = {0.7, 0.7}
 	self.mp5.auto.fire_rate = 0.0857
 	self.mp5.firerate_multiplier = 1
@@ -232,7 +232,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
 	self.mac11.CLIP_AMMO_MAX = 32
     self.mac11.DAMAGE = 3.5
 	self.mac11.spread.steelsight = 1.1
-    self.mac11.AMMO_PICKUP = { 1.2, 2.9 }
+    self.mac11.AMMO_PICKUP = { 1.5, 2.5 }
 	self.mac11.EXTRA_PICKUP = { 0.2, 0.6 }
     self.mac11.auto.fire_rate = 0.05
 	self.mac11.firerate_multiplier = 1
@@ -359,7 +359,7 @@ module:hook(WeaponTweakData, "_init_data_c45", function(self)
 	self.c45.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.c45.NR_CLIPS_MAX = 4
 	self.c45.CLIP_AMMO_MAX = 8
-    self.c45.AMMO_PICKUP = { 0.32, 1.4 }
+    self.c45.AMMO_PICKUP = { 0.45, 1.4 }
 	self.c45.EXTRA_PICKUP = { 0.2, 0.6 }
     self.c45.DAMAGE = 4
 	self.c45.single.fire_rate = 0.18
@@ -392,7 +392,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
 	self.raging_bull.damage_melee = damage_melee_high
 	self.raging_bull.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.raging_bull.NR_CLIPS_MAX = 4
-    self.raging_bull.AMMO_PICKUP = { 0.1, 0.5 }
+    self.raging_bull.AMMO_PICKUP = { 0.2, 0.25 }
 	self.raging_bull.EXTRA_PICKUP = { 0.1, 0.3 }
     self.raging_bull.DAMAGE = 13
 	self.raging_bull.bodyshot_multiplier = 5
