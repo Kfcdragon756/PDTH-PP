@@ -43,34 +43,42 @@ local replacements = {
 	["sws_show_queue_hints"] = {
 		english = "Show hints on switch queue",
 		chinese = "在切换武器延迟时显示提示",
+		spanish = "Mostrar indicadores del cambio de armas inteligente",
 	},
 	["sws_show_queue_hints_help"] = {
 		english = "Show screen hints about the queue system while reloading.",
 		chinese = "在武器换弹时间百分比小于设定数值时，换弹切枪时将会显示切换武器延时的提示。\n\n\n不影响实际延迟切换机制。",
+		spanish = "Muestra un indicador en la pantalla sobre el cambio de armas inteligente mientras relizas una recarga.",
 	},
 	["sws_min_reload_remaining_pct"] = {
 		english = "Force weapon switch threshold (%)",
 		chinese = "切换武器延迟时最低换弹时间百分比",
+		spanish = "Valor asignado para el cambio de arma",
 	},
 	["sws_min_reload_remaining_pct_help"] = {
 		english = "When attempting to switch weapons during a reload, if the current reload has this much or more remaining (in percent), the switch will be forced immediately. Value is the percent of reload left (1-100).",
 		chinese = "在武器换弹时切换武器，倘若剩余换弹时间的百分比值高于该设置的值，那么就会像原版一样立刻开始切换武器，反之，则会在武器换弹完成之后才切换武器。\n\n该值的设置区间为1%-100%，设置为1%将在实质上关闭该功能。",
+		spanish = "Cuando intentes cambiar de arma mientras recargas, si a la recarga actual le queda este valor o menos se forzará el cambio de arma inmediatamente.\n\nEl valor representa al tiempo de recarga restante en forma de porcentaje (1-100)", 
 	},
 	["sws_force_switch_after_loading_shell"] = {
 		english = "Force weapon switch after loading a shell",
 		chinese = "单发装填武器延迟切换优化",
+		spanish = "Forzar cambio de arma luego de introducir un cartucho.",
 	},
 	["sws_force_switch_after_loading_shell_help"] = {
 		english = "When enabled, if a weapon switch is queued while reloading a shotgun (shell-by-shell reload), the switch will be performed immediately after the next shell is loaded, without waiting for the full reload to finish.",
 		chinese = "开启以后，倘若单发装填的武器触发了切换武器延迟，那么将会在装填完毕下一颗弹药以后立刻切换武器，而不是必须等到换弹完成以后。",
+		spanish = "Cuando está activado, si hay un cambio de arma en cola mientras recargas una escopeta (recarga de cartucho por cartucho) el cambio será realizado inmediatamente luego de que el siguiente cartucho sea cargado, sin necesidad de esperar a que la recarga completa termine.",
 	},
 	["sws_hint_doubletap_to_force_switch"] = {
 		english = "Weapon switch queued; double-tap to force switching weapons.",
 		chinese = "武器切换已延迟，双击武器槽位对应按键以强制切换武器。",
+		spanish = "Cambio de arma en cola: Pulsa 2 veces para forzarlo.",
 	},
 	["sws_hint_switching_after_shell_load"] = {
 		english = "Weapon switch queued; switching weapons after finishing loading the next shell.",
 		chinese = "武器切换已延迟，将在填装下一颗弹药以后切换武器。",
+		spanish = "Cambio de arma en cola: Se realizará luego de cargar el siguiente cartucho.",
 	},
 	["des_m4"] = {
 	chinese = "数据：控制性高：高精度：高射速：增伤6点： \n高射速，容易操控，精度高使得即使是略低一点的伤害也不妨碍其成为专业人员的第一选择。\n即使是没经过训练的菜鸟也能轻松使用。",
@@ -95,12 +103,12 @@ local replacements = {
 	["des_hk21"] = {
 	chinese = "数据：精度较低：较高射速：强压制力：手持与射击时减速：威力强大：增伤15点： \n不赖的精度，高射速与高威力让它变成了一头猛兽。近距离没有任何人可以抵挡得住这家伙的扫射。\n若有人敢来犯，就用80发大弹盒让他们瞧瞧厉害。",
 	english = "stats:low accuracy:high firerate:high suppression ability:reduce movement speed while wielded and shooting:hi-power:gain 15 extra-damagee: \nOkay accuracy, high firerate and high firepower makes it a beast. No one can live under it's strafing at close range. \nGive'em a lesson with your 80 rounds box magtazine if they get near.",
-	spanish = "Estadísticas: Daño alto : Precisión baja : Cadencia de fuego alta : Supresión alta : Sostenerlo y disparar ralentiza la velocidad de movimiento : Cargador enorme de 80 rondas. \nNadie sobrevive estando cerca de esta bestia. \nEl perk 'Munición AP' añade 15 de daño extra al cuerpo.",
+	spanish = "Estadísticas: Daño alto : Precisión baja : Cadencia de fuego alta : Supresión alta : Sostenerla o disparar ralentiza la velocidad de movimiento : Cargador enorme de 80 rondas. \nNadie sobrevive estando cerca de esta bestia. \nEl perk 'Munición AP' añade 15 de daño extra al cuerpo.",
 	},
 	["des_beretta92"] = {
 	chinese = "数据：高精度：高射速：增伤7点： \n这把带着消音器的手枪终于迎来了春天。 \n改良以后的枪管和弹药现在能在不增加后坐力的前提下增加精度和威力。其具有的高射速让使用者能快速造成伤害。 \n不论是警察，特工，安保人员，甚至是劫匪都对其非常满意，适合新手使用。",
 	english = "stats:high accuracy:high firerate:gain 7 extra-damagee: \nBeing easy to control, great firepower, and best firerate makes it a great weapon for rookies.",
-	spanish = "Estadísticas: Daño bajo : Precisión alta : Cadencia de fuego alta. \nEstadísticas exelentes para una pistola, el arma ideal para los novatos. \nEl perk 'Munición AP' añade 7 de daño extra al cuerpo.",
+	spanish = "Estadísticas: Daño bajo : Precisión alta : Cadencia de fuego alta. \nEstadísticas excelentes para una pistola, el arma ideal para los novatos. \nEl perk 'Munición AP' añade 7 de daño extra al cuerpo.",
 	},
 	["des_c45"] = {
 	chinese = "数据：威力大：精度略低：携弹量少：增伤10点： \n这把问世于2011年的.45口径手枪在现在推出了最新的改良版本。 \n它的威力和精度现在完全足够应付绝大多数敌人，代价是八发稀烂的弹匣。 \n这把改良型武器受到绝大多数群体的欢迎。",
@@ -115,7 +123,7 @@ local replacements = {
 	["des_raging_bull"] = {
 	chinese = "数据：威力巨大：精度高：携弹量少：难以控制：增伤50点： \n.44MAGNUM弹药注定了这把枪将会非同凡响，这把枪原本用于对付大型动物。 \n巨大的威力让它所向披靡。",
 	english = "stats:extreme-power:high accuracy:low ammo:hard to control:gain 50 extra-damagee: \n.44MAGNUM rounds makes it will not be a common pistol. \nThis weapon is designed to deal with larger animals. \nExtreme firepower will make it unstoppable.",
-	spanish = "Estadísticas: Daño descomunal : Precisión casi perfecta : Poca munición : Difícil de controlar : EL calibre .44 MAGNUM hace que no sea común encontrarse con munición. \nEste arma está diseñada para cazar animales grandes. \nEl perk 'Munición AP' añade 50 de daño extra al cuerpo.",
+	spanish = "Estadísticas: Daño descomunal : Precisión casi perfecta : Poca munición : Difícil de controlar : EL calibre .44 MAGNUM hace que no sea común encontrarse con munición. \nArma diseñada para cazar animales grandes. \nEl perk 'Munición AP' añade 50 de daño extra al cuerpo.",
 	},
 	["des_glock"] = {
 	chinese = "数据：精度略低：极高射速：强压制力：增伤5点： \nSTRYK是一把采用大量聚合物制造的自动手枪，其因在近距离极强的爆发性输出而闻名。 \n军方在用，一些地区的警察在用，黑帮也在用，现在轮到你了。",
@@ -140,7 +148,7 @@ local replacements = {
 	["des_mossberg"] = {
 	chinese = "数据：快速行动：威力巨大：伤害衰减：打击范围较大：极强击退力：手持时速度增加： \n火车头 12G以更少的弹容量和更差的精准度为代价获得了极高的爆发能力。 \n使用装有14发弹丸的鹿弹，牺牲单颗弹丸火力，但容错率变得更高了。 \n务必在近距离使用。",
 	english = "stats:quick action:extreme-power:damagee falloff:wide spread:strong knockback:increase movement speed while wielded: \nLocomotive 12G gains terrific ability to burst damagee in cost of lower capacity and worse accuracy. \nIt uses buckshot contains 14 pellets, missing one pellet will never be a deal.",
-	spanish = "Estadísticas: Daño descomunal : Arma de corto alcance : El daño disminuye con la distancia : Precisión mediocre : Cadencia de fuego alta : Dispara en forma de cono amplio : Retroceso fuerte : Tenerla equipada incrementa tu velocidad de movimiento un 5%. \nDispara cartuchos buckshot cargados con 14 perdigones.",
+	spanish = "Estadísticas: Daño descomunal : Arma de corto alcance : El daño disminuye con la distancia : Precisión mediocre : Cadencia de fuego alta : Dispara en forma de cono amplio : Retroceso fuerte : Tenerla equipada incrementa tu velocidad de movimiento un 5%. \nDispara cartuchos cargados con 14 perdigones.",
 	},
 	["debug_thick_skin"] = {
 	chinese = "重型护甲",
@@ -150,12 +158,12 @@ local replacements = {
 	["des_thick_skin"] = {
 	chinese = "重型护甲为玩家增加100点血量与30点护甲。\n代价是行走速度减慢15%,奔跑速度减慢10%，护甲回复时间延长0.8秒。\n这种护甲能让你近距离硬抗防爆特警一枪而不倒地。",	
 	english = "Heavy armor provides 100 hp and 30 ap. \nFor what it costs, your walking speed is decreased by 15%, running speed decreased by 10%, and armor regen time is increased by 0.8 second. \nThis kind of armor can allow you to take a Bulldozer's shotgun shot without bleeding out.",
-	spanish = "Llevar la Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, la de correr un 10% y el tiempo de regeneración es incrementado por 0.8 segundo. \nEste tipo de armadura te permite aguantar un disparo de escopeta de los Bulldozers y seguir vivo.",
+	spanish = "La Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, al correr un 10% y el tiempo de regeneración es incrementado por 0.8 segundos. \nEste tipo de armadura te permite aguantar un escopetazo de los Bulldozers y seguir vivo.",
 	},
 	["des_extra_start_out_ammo"] = {
 	chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。",
 	english = "Provide a extra magazine per weapon.(In exception of GL40)",
-	spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 no se beneficia de esta habilidad.",
+	spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.",
 	},
 	["des_toolset"] = {
 	chinese = "减少45%互动（包括援助他人）所需时长。",
@@ -280,7 +288,7 @@ local replacements = {
 	["mutator_zhouji"] = {
 	chinese = "肘击高手",
 	english = "MELEE EXPERT",
-	spanish = "EXPERTO EN COMBATE CUERPO A CUERPO",
+	spanish = "EXPERTO EN ARTES MARCIALES",
 	},
 	["mutator_zhouji_help"] = {
 	chinese = "我不需要太多子弹，子弹就留给那些重型单位吧。\n\n\n我要用枪托给那些傻逼点颜色瞧瞧。\n\n\n\n所有武器初始只有一个弹匣，所有难度的无敌帧增加0.3秒，所有武器的近战伤害锁定为150，击倒指数为10且捡弹率减少50%。\n\n和炸翻天与无暇搜刮冲突。",
@@ -315,7 +323,7 @@ local replacements = {
 	["mutator_no_time_for_searching_help"] = {
 	chinese = "弟兄们，这次十万火急！\n\n\n这次应该没时间从条子身上搜刮弹药了，多带点！\n\n\n\n敌人死亡不会掉落可拾取的弹药盒，且玩家可携带弹药量增加。\n\n与炸翻天和肘击高手冲突。",
 	english = "Gang, we got a situation! \n\n\nWe have no time for searching ammo from these dead cops, just carry more AMMO! \n\n\n\nAmmoclip will not spawn on enemies dead, and players' start out ammo is increased.\n\nConflicts with KABOOM and MELEE EXPERT mutator.",
-	spanish = "Pandilla ¡Estámos en problemas! \n\n\nNo tenemos tiempo para buscar munición de esos cadáveres ¡Simplemente llevemos más munición! \n\n\n\nLos enemigos muertos no dejarán caér munición y la munición con la que aparecen los jugadores está incrementada.\n\nEste mutador tiene conflicto con los mutadores '¡KABOOM!' y 'EXPERTO EN COMBATE CUERPO A CUERPO'.",
+	spanish = "Pandilla ¡Estámos en problemas! \n\n\nNo tenemos tiempo para buscar munición de esos cadáveres ¡Simplemente llevemos más munición! \n\n\n\nLos enemigos muertos no dejarán caér munición y la munición con la que aparecen los jugadores está incrementada.\n\nEste mutador tiene conflicto con los mutadores '¡KABOOM!' y 'EXPERTO EN ARTES MARCIALES'.",
 	},
 	["mutator_no_time_for_searching_motd"] = {
 	chinese = "突变模式‘无暇搜刮’已开启。别指望从条子尸体身上捡到奇奇怪怪的子弹了。",
@@ -330,7 +338,7 @@ local replacements = {
 	["mutator_kaboom_help"] = {
 	chinese = "“今天让那帮傻逼条子吃点好吃的！”\n\n\n“沃尔夫，你这个傻逼！这就是你他妈连其他弹药都不带的理由？都怪你，现在我们只有筒子和手枪能用的，你一个人滚去吃屎吧！”\n\n\n\nGL40可以捡弹，换弹更快，但以伤害更低为代价。\n\n\n只能使用手枪和GL40，其他武器全部没有子弹。\n\n与肘击高手和无暇搜刮冲突。",
 	english = "What makes me a good demoman?\n\n\nWolf, you fucking moron! Is this the reason you don't carry other fucking ammunition? It's all your fault that we can only use Grenade launcher and a pistol now, go eat shit yourself!\n\n\n\nGL40 can now pickup ammo, reload faster in cost of lower damagee.\n\n\nOnly pistols and GL40 are availiable, No ammo for other weapons.\n\nConflicts with MELEE EXPERT and NO TIME FOR SEARCHING mutator.",
-	spanish = "¿Que es lo que me hace un buen demoledor?\n\n\n¡Wolf, psicótico de mierda! ¿Ésta es la razón por la que no trajiste otro tipo de munición? Por tu culpa solo podemos usar el Lanzagranadas y la Pistola, si no morimos por esto ¡Te mataré con propias mis manos!\n\n\n\nEl GL40 puede recoger munición del suelo, ahora recarga más rápido a costa de que su daño es menor.\n\n\nSolo las pistolas y el GL40 están disponibles. No hay munición para otras armas.\n\nEste mutador tiene conflicto con los mutadores 'NO HAY TIEMPO QUE PERDER' y 'EXPERTO EN COMBATE CUERPO A CUERPO'.",
+	spanish = "¿Que es lo que me hace un buen demoledor?\n\n\n¡Wolf, psicótico de mierda! ¿Ésta es la razón por la que no trajiste otro tipo de munición? Por tu culpa solo podemos usar el Lanzagranadas y la Pistola, si no morimos por esto ¡Te mataré con propias mis manos!\n\n\n\nEl GL40 puede recoger munición del suelo, ahora recarga más rápido a costa de que su daño es menor.\n\n\nSolo las pistolas y el GL40 están disponibles. No hay munición para otras armas.\n\nEste mutador tiene conflicto con los mutadores 'NO HAY TIEMPO QUE PERDER' y 'EXPERTO EN ARTES MARCIALES'.",
 	},
 	["mutator_kaboom_motd"] = {
 	chinese = "突变模式‘炸翻天’已开启。把这些傻逼全炸死！",
@@ -390,7 +398,7 @@ local replacements = {
     ["mutator_agents_vs_fbi_help"] = {
     chinese = "探员们，虽然我不想让各位兄弟受苦，但是不可否认的是为了轻便起见，各位探员只能带上手枪。\n\n\n不过好处就是对面也不会派太多重火力——吧？\n\n\n\n非地图事件的敌人只会生成幻影特工与FBI探员。\n\n\n防爆特警面甲血量大幅度降低。\n\n\n\n不可在枪林弹雨193+难度下启用。\n与肘击高手，高级训练，联合进攻，炸翻天，无暇搜刮突变模式冲突。",
     english = "Agents, I don't wanna let you suffer, but for lightness, I think you guys can only carry a pistol.\n\n\nAnd they won't send heavy firepower to you...right?\n\n\n\nNon-map-scripted spawned enemies will only be Cloakers and FBI agents.\n\n\n Bulldozer's visor Health massively decreased.\n\n\n\nUnavailiable on Overkill 193+ difficulty.\nConflicts with MELEE EXPERT, EXERCISED COPS, COMBINE ASSAULT, KABOOM, and NO TIME FOR SEARCHING mutators.",
-    spanish = "Agentes, que tierno... No quiero que sufran. Para estar ligeros iremos solo con nuestras pistolas.\n\n\nNo enviarán artillería pesada... ¿Verdad?\n\n\n\nLos únicos enemigos 'No-Scripteados' que pueden spawnear son los Cloakers y Agentes del FBI.\n\n\n La vida del visor de los Bulldozers se disminuye considerablemente.\n\n\n\nNo disponible en Overkill 193+.\n\nEste mutador tiene conflicto con los mutadores 'EXPERTO EN COMBATE CUERPO A CUERPO', 'POLICIAS DOPADOS', 'ASALTO COMBINE', '¡KABOOM!' y 'NO HAY TIEMPO QUE PERDER'.",
+    spanish = "Agentes, que tierno... No quiero que sufran. Para estar ligeros iremos solo con nuestras pistolas.\n\n\nNo enviarán artillería pesada... ¿Verdad?\n\n\n\nLos únicos enemigos 'No-Scripteados' que pueden spawnear son los Cloakers y Agentes del FBI.\n\n\n La vida del visor de los Bulldozers se disminuye considerablemente.\n\n\n\nNo disponible en Overkill 193+.\n\nEste mutador tiene conflicto con los mutadores 'EXPERTO EN ARTES MARCIALES', 'POLICIAS DOPADOS', 'ASALTO COMBINE', '¡KABOOM!' y 'NO HAY TIEMPO QUE PERDER'.",
     },
     ["mutator_agents_vs_fbi_motd"] = {
     chinese = "007",
