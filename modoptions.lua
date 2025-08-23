@@ -38,6 +38,7 @@ module:add_menu_option("m308_fov_zoom_sens", {
 })
 
 --Ported from mod "smart_weapon_switch".
+
 module:add_menu_option("sws_show_queue_hints", {
 	type = "boolean",
 	default_value = true,
@@ -61,6 +62,18 @@ module:add_menu_option("sws_force_switch_after_loading_shell", {
 	default_value = true,
 	text_id = "sws_force_switch_after_loading_shell",
 	help_id = "sws_force_switch_after_loading_shell_help",
+})
+
+module:add_menu_option("sws_melee_cancel_queue", {
+	type = "multi_choice",
+	text_id = "sws_melee_cancel_queue",
+	help_id = "sws_melee_cancel_queue_help",
+	choices = {
+		{ false, "sws_never" },
+		{ "on_not_weapon_empty", "sws_on_not_weapon_empty" },
+		{ "always", "sws_always" },
+	},
+	default_value = "default",
 })
 
 

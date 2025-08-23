@@ -55,9 +55,9 @@ local replacements = {
 		chinese = "切换武器延迟时最低换弹时间百分比",
 		spanish = "Valor asignado para el cambio de arma",
 	},
-	["sws_min_reload_remaining_pct_help"] = {
-		english = "When attempting to switch weapons during a reload, if the current reload has this much or more remaining (in percent), the switch will be forced immediately. Value is the percent of reload left (1-100).",
-		chinese = "在武器换弹时切换武器，倘若剩余换弹时间的百分比值高于该设置的值，那么就会像原版一样立刻开始切换武器，反之，则会在武器换弹完成之后才切换武器。\n\n该值的设置区间为1%-100%，设置为1%将在实质上关闭该功能。",
+	["sws_min_reload_remaining_pct_help"] = { --Need to update spanish loc
+		english = "When attempting to switch weapons during a reload, if the current reload has this much or more remaining (in percent), the switch will be forced immediately. Value is the percent of reload left (1-100).\nQueued weapon switches can be cancelled by attempting to equip the currently selected weapon.",
+		chinese = "在武器换弹时切换武器，倘若剩余换弹时间的百分比值高于该设置的值，那么就会像原版一样立刻开始切换武器，反之，则会在武器换弹完成之后才切换武器。\n\n该值的设置区间为1%-100%，设置为1%将在实质上关闭该功能。\n在延迟期间切换武器可通过再次装备该武器取消。",
 		spanish = "Cuando intentes cambiar de arma mientras recargas, si a la recarga actual le queda este valor o menos se forzará el cambio de arma inmediatamente.\n\nEl valor representa al tiempo de recarga restante en forma de porcentaje (1-100)", 
 	},
 	["sws_force_switch_after_loading_shell"] = {
@@ -80,6 +80,31 @@ local replacements = {
 		chinese = "武器切换已延迟，将在填装下一颗弹药以后切换武器。",
 		spanish = "Cambio de arma en cola: Se realizará luego de cargar el siguiente cartucho.",
 	},
+	["sws_hint_switch_cancelled"] = {
+		english = "Weapon switch queue cancelled.",
+		chinese = "武器切换已取消。",
+	},
+	["sws_melee_cancel_queue"] = {
+		english = "Cancel weapon switch queue with melee",
+		chinese = "用近战取消武器切换延迟",
+	},
+	["sws_melee_cancel_queue_help"] = {
+		english = "When enabled, performing a melee attack will cancel your current weapon switch queue.",
+		chinese = "开启时，使用近战将会取消武器切换。",
+	},
+	["sws_never"] = {
+		english = "never",
+		chinese = "不开启功能",
+	},
+	["sws_on_not_weapon_empty"] = {
+		english = "If weapon is magazine is not empty",
+		chinese = "如果武器弹匣不为空",
+	},
+	["sws_always"] = {
+		english = "Always",
+		chinese = "开启该功能",
+	},
+	--Smart weapon switch stuffs ends here.
 	["des_m4"] = {
 	chinese = "数据：控制性高：高精度：高射速：增伤6点： \n高射速，容易操控，精度高使得即使是略低一点的伤害也不妨碍其成为专业人员的第一选择。\n即使是没经过训练的菜鸟也能轻松使用。",
 	english = "stats:high control:high accuracy:high firerate:gain 6 extra-damagee:\nHigh firerate,easy to control and high accuracy makes it a professional's priority one, although it has a little low damagee for its downside. \nEven an un-trained rookie can handle it easily.",

@@ -152,28 +152,28 @@ module:hook(PlayerStandard, "_start_action_reload", function(self, t, dt)
 	local is_empty = weapon_base:clip_empty()
 	local anim_suffix = is_empty and ("reload_" .. name_id) or ("reload_not_empty_" .. name_id)
 	local camera_redirect = Idstring(anim_suffix)
-	local reload_anim = is_empty and nil or "reload_not_empty"
+	local reload_anim = not is_empty and "reload_not_empty"
 
 	self._unit:camera():play_redirect(camera_redirect, speed_multiplier)
 
 	local base_timer = nil
-		if is_empty then
-			base_timer = tweak_data.timers.reload_empty or weapon_base:reload_expire_t() or 2.6
-		else
-			base_timer = tweak_data.timers.reload_not_empty or weapon_base:reload_expire_t() or 2.2
-		end
+	if is_empty then
+		base_timer = tweak_data.timers.reload_empty or weapon_base:reload_expire_t() or 2.6
+	else
+		base_timer = tweak_data.timers.reload_not_empty or weapon_base:reload_expire_t() or 2.2
+	end
 
-		self._reload_start_t = t
-		self._reload_expire_t = t + (base_timer / speed_multiplier)
+	self._reload_start_t = t
+	self._reload_expire_t = t + (base_timer / speed_multiplier)
 
-		weapon_base:start_reload()
-		if not weapon_base:tweak_data_anim_play(reload_anim, speed_multiplier) then
-			weapon_base:tweak_data_anim_play("reload", speed_multiplier)
-		end
+	weapon_base:start_reload()
+	if not weapon_base:tweak_data_anim_play(reload_anim, speed_multiplier) then
+		weapon_base:tweak_data_anim_play("reload", speed_multiplier)
+	end
 
-		if self._ext_network then
-			self._ext_network:send("reload_weapon")
-		end
+	if self._ext_network then
+		self._ext_network:send("reload_weapon")
+	end
 end)
 
 module:hook(PlayerStandard, "get_remaining_reload_time_percentage", function(self, t)
@@ -185,7 +185,7 @@ module:hook(PlayerStandard, "get_remaining_reload_time_percentage", function(sel
 
 	local progress
 	if start_t and expire_t > start_t then
-		progress = math.clamp((t - start_t) / (expire_t - start_t), 0, 1)		
+		progress = math.clamp((t - start_t) / (expire_t - start_t), 0, 1)
 	else
 		if expire_t > t then
 			progress = math.clamp(1 - ((expire_t - t) / expire_t), 0, 1)
@@ -193,7 +193,7 @@ module:hook(PlayerStandard, "get_remaining_reload_time_percentage", function(sel
 			progress = 1
 		end
 	end
-				
+
 	local remaining = math.clamp(1 - progress, 0, 1)
 	return math.floor(remaining * 1000 + 0.5) / 10
 end)
@@ -216,6 +216,15 @@ module:hook(PlayerStandard, "show_weapon_switch_queue_hint", function(self)
 	managers.hud:show_hint({ text = managers.localization:text(hint), time = 3.5 })
 end)
 
+module:hook(PlayerStandard, "show_weapon_switch_cancel_hint", function(self, duration)
+	if not D:conf("sws_show_queue_hints") then
+		return
+	end
+
+	local hint = "sws_hint_switch_cancelled"
+	managers.hud:show_hint({ text = managers.localization:text(hint), time = duration or 3.5 })
+end)
+
 module:hook(PlayerStandard, "_should_force_switch", function(self, t, input_index)
 	local last_index = self._queued_reload_switch_index
 	local last_time = self._queued_reload_switch_t or 0
@@ -227,9 +236,18 @@ module:hook(PlayerStandard, "_should_force_switch", function(self, t, input_inde
 	return (last_index == input_index and delay < 0.35) or reload_time_check
 end)
 
+module:hook(PlayerStandard, "_queued_weapon_switch", function(self)
+	return self._wanted_index or self._queued_reload_switch_index
+end)
+
 module:hook(PlayerStandard, "_consume_queued_switch", function(self)
-	self._selection_wanted = true
 	self._wanted_index = self._queued_reload_switch_index
+	self._queued_reload_switch_index = nil
+	self._queued_reload_switch_t = nil
+end)
+
+module:hook(PlayerStandard, "_clear_queued_switch", function(self)
+	self._wanted_index = nil
 	self._queued_reload_switch_index = nil
 	self._queued_reload_switch_t = nil
 end)
@@ -241,10 +259,7 @@ module:hook(PlayerStandard, "_check_action_equip", function(self, t, input)
 
 		if self._ext_inventory:is_selection_available(selection_wanted) then
 			self:_start_action_unequip_weapon(t, { selection_wanted = selection_wanted })
-			self._selection_wanted = false
-			self._wanted_index = nil
-			self._queued_reload_switch_index = nil
-			self._queued_reload_switch_t = nil
+			self:_clear_queued_switch()
 			return true
 		end
 	end
@@ -267,13 +282,13 @@ module:hook(PlayerStandard, "_check_action_equip", function(self, t, input)
 		self:_consume_queued_switch()
 	end
 
-	if is_reloading and input_index and not is_equipped then
+	if is_reloading and input_index and is_equipped then
+		self:_clear_queued_switch()
+		self:show_weapon_switch_cancel_hint()
+	elseif is_reloading and input_index and not is_equipped then
 		if self:_should_force_switch(t, input_index) then
 			self:_start_action_unequip_weapon(t, { selection_wanted = input_index })
-			self._selection_wanted = false
-			self._wanted_index = nil
-			self._queued_reload_switch_index = nil
-			self._queued_reload_switch_t = nil
+			self:_clear_queued_switch()
 			new_action = true
 			return new_action
 		else
@@ -294,10 +309,7 @@ module:hook(PlayerStandard, "_check_action_equip", function(self, t, input)
 		new_action = not is_equipped
 		if new_action then
 			self:_start_action_unequip_weapon(t, { selection_wanted = selection_wanted })
-			self._selection_wanted = false
-			self._wanted_index = nil
-			self._queued_reload_switch_index = nil
-			self._queued_reload_switch_t = nil
+			self:_clear_queued_switch()
 		end
 	end
 
@@ -346,10 +358,10 @@ module:hook(70, PlayerStandard, "_update_action_reload", function(self, t, dt, i
 			if input.btn_steelsight_state then
 				self._steelsight_wanted = true
 			elseif
-				self._run_by_default
+					self._run_by_default
 				and self._running_wanted ~= false
-					and not input.btn_run_state
-					and not self:_is_reloading()
+				and not input.btn_run_state
+				and not self:_is_reloading()
 			then
 				self._running_wanted = true
 			end
@@ -358,7 +370,6 @@ module:hook(70, PlayerStandard, "_update_action_reload", function(self, t, dt, i
 end, false)
 
 module:hook(PlayerStandard, "_queue_weapon_switch_during_reload", function(self, index)
-	self._selection_wanted = true
 	self._wanted_index = index
 end)
 
@@ -382,4 +393,28 @@ end)
 
 module:post_hook(PlayerStandard, "_start_action_equip_weapon", function(self, t)
 	self._weapon_state = WEAPON_EQUIPPED
+end)
+
+module:hook(PlayerStandard, "_check_weapon_queue_cancel_on_melee", function(self)
+	if not self:_queued_weapon_switch() then
+		return false
+	end
+
+	local setting = D:conf("sws_melee_cancel_queue")
+	if not setting then
+		return false
+	end
+
+	if setting == "on_not_weapon_empty" then
+		return not self._equipped_unit:base():clip_empty()
+	end
+
+	return true
+end)
+
+module:pre_hook(PlayerStandard, "_check_action_melee", function(self, t, input)
+	if input.btn_melee_press and self:_check_weapon_queue_cancel_on_melee() then
+		self:_clear_queued_switch()
+		self:show_weapon_switch_cancel_hint(1)
+	end
 end)
