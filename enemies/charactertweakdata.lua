@@ -46,6 +46,10 @@ module:post_hook(CharacterTweakData, "_init_murky", function(self,presets)
 	self.murky.weapon.r870.FALLOFF[3].dmg_mul = 1.5
 end, false)
 
+module:post_hook(CharacterTweakData, "_init_shield", function(self, presets)
+	self.shield.weapon.shield.aim_delay = { 0.3, 0.5 }
+end, false)
+
 module:post_hook(CharacterTweakData, "_init_fbi", function(self, presets)
 	self.fbi.weapon = presets.weapon.fbi
 	self.fbi.HEALTH_INIT = 4
@@ -96,11 +100,11 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	local presets = module:call_orig(CharacterTweakData, "_presets", self, tweak_data)
 	
 	
-
-	presets.weapon.normal.r870.aim_delay = { 0.4, 0.3 }
-	presets.weapon.good.r870.aim_delay = { 0.3, 0.3 }
-	presets.weapon.expert.r870.aim_delay = { 0.2, 0.2 }
-	presets.weapon.gang_member.r870.aim_delay = { 0.2, 0.2 }
+	--nerfed some shotgunner's reaction time since they can deal 90 damage.
+	presets.weapon.normal.r870.aim_delay = { 0.3, 0.4 }
+	presets.weapon.good.r870.aim_delay = { 0.2, 0.35 }
+	presets.weapon.expert.r870.aim_delay = { 0.15, 0.3 }
+	presets.weapon.gang_member.r870.aim_delay = { 0.15, 0.2 }
 
 
 	presets.weapon.normal.glock = deep_clone(presets.weapon.normal.mp5)
