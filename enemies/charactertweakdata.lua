@@ -47,7 +47,7 @@ module:post_hook(CharacterTweakData, "_init_murky", function(self,presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_shield", function(self, presets)
-	self.shield.weapon.shield.aim_delay = { 0.3, 0.5 }
+	self.shield.weapon.shield.aim_delay = { 1, 2.5 }
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_fbi", function(self, presets)
@@ -102,8 +102,8 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	
 	--nerfed some shotgunner's reaction time since they can deal 90 damage.
 	presets.weapon.normal.r870.aim_delay = { 0.3, 0.4 }
-	presets.weapon.good.r870.aim_delay = { 0.2, 0.35 }
-	presets.weapon.expert.r870.aim_delay = { 0.15, 0.3 }
+	presets.weapon.good.r870.aim_delay = { 0.25, 0.35 }
+	presets.weapon.expert.r870.aim_delay = { 0.2, 0.3 }
 	presets.weapon.gang_member.r870.aim_delay = { 0.15, 0.2 }
 
 
