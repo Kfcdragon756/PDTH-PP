@@ -32,7 +32,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.damage_far = 4800
 	self.r870_shotgun.spread.standing = 1.5
 	self.r870_shotgun.spread.crouching = 1.5
-	self.r870_shotgun.spread.steelsight = 0.785
+	self.r870_shotgun.spread.steelsight = 0.73
 	self.r870_shotgun.spread.moving_standing = 1.5
 	self.r870_shotgun.spread.moving_crouching = 1.5
 	self.r870_shotgun.pellet_amount = 6
@@ -89,10 +89,10 @@ module:hook(WeaponTweakData, "_init_data_m4", function(self)
 	self.test_raycast_weapon.DAMAGE = 2.4
 	self.test_raycast_weapon.damage_melee = damage_melee_medium
 	self.test_raycast_weapon.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
-    self.test_raycast_weapon.AMMO_PICKUP = { 2.4, 5.1 }
+    self.test_raycast_weapon.AMMO_PICKUP = { 3, 5.6 }
 	self.test_raycast_weapon.EXTRA_PICKUP = { 0.3, 0.7 }
 	self.test_raycast_weapon.CLIP_AMMO_MAX = 30
-	self.test_raycast_weapon.NR_CLIPS_MAX = 4
+	self.test_raycast_weapon.NR_CLIPS_MAX = 5
 	self.test_raycast_weapon.auto.fire_rate = 0.088
 	self.test_raycast_weapon.firerate_multiplier = 1
     self.test_raycast_weapon.spread.standing = 1.135
@@ -114,7 +114,7 @@ module:hook(WeaponTweakData, "_init_data_m4", function(self)
 	self.test_raycast_weapon.kick.h.steelsight = 0.09
 	self.test_raycast_weapon.headshot_multiplier = 1.05
 	self.test_raycast_weapon.ads_speed = 1.12
-	self.test_raycast_weapon.reload_speed = 0.85
+	self.test_raycast_weapon.reload_speed = 0.875
 	self.test_raycast_weapon.bodyshot_multiplier = 0.6
 	
 	self.m4 = deep_clone(self.test_raycast_weapon)
@@ -174,7 +174,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.kick.h.steelsight = 0.6
     self.hk21.NR_CLIPS_MAX = 2
 	self.hk21.CLIP_AMMO_MAX = 80
-    self.hk21.AMMO_PICKUP = {2.7, 4.5}
+    self.hk21.AMMO_PICKUP = {2.9, 4.8}
 	self.hk21.EXTRA_PICKUP = {0.3, 0.9}
 	self.hk21.DAMAGE = 4
     self.hk21.crosshair.standing.offset = 0.2855
@@ -198,7 +198,7 @@ module:hook(WeaponTweakData, "_init_data_mp5", function(self)
 	self.mp5.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mp5.NR_CLIPS_MAX = 3
     self.mp5.DAMAGE = 1.5
-    self.mp5.AMMO_PICKUP = {2.8, 5.3}
+    self.mp5.AMMO_PICKUP = {3.2, 5.7}
 	self.mp5.EXTRA_PICKUP = {0.7, 0.7}
 	self.mp5.auto.fire_rate = 0.0857
 	self.mp5.firerate_multiplier = 1

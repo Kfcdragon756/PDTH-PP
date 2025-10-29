@@ -91,9 +91,9 @@ module:hook(GroupAITweakData, "_set_hard", function(self)
 		swat = { 0.5, 0.9, 0.8 },
 		swat_kevlar = { 0, 0.4, 0.5 },
 		shield = { 0.2, 0.5, 0.5 },
-		tank = { 0, 0, 0.127 },
+		tank = { 0, 0, 0.1 },
 		spooc = { 0.2, 0.5, 0.65 },
-		taser = { 0.05, 0.4, 0.5 },
+		taser = { 0.05, 0.1, 0.125 },
 	}
 
 	local is_singleplayer = Global.game_settings.single_player
@@ -140,7 +140,7 @@ module:hook(GroupAITweakData, "_set_overkill", function(self)
 	self.besiege.assault.units = {
 		cop = { 0.5, 0.1, 0 },
 		swat = { 0.7, 0.7, 0.8 },
-		swat_kevlar = { 0.25, 0.6, 0.6 },
+		swat_kevlar = { 0.25, 0.4, 0.55 },
 		shield = { 0.5, 0.7, 0.9 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.2, 0.7, 1 },
@@ -197,7 +197,7 @@ module:hook(GroupAITweakData, "_set_overkill_145", function(self)
 	self.besiege.assault.units = {
 		cop = { 0.3, 0, 0 },
 		swat = { 1, 0.7, 0.7 },
-		swat_kevlar = { 0.5, 0.6, 0.8 },
+		swat_kevlar = { 0.5, 0.6, 0.6 },
 		shield = { 0.5, 0.7, 0.8 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.3, 0.9, 1 },
@@ -216,8 +216,8 @@ module:hook(GroupAITweakData, "_set_overkill_145", function(self)
 	self.street.assault.sustain_duration_max = { 60, 120, 160 }
 	self.street.assault.delay = { 40, 35, 30 }
 	self.street.assault.units = {
-		swat = { 0.7, 0.6, 0.5 },
-		swat_kevlar = { 0.5, 0.5, 0.5 },
+		swat = { 0.7, 0.7, 0.6 },
+		swat_kevlar = { 0.4, 0.4, 0.5 },
 		shield = { 0.5, 0.7, 0.7 },
 		tank = { 0, 0.1, 0.2 },
 		spooc = { 0.2, 0.7, 1 },
@@ -226,7 +226,7 @@ module:hook(GroupAITweakData, "_set_overkill_145", function(self)
 	self.street.blockade.units = {
 		defend = {
 			swat = { 0.7, 0.6, 0.6 },
-			swat_kevlar = { 0.5, 0.5, 0.5 },
+			swat_kevlar = { 0.4, 0.5, 0.5 },
 			shield = { 0.7, 0.9, 0.9 },
 		},
 		frontal = {

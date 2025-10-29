@@ -205,6 +205,11 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 		module:hook_post_require("lib/tweak_data/charactertweakdata", "mutator/agents_vs_fbi/charactertweakdata")
 		module:hook_post_require("lib/managers/playermanager", "mutator/agents_vs_fbi/playermanager")
 	end
+	
+	mutator_availability = { all = true }
+	if MutatorHelper.setup_mutator(module, "mag_free", mutator_availability, nil, true) then
+		module:hook_post_require("lib/units/weapons/raycastweaponbase", "mutator/mag_free/raycastweaponbase")
+	end
 end, false)
 
 return module

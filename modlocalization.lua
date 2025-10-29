@@ -416,7 +416,7 @@ local replacements = {
 		english = "WOLF, DID YOU SEE THAT MOTHERFUCKER WHO JUST SNIPE US?!\n\n\nI CAN'T SEE! CAN'T SEE! CAN'T SEE!!!!\n\n\n\nSnipers will equip M308s which will not cause red traces.\n\nUnavailiable in NO MERCY heist.",
 		spanish = "¿¡WOLF, VISTE AL BASTARDO QUE NOS ACABA DE DISPARAR!?\n\n\n¡NO LO VEO! ¿¡DONDE ESTÁ!?\n\n\n\nLos Snipers enemigos ahora están equipados con un M308 que no causa trazados rojos/naranjas.\n\nNo disponible en 'NO MERCY' (xd)",
 	},
-	["mutaotr_stealth_marksman_motd"] = {
+	["mutator_stealth_marksman_motd"] = {
 		chinese = "狙佬呢？！",
 		english = "CAN YOU FIND THE SNIPERS?",
 		spanish = "¿PUEDES ENCONTRAR ALGÚN SNIPER?",
@@ -435,6 +435,18 @@ local replacements = {
 		chinese = "007",
 		english = "JAMES BOND",
 		spanish = "JAMES BOND",
+	},
+	["mutator_mag_free"] = {
+		chinese = "随地扔垃圾",
+		english = "Littering everywhere",
+	},
+	["mutator_mag_free_help"] = {
+		chinese = "懒得把弹匣放回去？\n\n\n没关系！扔了就好了！\n\n\n\n换弹将会使你失去弹匣余弹，但你将获得10%换弹速度加成。",
+		english = "Feeling too lazy to put the magazine back to your suit? \n\n\nNo worries! just throu them away! \n\n\n\nReloading will make you lose the rest bullets in your magazine, but you will gain 10% reload speed bonus.",
+	},
+	["mutator_mag_free_motd"] = {
+		chinese = "乱扔垃圾，罚款！",
+		english = "Let's go LITTERING",
 	},
 }
 

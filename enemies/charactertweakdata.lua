@@ -47,7 +47,11 @@ module:post_hook(CharacterTweakData, "_init_murky", function(self,presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_shield", function(self, presets)
-	self.shield.weapon.shield.aim_delay = { 1, 2.5 }
+	self.shield.weapon.shield.aim_delay = { 3, 4.5 } --Why would this shield motherfucker turn his shield to enemie instantly in vanilla game???
+end, false)
+
+module:post_hook(CharacterTweakData, "_init_taser", function(self, presets)
+	self.taser.weapon.m4.aim_delay_tase = { 0.5, 1 } --No instant tasing anymore.
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_fbi", function(self, presets)
@@ -101,10 +105,34 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	
 	
 	--nerfed some shotgunner's reaction time since they can deal 90 damage.
-	presets.weapon.normal.r870.aim_delay = { 0.3, 0.4 }
-	presets.weapon.good.r870.aim_delay = { 0.25, 0.35 }
-	presets.weapon.expert.r870.aim_delay = { 0.2, 0.3 }
-	presets.weapon.gang_member.r870.aim_delay = { 0.15, 0.2 }
+	presets.weapon.normal.r870.aim_delay = { 0.5, 0.8 }
+	presets.weapon.good.r870.aim_delay = { 0.4, 0.7 }
+	presets.weapon.expert.r870.aim_delay = { 0.3, 0.5 }
+	presets.weapon.gang_member.r870.aim_delay = { 0.3, 0.5 }
+	
+	--tweaks reaction timer for most enemies
+	presets.weapon.normal.m4.aim_delay = { 0.3, 0.4 }
+	presets.weapon.good.m4.aim_delay = { 0.2, 0.4 }
+	presets.weapon.expert.m4.aim_delay = { 0.2, 0.3 }
+	presets.weapon.gang_member.m4.aim_delay = { 0.2, 0.3 }
+	presets.weapon.sniper.m4.aim_delay = { 0.2, 0.2 }
+	
+	presets.weapon.normal.mp5.aim_delay = { 0.3, 0.4 }
+	presets.weapon.good.mp5.aim_delay = { 0.2, 0.3 }
+	presets.weapon.expert.mp5.aim_delay = { 0.2, 0.25 }
+	presets.weapon.gang_member.mp5.aim_delay = { 0.15, 0.15 }
+	
+	presets.weapon.normal.beretta92.aim_delay = { 0.3, 0.4 }
+	presets.weapon.good.beretta92.aim_delay = { 0.3, 0.3 }
+	presets.weapon.expert.beretta92.aim_delay = { 0.2, 0.3 }
+	
+	presets.weapon.normal.c45.aim_delay = { 0.3, 0.4 }
+	presets.weapon.good.c45.aim_delay = { 0.3, 0.3 }
+	presets.weapon.expert.c45.aim_delay = { 0.2, 0.3 }
+	
+	presets.weapon.normal.mac11.aim_delay = { 0.5, 0.8 }
+	presets.weapon.good.mac11.aim_delay = { 0.4, 0.7 }
+	presets.weapon.expert.mac11.aim_delay = { 0.3, 0.4 }
 
 
 	presets.weapon.normal.glock = deep_clone(presets.weapon.normal.mp5)
@@ -117,6 +145,7 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 
 	presets.weapon.normal.bronco = deep_clone(presets.weapon.normal.c45)
 	presets.weapon.good.bronco = deep_clone(presets.weapon.good.c45)
+	presets.weapon.expert.bronco = deep_clone(presets.weapon.expert.c45)
 	
 	presets.weapon.expert.hk21 = deep_clone(presets.weapon.expert.m4)
 	presets.weapon.sniper.m14 = deep_clone(presets.weapon.sniper.m4)
