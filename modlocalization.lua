@@ -431,23 +431,21 @@ local replacements = {
 		english = "Agents, I don't wanna let you suffer, but for lightness, I think you guys can only carry a pistol.\n\n\nAnd they won't send heavy firepower to you...right?\n\n\n\nNon-map-scripted spawned enemies will only be Cloakers and FBI agents.\n\n\n Bulldozer's visor Health massively decreased.\n\n\n\nUnavailiable on Overkill 193+ difficulty.\nConflicts with MELEE EXPERT, EXERCISED COPS, COMBINE ASSAULT, KABOOM, and NO TIME FOR SEARCHING mutators.",
 		spanish = "Agentes, que tierno... No quiero que sufran. Para estar ligeros iremos solo con nuestras pistolas.\n\n\nNo enviarán artillería pesada... ¿Verdad?\n\n\n\nLos únicos enemigos 'No-Scripteados' que pueden spawnear son los Cloakers y Agentes del FBI.\n\n\n La vida del visor de los Bulldozers se disminuye considerablemente.\n\n\n\nNo disponible en Overkill 193+.\n\nEste mutador tiene conflicto con los mutadores 'EXPERTO EN ARTES MARCIALES', 'POLICIAS DOPADOS', 'ASALTO COMBINE', '¡KABOOM!' y 'NO HAY TIEMPO QUE PERDER'.",
 	},
-	["mutator_agents_vs_fbi_motd"] = {
-		chinese = "007",
-		english = "JAMES BOND",
-		spanish = "JAMES BOND",
-	},
 	["mutator_mag_free"] = {
 		chinese = "随地扔垃圾",
 		english = "Littering everywhere",
+		spanish = "Basura por todas partes",
 	},
 	["mutator_mag_free_help"] = {
 		chinese = "懒得把弹匣放回去？\n\n\n没关系！扔了就好了！\n\n\n\n换弹将会使你失去弹匣余弹，但你将获得10%换弹速度加成。",
-		english = "Feeling too lazy to put the magazine back to your suit? \n\n\nNo worries! just throu them away! \n\n\n\nReloading will make you lose the rest bullets in your magazine, but you will gain 10% reload speed bonus.",
+		english = "Feeling too lazy to put the magazines back to your suit? \n\n\nNo worries! just throw them away! \n\n\n\nReloading will make you lose the rest bullets in your magazine, but you will gain 10% reload speed bonus.",
+		spanish = "¿Eres demasiado perezoso para guardar los cargadores de nuevo en tu traje? \n\n\n¡No te preocupes! ¡Simplemente tiralos por doquier! \n\n\n\nAl recargar tu arma perderás las balas restantes del cargador, pero ganas un 10% de velocidad de recarga.",
 	},
 	["mutator_mag_free_motd"] = {
 		chinese = "乱扔垃圾，罚款！",
 		english = "Let's go LITTERING",
-	},
+		spanish = "¡¿Nadie piensa en el medio ambiente?!", -- (Un)funny quote... if you want an accurate translation it would be something like this: "¡Tiremos basura por doquier!" -- NO-kfc
+    },
 }
 
 for id, repl in pairs(replacements) do
