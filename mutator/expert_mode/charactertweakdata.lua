@@ -27,3 +27,7 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	presets.weapon.expert.mossberg = deep_clone(presets.weapon.expert.r870)
 	return presets
 end, false)
+
+module:post_hook(CharacterTweakData, "_init_taser", function(self, presets)
+	self.taser.weapon.m4.aim_delay_tase = { 0, 0 } --Instant tasing in expert mode only.
+end, false)

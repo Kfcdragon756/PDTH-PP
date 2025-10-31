@@ -196,7 +196,7 @@ module:hook(GroupAITweakData, "_set_overkill_145", function(self)
 	self.besiege.assault.delay = { 40, 35, 30 }
 	self.besiege.assault.units = {
 		cop = { 0.3, 0, 0 },
-		swat = { 1, 0.7, 0.7 },
+		swat = { 0.8, 0.7, 0.65 },
 		swat_kevlar = { 0.5, 0.6, 0.6 },
 		shield = { 0.5, 0.7, 0.8 },
 		tank = { 0, 0.1, 0.2 },

@@ -105,34 +105,34 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	
 	
 	--nerfed some shotgunner's reaction time since they can deal 90 damage.
-	presets.weapon.normal.r870.aim_delay = { 0.5, 0.8 }
-	presets.weapon.good.r870.aim_delay = { 0.4, 0.7 }
-	presets.weapon.expert.r870.aim_delay = { 0.3, 0.5 }
-	presets.weapon.gang_member.r870.aim_delay = { 0.3, 0.5 }
+	presets.weapon.normal.r870.aim_delay = { 0.3, 0.5 }
+	presets.weapon.good.r870.aim_delay = { 0.25, 0.45 }
+	presets.weapon.expert.r870.aim_delay = { 0.25, 0.35 }
+	presets.weapon.gang_member.r870.aim_delay = { 0.25, 0.35 }
 	
 	--tweaks reaction timer for most enemies
-	presets.weapon.normal.m4.aim_delay = { 0.3, 0.4 }
-	presets.weapon.good.m4.aim_delay = { 0.2, 0.4 }
-	presets.weapon.expert.m4.aim_delay = { 0.2, 0.3 }
-	presets.weapon.gang_member.m4.aim_delay = { 0.2, 0.3 }
+	presets.weapon.normal.m4.aim_delay = { 0.25, 0.4 }
+	presets.weapon.good.m4.aim_delay = { 0.15, 0.4 }
+	presets.weapon.expert.m4.aim_delay = { 0.15, 0.3 }
+	presets.weapon.gang_member.m4.aim_delay = { 0.15, 0.3 }
 	presets.weapon.sniper.m4.aim_delay = { 0.2, 0.2 }
 	
-	presets.weapon.normal.mp5.aim_delay = { 0.3, 0.4 }
-	presets.weapon.good.mp5.aim_delay = { 0.2, 0.3 }
-	presets.weapon.expert.mp5.aim_delay = { 0.2, 0.25 }
+	presets.weapon.normal.mp5.aim_delay = { 0.25, 0.4 }
+	presets.weapon.good.mp5.aim_delay = { 0.15, 0.3 }
+	presets.weapon.expert.mp5.aim_delay = { 0.15, 0.25 }
 	presets.weapon.gang_member.mp5.aim_delay = { 0.15, 0.15 }
 	
-	presets.weapon.normal.beretta92.aim_delay = { 0.3, 0.4 }
-	presets.weapon.good.beretta92.aim_delay = { 0.3, 0.3 }
-	presets.weapon.expert.beretta92.aim_delay = { 0.2, 0.3 }
+	presets.weapon.normal.beretta92.aim_delay = { 0.25, 0.4 }
+	presets.weapon.good.beretta92.aim_delay = { 0.25, 0.3 }
+	presets.weapon.expert.beretta92.aim_delay = { 0.15, 0.3 }
 	
-	presets.weapon.normal.c45.aim_delay = { 0.3, 0.4 }
-	presets.weapon.good.c45.aim_delay = { 0.3, 0.3 }
-	presets.weapon.expert.c45.aim_delay = { 0.2, 0.3 }
+	presets.weapon.normal.c45.aim_delay = { 0.25, 0.4 }
+	presets.weapon.good.c45.aim_delay = { 0.25, 0.3 }
+	presets.weapon.expert.c45.aim_delay = { 0.15, 0.3 }
 	
-	presets.weapon.normal.mac11.aim_delay = { 0.5, 0.8 }
-	presets.weapon.good.mac11.aim_delay = { 0.4, 0.7 }
-	presets.weapon.expert.mac11.aim_delay = { 0.3, 0.4 }
+	presets.weapon.normal.mac11.aim_delay = { 0.25, 0.5 }
+	presets.weapon.good.mac11.aim_delay = { 0.15, 0.4 }
+	presets.weapon.expert.mac11.aim_delay = { 0.15, 0.2 }
 
 
 	presets.weapon.normal.glock = deep_clone(presets.weapon.normal.mp5)

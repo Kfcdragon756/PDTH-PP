@@ -89,7 +89,7 @@ module:hook(WeaponTweakData, "_init_data_m4", function(self)
 	self.test_raycast_weapon.DAMAGE = 2.4
 	self.test_raycast_weapon.damage_melee = damage_melee_medium
 	self.test_raycast_weapon.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
-    self.test_raycast_weapon.AMMO_PICKUP = { 3, 5.6 }
+    self.test_raycast_weapon.AMMO_PICKUP = { 2.4, 5.6 }
 	self.test_raycast_weapon.EXTRA_PICKUP = { 0.3, 0.7 }
 	self.test_raycast_weapon.CLIP_AMMO_MAX = 30
 	self.test_raycast_weapon.NR_CLIPS_MAX = 5
@@ -198,7 +198,7 @@ module:hook(WeaponTweakData, "_init_data_mp5", function(self)
 	self.mp5.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.mp5.NR_CLIPS_MAX = 3
     self.mp5.DAMAGE = 1.5
-    self.mp5.AMMO_PICKUP = {3.2, 5.7}
+    self.mp5.AMMO_PICKUP = {2.8, 5.7}
 	self.mp5.EXTRA_PICKUP = {0.7, 0.7}
 	self.mp5.auto.fire_rate = 0.0857
 	self.mp5.firerate_multiplier = 1
