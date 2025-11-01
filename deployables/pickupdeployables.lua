@@ -43,7 +43,16 @@ if RequiredScript == "lib/managers/playermanager" then
 	--	end
 	--	return tostring(get_w)
 	--end)
-	--Thanks Vinight for help.
+	--Thanks Vinight for help.\
+	
+	module:hook(PlayerManager, "get_equipment_amount", function(self)
+		local equipment = self._equipment.selections[self._equipment.selected_index]
+		local selfEquipment = self:get_equipment()
+		if not selfEquipment or not equipment then
+			return 0 --return a number to prevent a crash.
+		end
+		return equipment.amount
+	end, true)
 end
 
 if RequiredScript == "lib/units/pickups/ammoclip" then

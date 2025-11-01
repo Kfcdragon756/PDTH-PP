@@ -71,10 +71,12 @@ module:hook_post_require("lib/tweak_data/equipmentstweakdata", "deployables/equi
 module:hook_post_require("lib/units/pickups/ammoclip", "deployables/pickupdeployables")
 module:hook_post_require("lib/managers/playermanager", "deployables/pickupdeployables")
 module:hook_post_require("lib/units/equipment/ammo_bag/ammobagbase", "deployables/pickupdeployables")
---module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase") - Currently unused but will be still here for future development.
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase") -- Currently unused but will be still here for future development.
 module:hook_post_require("lib/units/weapons/trip_mine/tripminebase", "deployables/tripminebase")
+module:hook_post_require("lib/units/interactions/interactionext", "deployables/interactionext")
 --tweakdata
 module:hook_post_require("lib/tweak_data/upgradestweakdata", "tweakdata/upgradestweakdata")
+module:hook_post_require("lib/tweak_data/tweakdata", "tweakdata/tweakdata")
 --equipments & crew bonuses and less shake on hit.
 module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_overhaul/playerdamage")
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
@@ -89,12 +91,16 @@ local conflicting_mods = {
 	"smart_weapon_switch", -- Their functions already exist in this mod.
 }
 
---disable some mods that may conflict with this mod.
+--disable some mods that may conflict with this mod and load custom assets here.
 module:hook("OnModuleRegistered", "load_KO", function()
 	for _, module_id in pairs(conflicting_mods) do
 		D:unregister_module(module_id)
 	end
 end)
+
+--[[module:hook("OnModuleloading", "load_KO", function()
+	DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP_assets/sentry_gun.unit")
+end)]]
 
 --some mutators will be fun.
 module:hook("OnModuleLoading", "load_mutators", function(module)

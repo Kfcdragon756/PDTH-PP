@@ -271,6 +271,14 @@ local replacements = {
 		english = "A medic bag can always refill your health and reset your down times. \nA medic bag can be used for 3 times, a player can carry 2 medic bags.",
 		spanish = "Las bolsas médicas pueden abastecerte de vida y reiniciar tu contador de caídas/bajas. \nPuedes llevar 2 bolsas médicas y cada una tiene 3 usos.",
 	},
+	["debug_interact_sentry_gun"] = {
+		chinese = "按住$BTN_INTERACT;拾取步哨机枪",
+		english = "Hold $BTN_INTERACT; to pick up the sentry gun",
+	},
+	["not_sentry_gun_or_low_ammo"] = {
+		chinese = "你携带的装备并非步哨机枪或携带数目已达到上限。",
+		english = "Your equipment is not sentry gun\nor your equipment amount hit the carry amount limit."
+	},
 	["mutator_combine_assault"] = {
 		chinese = "联合进攻",
 		english = "COMBINE ASSAULT",
