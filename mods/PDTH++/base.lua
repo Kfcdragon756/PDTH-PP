@@ -98,10 +98,6 @@ module:hook("OnModuleRegistered", "load_KO", function()
 	end
 end)
 
---[[module:hook("OnModuleloading", "load_KO", function()
-	DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP_assets/sentry_gun.unit")
-end)]]
-
 --some mutators will be fun.
 module:hook("OnModuleLoading", "load_mutators", function(module)
 	--prevents that you load mutator without loading ovk_193, it will crash the game.
