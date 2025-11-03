@@ -76,7 +76,7 @@ end)
 
 module:hook(CharacterTweakData, "_set_overkill_145", function(self)
 	self:_multiply_all_hp(2, 1.55)
-	self:_multiply_all_speeds(1.1, 1.15)
+	self:_multiply_all_speeds(1.05, 1.15)
 	self:_multiply_weapon_delay(self.presets.weapon.normal, 0.75)
 	self:_multiply_weapon_delay(self.presets.weapon.good, 0.3)
 	self:_multiply_weapon_delay(self.presets.weapon.swats, 0.3)
