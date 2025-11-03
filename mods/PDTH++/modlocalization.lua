@@ -452,7 +452,7 @@ local replacements = {
 	["mutator_mag_free_motd"] = {
 		chinese = "乱扔垃圾，罚款！",
 		english = "Let's go LITTERING",
-		spanish = "¡¿Nadie piensa en el medio ambiente?!", -- (Un)funny quote... if you want an accurate translation it would be something like this: "¡Tiremos basura por doquier!" -- NO-kfc
+		spanish = "¡¿Nadie piensa en el medio ambiente?!", -- (Un)funny quote... if you want an accurate translation it would be something like this: "¡Tiremos basura por doquier!" -- NO // -KF
 	},
 }
 

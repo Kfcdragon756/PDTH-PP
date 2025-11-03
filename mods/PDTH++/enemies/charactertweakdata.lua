@@ -157,6 +157,8 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	presets.weapon.fbi = deep_clone(presets.weapon.expert)
 	presets.weapon.swats = deep_clone(presets.weapon.good)
 	
+	presets.gang_member_damage.hurt_severity = { 1, 1, 1, 1,} -- The bots will no longer get knockbacked by a dozer.
+	
 	return presets
 end, false)
 
