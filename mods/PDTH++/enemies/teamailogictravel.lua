@@ -204,3 +204,26 @@ module:hook("TeamAILogicTravel", "_update_enemy_detection", function(self, data)
 	TeamAILogicAssault._chk_request_combat_chatter(data, my_data)
 	CopLogicBase.queue_task(my_data, my_data.detection_task_key, TeamAILogicTravel._update_enemy_detection, data, data.t + delay)
 end)
+
+
+
+-- 有clk在附近的时候先不要直接救人
+local update = TeamAILogicTravel.update
+function TeamAILogicTravel.update(data, ...)
+	if data.objective and data.objective.type == "revive" then
+		local focus_enemy = data.internal_data.focus_enemy
+		if focus_enemy and focus_enemy.verified and focus_enemy.unit:base() and focus_enemy.unit:base()._tweak_table == "spooc" then  --有没有必要加上泰瑟？
+			if mvector3.distance_sq(focus_enemy.m_head_pos, data.unit:movement():m_head_pos()) < 1000000 then
+				if data.internal_data.advancing then
+					data.unit:brain():action_request({
+						body_part = 2,
+						type = "idle"
+					})
+				end
+				return
+			end
+		end
+	end
+
+	return update(data, ...)
+end

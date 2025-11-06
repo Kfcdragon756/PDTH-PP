@@ -59,6 +59,7 @@ module:hook_post_require("lib/units/enemies/cop/copdamage", "enemies/copdamage")
 module:hook_post_require("lib/units/enemies/cop/copbase", "enemies/copbase")
 module:hook_post_require("lib/units/civilians/logics/civilianlogicescort", "enemies/civilianlogicescort")
 module:hook_post_require("lib/units/player_team/logics/teamailogicassault", "enemies/teamailogicassault")
+module:hook_post_require("lib/units/enemies/cop/logics/coplogicidle", "enemies/coplogicidle")
 module:hook_post_require("lib/units/player_team/logics/teamailogicidle", "enemies/teamailogicidle")
 module:hook_post_require("lib/units/player_team/logics/teamailogictravel", "enemies/teamailogictravel")
 --difficulty
@@ -80,6 +81,7 @@ module:hook_post_require("lib/tweak_data/tweakdata", "tweakdata/tweakdata")
 --equipments & crew bonuses and less shake on hit.
 module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_overhaul/playerdamage")
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
+
 
 local conflicting_mods = {
 	"anticheat",
