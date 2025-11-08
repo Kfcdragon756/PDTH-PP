@@ -192,8 +192,8 @@ local replacements = {
 		spanish = "La Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, al correr un 10% y el tiempo de regeneración es incrementado por 0.8 segundos. \nEste tipo de armadura te permite aguantar un escopetazo de los Bulldozers y seguir vivo.",
 	},
 	["des_extra_start_out_ammo"] = {
-		chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。\n装备该技能时，使用弹药包将自动装填已装备武器。",
-		english = "Provide a extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this equipped, you will automatically reload your equipped weapon.",
+		chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。",
+		english = "Provide a extra magazine per weapon.(In exception of GL40)",
 		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.",
 	},
 	["des_toolset"] = {
@@ -278,7 +278,7 @@ local replacements = {
 	["not_sentry_gun_or_low_ammo"] = {
 		chinese = "你携带的装备并非步哨机枪或携带数目已达到上限。",
 		english = "Your equipment is not sentry gun\nor your equipment amount hit the carry amount limit."
-	}, -- need spanish loc.
+	},
 	["mutator_combine_assault"] = {
 		chinese = "联合进攻",
 		english = "COMBINE ASSAULT",

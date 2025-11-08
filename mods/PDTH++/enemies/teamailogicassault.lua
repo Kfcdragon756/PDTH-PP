@@ -74,3 +74,78 @@ module:hook("TeamAILogicAssault", "_update_cover", function(self, data)
 	local delay = satisfied and 4 or 1
 	CopLogicBase.queue_task(my_data, my_data.cover_update_task_key, TeamAILogicAssault._update_cover, data, TimerManager:game():time() + delay)
 end)
+
+
+
+-- ==调整AI队友的攻击目标优先级，使它们优先攻击特殊单位==
+TeamAILogicAssault.INTIMIDATE_PROGRESS = {}
+
+local enemy_vec = Vector3()
+local shield_slotmask = World:make_slot_mask(8)
+local priority_muls = {  --倍数越低优先攻击的权重越高
+	taser = 0.5,
+	spooc = 0.5,
+	tank = 0.85,  --反正AI打熊也打不死
+	sniper = 0.7
+}
+function TeamAILogicAssault._get_priority_enemy(data, enemies)
+	if managers.groupai:state():whisper_mode() then
+		return
+	end
+
+	local best_target
+	local best_target_priority = math.huge
+	local my_head_pos = data.unit:movement():m_head_pos()
+	for key, enemy_data in pairs(enemies) do
+		mvector3.set(enemy_vec, enemy_data.m_head_pos)
+		local distance = mvector3.direction(enemy_vec, my_head_pos, enemy_vec)
+		local alert_dt = enemy_data.alert_t and data.t - enemy_data.alert_t or 10000
+		local dmg_dt = enemy_data.dmg_t and data.t - enemy_data.dmg_t or 10000
+		local mark_dt = enemy_data.mark_t and data.t - enemy_data.mark_t or 10000
+
+		local target_priority = distance
+		if TeamAILogicAssault.INTIMIDATE_PROGRESS[key] and data.t - TeamAILogicAssault.INTIMIDATE_PROGRESS[key] < 4 then
+			-- 不攻击玩家要抓的敌人
+			target_priority = -1
+		elseif not enemy_data.verified then
+			if alert_dt < 5 then
+				target_priority = target_priority * 10
+			else
+				target_priority = -1
+			end
+		else
+			if data.unit:raycast("ray", my_head_pos, enemy_data.m_head_pos, "slot_mask", shield_slotmask, "report") then
+				-- 不要浪费子弹打 打不到的盾兵本体
+				target_priority = -1
+			else
+				local tweak_table = enemy_data.unit:base()._tweak_table
+				if priority_muls[tweak_table] then
+					-- 根据上述倍率调整敌人的优先级
+					target_priority = target_priority * priority_muls[tweak_table]
+				end
+
+				if mark_dt < 8 or dmg_dt < 2 then
+					-- 提高被标记敌人和攻击玩家敌人的优先级
+					target_priority = target_priority * 0.5
+				end
+
+				if data.internal_data.focus_enemy and data.internal_data.focus_enemy.unit:key() == key then
+					-- 提高玩家正在攻击的敌人的优先级
+					target_priority = target_priority * 0.75
+				end
+			end
+		end
+
+		if target_priority >= 0 and target_priority < best_target_priority then
+			best_target = {
+				enemy_data = enemy_data,
+				reaction = "assault",
+				key = key
+			}
+			best_target_priority = target_priority
+		end
+	end
+
+	local best_target_priority_slot = math.ceil(best_target_priority / 300)
+	return best_target, best_target, best_target_priority_slot, best_target_priority_slot
+end
