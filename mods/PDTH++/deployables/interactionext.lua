@@ -1,9 +1,10 @@
 local module = ... or D:module("PDTH++")
 local UseInteractionExt = module:hook_class("UseInteractionExt")
 local SentryGunInteractionExt = module:hook_class("SentryGunInteractionExt", class, UseInteractionExt)
+local AmmoBagInteractionExt = module:hook_class("AmmoBagInteractionExt")
 
 function SentryGunInteractionExt:_interact_blocked(player)
-	return not managers.player:get_equipment() == "sentry_gun" or ( managers.player:get_equipment_amount() >= 1 )
+	return not ( managers.player:get_equipment() == "sentry_gun" ) or ( managers.player:get_equipment_amount() >= 1 )
 end
 
 function SentryGunInteractionExt:interact(player)
@@ -12,3 +13,15 @@ function SentryGunInteractionExt:interact(player)
 	managers.player:add_selected_equipment(1, 1, 1)
 	return true
 end
+
+module:hook(AmmoBagInteractionExt, "interact", function(self, player) -- Extra start ammo now provides a instant reload while interacted with an ammo bag.
+	if managers.player:has_special_equipment("extra_start_out_ammo") then
+		player:inventory():equipped_unit():base():on_reload()
+	end
+	module:call_orig(AmmoBagInteractionExt, "interact", self, player)
+	if managers.player:has_special_equipment("extra_start_out_ammo") then
+		player:inventory():equipped_unit():base():_reload_instant()
+	end
+end, false)
+-- Why set up this function like this bullshit? 
+-- This is for making sure that your clip ammo amount is always full and you will always gain reload penalty in "littering everywhere" mutator.
