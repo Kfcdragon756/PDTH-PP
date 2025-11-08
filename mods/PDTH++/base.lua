@@ -34,7 +34,7 @@ local module = DMod:new("PDTH++", {
 })
 
 --sandbox
-module:hook_post_require("lib/managers/achievmentmanager.", "sandbox/achievmentmanager")
+module:hook_post_require("lib/managers/achievmentmanager", "sandbox/achievmentmanager")
 module:hook_post_require("lib/network/matchmaking/networkaccountsteam", "sandbox/NetworkAccountSTEAM")
 module:hook_post_require("lib/network/matchmaking/networkmatchmakingsteam", "sandbox/NetworkMatchMakingSTEAM")
 module:hook_post_require("lib/managers/savefilemanager", "sandbox/savefile")
@@ -81,7 +81,6 @@ module:hook_post_require("lib/tweak_data/tweakdata", "tweakdata/tweakdata")
 --equipments & crew bonuses and less shake on hit.
 module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_overhaul/playerdamage")
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
-
 
 local conflicting_mods = {
 	"anticheat",
