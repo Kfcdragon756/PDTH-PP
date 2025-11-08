@@ -132,3 +132,8 @@ end, true)
 module:hook(RaycastWeaponBase, "_is_shooting", function(self)
 	return self._shooting
 end, true)
+
+module:hook(RaycastWeaponBase, "_reload_instant", function(self)
+	self._ammo_remaining_in_clip = math.min(self._ammo_total, self._ammo_max_per_clip)
+	managers.hud:set_ammo_amount(self:ammo_info())
+end, false)
