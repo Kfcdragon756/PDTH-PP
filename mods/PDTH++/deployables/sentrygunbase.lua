@@ -5,7 +5,6 @@ module:post_hook(SentryGunBase, "setup", function(self)
 	self._interact_ext = self._unit:interaction()
 	if self._interact_ext then
 		self._interact_ext:set_active(true)
-		self._interact_ext:_set_contour("standard_color", 1)
 		return
 	end
 	local interaction = SentryGunInteractionExt:new(self._unit)

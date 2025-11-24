@@ -380,7 +380,6 @@ function TeamAILogicTravel.update(data)
 					haste = "run"
 					no_strafe = false
 				elseif need_catchup and not no_strafe then
-					dlog("[PDTH++DEV] AI离玩家过远并开始追逐玩家")
 					haste = "run"
 					no_strafe = false
 				end
@@ -586,7 +585,6 @@ function TeamAILogicTravel._determine_destination_occupation(data, objective)
 			pos = objective.pos
 		}
 	elseif objective.type == "follow" then
-		dlog("[PDTH++DEV] AI的行动目标是follow")
 		local follow_tracker = objective.follow_unit:movement():nav_tracker()
 		local follow_pos = follow_tracker:field_position()
 		local threat_pos

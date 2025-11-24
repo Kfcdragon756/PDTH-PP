@@ -4,13 +4,14 @@ local SentryGunInteractionExt = module:hook_class("SentryGunInteractionExt", cla
 local AmmoBagInteractionExt = module:hook_class("AmmoBagInteractionExt")
 
 function SentryGunInteractionExt:_interact_blocked(player)
-	return not ( managers.player:get_equipment() == "sentry_gun" ) or ( managers.player:get_equipment_amount() >= 1 )
+    local data, _index = managers.player:equipment_data_by_name("sentry_gun")
+    return not data or data.amount >= 1
 end
 
 function SentryGunInteractionExt:interact(player)
 	SentryGunInteractionExt.super.super.interact(self, player) -- For now I have no clue of what it actually does. // -KF
-	if not managers.network.session():is_host then
-		DNet:send_to_peer(peer, "ModEvent", {
+	if not Network:is_server() then
+		DNet:send_to_peers(peer, "ModEvent", {
 		module = module:id(),
 		event = "Destroy_sentry",
 		value = 123,
