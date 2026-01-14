@@ -81,6 +81,8 @@ module:hook_post_require("lib/tweak_data/tweakdata", "tweakdata/tweakdata")
 --equipments & crew bonuses and less shake on hit.
 module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_overhaul/playerdamage")
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
+--mod_override things
+DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit")
 
 local conflicting_mods = {
 	"anticheat",
