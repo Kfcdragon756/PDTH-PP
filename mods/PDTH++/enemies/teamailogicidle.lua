@@ -1,7 +1,7 @@
 local module = ... or D:module("PDTH++")
 local TeamAILogicIdle = module:hook_class("TeamAILogicIdle")
 
-module:hook("TeamAILogicIdle", "_calculate_should_relocate", function(self, data, my_data, objective)
+function TeamAILogicIdle._calculate_should_relocate(data, my_data, objective)
 	if my_data.relocation_pathing then
 		return
 	end
@@ -11,9 +11,9 @@ module:hook("TeamAILogicIdle", "_calculate_should_relocate", function(self, data
 	my_data.relocation_pathing = true
 	my_data.should_relocate = true
 	my_data.relocate_chk_t = data.t + (data.unit:movement():cool() and 3 or 6)
-end)
+end
 
-module:hook("TeamAILogicIdle", "_check_should_relocate", function(self, data, my_data, objective)
+function TeamAILogicIdle._check_should_relocate(data, my_data, objective)
 	if data.pathing_results then
 		local path = data.pathing_results[my_data.relocation_search_id]
 		if path then
@@ -38,4 +38,4 @@ module:hook("TeamAILogicIdle", "_check_should_relocate", function(self, data, my
 			end
 		end
 	end
-end)
+end

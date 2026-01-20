@@ -1,7 +1,7 @@
 local module = ... or D:module("PDTH++")
 local TeamAILogicAssault = module:hook_class("TeamAILogicAssault")
 
-module:hook("TeamAILogicAssault", "_update_cover", function(self, data)
+function TeamAILogicAssault._update_cover(data)
 	local my_data = data.internal_data
 	local cover_release_dis = 0
 	local best_cover = my_data.best_cover
@@ -73,19 +73,19 @@ module:hook("TeamAILogicAssault", "_update_cover", function(self, data)
 	end
 	local delay = satisfied and 4 or 1
 	CopLogicBase.queue_task(my_data, my_data.cover_update_task_key, TeamAILogicAssault._update_cover, data, TimerManager:game():time() + delay)
-end)
+end
 
 
 
--- ==调整AI队友的攻击目标优先级，使它们优先攻击特殊单位==
+-- ==调整AI队友的攻击目标优先级，使它们优先攻击特殊单位== ==Adjust bot teammates' attack priority, let them more likely to shoot special units==
 TeamAILogicAssault.INTIMIDATE_PROGRESS = {}
 
 local enemy_vec = Vector3()
 local shield_slotmask = World:make_slot_mask(8)
-local priority_muls = {  --倍数越低优先攻击的权重越高
+local priority_muls = {  --倍数越低优先攻击的权重越高 the lower multiplier is, the prior the target will get hit
 	taser = 0.5,
 	spooc = 0.5,
-	tank = 0.85,  --反正AI打熊也打不死
+	tank = 0.85,  --反正AI打熊也打不死 it takes a while to kill these dozers anyway
 	sniper = 0.7
 }
 function TeamAILogicAssault._get_priority_enemy(data, enemies)
@@ -105,7 +105,7 @@ function TeamAILogicAssault._get_priority_enemy(data, enemies)
 
 		local target_priority = distance
 		if TeamAILogicAssault.INTIMIDATE_PROGRESS[key] and data.t - TeamAILogicAssault.INTIMIDATE_PROGRESS[key] < 4 then
-			-- 不攻击玩家要抓的敌人
+			-- 不攻击玩家要抓的敌人 Disallow crew bots to shoot enemies that players trying to capture
 			target_priority = -1
 		elseif not enemy_data.verified then
 			if alert_dt < 5 then
@@ -115,22 +115,22 @@ function TeamAILogicAssault._get_priority_enemy(data, enemies)
 			end
 		else
 			if data.unit:raycast("ray", my_head_pos, enemy_data.m_head_pos, "slot_mask", shield_slotmask, "report") then
-				-- 不要浪费子弹打 打不到的盾兵本体
+				-- 不要浪费子弹打 打不到的盾兵本体 Disallow crew bots to shoot enemies behind shields
 				target_priority = -1
 			else
 				local tweak_table = enemy_data.unit:base()._tweak_table
 				if priority_muls[tweak_table] then
-					-- 根据上述倍率调整敌人的优先级
+					-- 根据上述倍率调整敌人的优先级 Adjust priority_muls
 					target_priority = target_priority * priority_muls[tweak_table]
 				end
 
 				if mark_dt < 8 or dmg_dt < 2 then
-					-- 提高被标记敌人和攻击玩家敌人的优先级
+					-- 提高被标记敌人和攻击玩家敌人的优先级 Increase priority of marked enemies and enemies shooting player
 					target_priority = target_priority * 0.5
 				end
 
 				if data.internal_data.focus_enemy and data.internal_data.focus_enemy.unit:key() == key then
-					-- 提高玩家正在攻击的敌人的优先级
+					-- 提高玩家正在攻击的敌人的优先级 Increase priority of enemies players' shooting at
 					target_priority = target_priority * 0.75
 				end
 			end

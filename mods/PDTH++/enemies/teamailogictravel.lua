@@ -1,7 +1,7 @@
 local module = ... or D:module("PDTH++")
 local TeamAILogicTravel = module:hook_class("TeamAILogicTravel")
 
-module:hook("TeamAILogicTravel", "_determine_destination_occupation", function(self, data, objective)
+--[[function TeamAILogicTravel._determine_destination_occupation(data, objective)
 	local occupation
 	if objective.type == "investigate_area" then
 		if objective.guard_obj then
@@ -127,7 +127,7 @@ module:hook("TeamAILogicTravel", "_determine_destination_occupation", function(s
 		}
 	end
 	return occupation
-end)
+end]]
 
 
 function TeamAILogicTravel._update_enemy_detection(data)
@@ -180,7 +180,7 @@ function TeamAILogicTravel._update_enemy_detection(data)
 					dont_exit = true
 				end
 
-				-- 新增：跟随阶段的额外保护——被叫回或尚未真正跟上时，不要切到 Assault
+				-- 新增：跟随阶段的额外保护——被叫回或尚未真正跟上时，不要切到 Assault  =If bot called or not followed, not let bots to enter assault state
 				if objective.called then
 					dont_exit = true
 				else
@@ -197,7 +197,7 @@ function TeamAILogicTravel._update_enemy_detection(data)
 			managers.groupai:state():on_criminal_objective_failed(data.unit, data.objective)
 			return
 		elseif not objective_block then
-			-- 限制在跟随阶段切换到 Assault（除非已满足退出条件）
+			-- 限制在跟随阶段切换到 Assault（除非已满足退出条件） = Limit bots enter assault state unless it can exit follow state
 			if focus_type == "assault" and target_prio_slot < 4 and not dont_exit and (not objective or objective.type ~= "follow") then
 				my_data.exiting = true
 				CopLogicBase._exit(data.unit, "assault")
@@ -306,11 +306,10 @@ end
 	CopLogicBase.queue_task(my_data, my_data.detection_task_key, TeamAILogicTravel._update_enemy_detection, data, data.t + delay)
 end)--]]
 
-
 function TeamAILogicTravel.update(data)
 	if data.objective and data.objective.type == "revive" then
 		local focus_enemy = data.internal_data.focus_enemy
-		if focus_enemy and focus_enemy.verified and focus_enemy.unit:base() and focus_enemy.unit:base()._tweak_table == "spooc" then  --有没有必要加上泰瑟？
+		if focus_enemy and focus_enemy.verified and focus_enemy.unit:base() and focus_enemy.unit:base()._tweak_table == "spooc" then  --有没有必要加上泰瑟？ Let bots not get too near around cloakers
 			if mvector3.distance_sq(focus_enemy.m_head_pos, data.unit:movement():m_head_pos()) < 1000000 then
 				if data.internal_data.advancing then
 					data.unit:brain():action_request({
@@ -366,7 +365,7 @@ function TeamAILogicTravel.update(data)
 				haste = "run"
 			end
 
-			-- 原有分支之后，追加一个“跟随纠偏”
+			-- 原有分支之后，追加一个“跟随纠偏” Make bots follow more closer
 			if objective and objective.type == "follow" then
 				local fpos = objective.follow_unit:movement():m_pos()
 				local dist2 = mvector3.distance_sq(fpos, data.m_pos)
@@ -439,7 +438,6 @@ function TeamAILogicTravel.update(data)
 
 end
 
-
 function TeamAILogicTravel._get_exact_move_pos(data, cur_index)
 	local my_data = data.internal_data
 	local objective = data.objective
@@ -502,12 +500,12 @@ function TeamAILogicTravel._get_exact_move_pos(data, cur_index)
 		local walk_dir = end_pos - my_pos
 		local walk_dis = mvector3.normalize(walk_dir)
 
-		-- 新增：跟随玩家、且暂未专注敌人时，不中途拐去掩体
+		-- 新增：跟随玩家、且暂未专注敌人时，不中途拐去掩体 If following players and not focused on enemies, just not go to cover
 		if objective and objective.type == "follow" and not my_data.focus_enemy and not managers.groupai:state():get_assault_mode() then
 			to_pos = end_pos
 			my_data.moving_to_cover = nil
 		else
-  			-- 原逻辑，但把范围收紧，避免大幅偏航
+  			-- 原逻辑，但把范围收紧，避免大幅偏航 Limited range bots can be far away from players
     		local cover_range = math.min(500, math.max(0, walk_dis - 200))
   			local cover = managers.navigation:find_cover_near_pos_1(
   				end_pos, end_pos + walk_dir * 600, cover_range, cover_range
@@ -540,7 +538,6 @@ function TeamAILogicTravel._get_exact_move_pos(data, cur_index)
 	my_data.rsrv_pos.path = reservation
 	return to_pos
 end
-
 
 function TeamAILogicTravel._determine_destination_occupation(data, objective)
 	local occupation
@@ -612,7 +609,7 @@ function TeamAILogicTravel._determine_destination_occupation(data, objective)
 		end
 		local cover = managers.navigation:find_cover_near_pos_1(follow_pos, threat_pos, near_r, near_r2, data.internal_data.called)
 
-		-- 新增：二次过滤，确保不离玩家太远
+		-- 新增：二次过滤，确保不离玩家太远 Make sure bots wont be too far from players
 		local function _too_far_from_follow(cov)
 			if not cov then return true end
 			local cpos = cov[1]
