@@ -59,14 +59,10 @@ module:hook(UpgradesTweakData, "init_weapon_upgrade_data", function(self)
 	self.values.doctor_bag.amount_increase = { 0, 0, 0 }
 	self.values.trip_mine.quantity = { 0, 0, 0, 0, 0, 0 }
 	self.values.trip_mine.damage_multiplier = { 1, 1 }
-	self.sentry_gun_base_ammo = 150
+	self.sentry_gun_base_ammo = 300
 	self.sentry_gun_base_armor = 10
-	self.values.sentry_gun.ammo_increase = {
-		50,
-		75,
-		100,
-		150,
-	}
+	self.values.sentry_gun.ammo_increase = { 0, 0, 0, 0 }
+	self.values.sentry_gun.armor_increase = { 0, 0, 0, 0 }
 end, false)
 
 module:hook(UpgradesTweakData, "init_crew_bonus_data", function(self)
