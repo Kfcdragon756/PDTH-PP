@@ -1,6 +1,6 @@
 local module = DMod:new("PDTH++", {
 	author = "kfcdragon756",
-	version = "v1.35.3-e",
+	version = "v1.36-e",
 	categories = { "gameplay", "overhaul" },
 	description = {
 		chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
@@ -82,7 +82,9 @@ module:hook_post_require("lib/tweak_data/tweakdata", "tweakdata/tweakdata")
 module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_overhaul/playerdamage")
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
 --mod_override things
-DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit")
+DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit") --Sentry interaction
+DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.model") --Sentry Model
+DB:create_entry("material_config", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.material_config") --Sentry Material Config
 
 local conflicting_mods = {
 	"anticheat",
@@ -94,7 +96,7 @@ local conflicting_mods = {
 	"smart_weapon_switch", -- Their functions already exist in this mod.
 }
 
---disable some mods that may conflict with this mod and load custom assets here.
+--disable some mods that may conflict with this mod.
 module:hook("OnModuleRegistered", "load_KO", function()
 	for _, module_id in pairs(conflicting_mods) do
 		D:unregister_module(module_id)
@@ -113,7 +115,7 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	module:hook_post_require("lib/setups/gamesetup", "mutator/gamesetup")
 
 	--this will prevent the mutator conflictions. (some mutators will break another mutator)
-	--Okay they will not be that useful at the situation of newest version of overkill 193 enabled, but I still decided to keep them for some reason.
+	--Okay they will not be that useful at the situation of newest version of overkill 193 enabled, but I still decided to keep them for some reason. - KF
 	module:hook_post_require("lib/managers/menumanager", "mutator/menumanager")
 	module:hook_post_require("lib/managers/menumanagerdialogs", "mutator/menumanagerdialogs")
 
