@@ -24,6 +24,7 @@ local module = DMod:new("PDTH++", {
 		"[smart_weapon_switch]",
 		"[Auto Fire Sound Fix]",
 		"[interact_toggle]", -- Optional dependency of smart weapon switch.
+		"[_hud]",
 	},
 	includes = {
 		{ "modlocalization", { type = "localization" } },

@@ -103,3 +103,10 @@ module:hook("OnKeyPressed", "change_308_fov_zoom", nil, "GAME", function(self)
 		managers.menu:set_mouse_sensitivity(zoom_fov)
 	end
 end)
+
+--Remove sentry when recieved sentry removal event on peers.
+module:hook("OnNetworkDataRecv", "OnNetworkDataRecv_Destroy_sentry", { "ModEvent", }, function(peer, data_type, data)
+    if data.module == module:id() and data.event == "Destroy_sentry" then
+		data.unit.base():destroy_sentry()
+	end
+end)
