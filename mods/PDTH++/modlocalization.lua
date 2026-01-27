@@ -262,10 +262,10 @@ local replacements = {
 		spanish = "La munición es necesaria para poder seguir en combate. Dos bolsas son suficientes para combatir la falta de munición ¿Verdad? \nEl jugador lleva 2 bolsas de munición y cada una tiene una carga del 750%.",
 	},
 	["des_sentry_gun"] = {
-		chinese = "步哨机枪总是可以帮助你清理一大群敌人。什么，一个不够？那么三个呢？ \n布置下来以后，步哨机枪可以自动锁定并攻击敌人，直到它被破坏或子弹耗尽为止。",
-		english = "Sentry guns can always help you to deal with a massive amounts of enemies. Wait, only one sentry is not enough? What about...three? \nOn deployed, the sentry gun can automatically lock then shoot the enemies, until it's destroyed or runs out of ammo.",
+		chinese = "步哨机枪总是可以帮助你清理一大群敌人。\n布置下来以后，步哨机枪可以自动锁定并攻击敌人，直到它被破坏或子弹耗尽为止。\n你可通过拾取步哨机枪重新补充它的弹药与血量。",
+		english = "Sentry guns can always help you to deal with a massive amounts of enemies.\nOn deployed, the sentry gun can automatically lock then shoot the enemies, until it's destroyed or runs out of ammo.\nYou can restore its health and refill its ammo by picking it up.",
 		spanish = "Las Torretas Sentinelas pueden ayudarte a combatir grandes grupos de enemigos. \n¿Una torreta no es suficiente? ¿¡Que te parecen... Tres!? \nUna vez desplegada la torreta automáticamente apuntará y disparará a los enemigos hasta que se quede sin munición o sea destruída.",
-	},
+	}, --Need spanish loc update
 	["des_doctor_bag"] = {
 		chinese = "医疗包总是能让你满血复活，而且还能重置你的倒地次数。 \n一个医疗包只能用三次，一个玩家可以携带两个医疗包。",
 		english = "A medic bag can always refill your health and reset your down times. \nA medic bag can be used for 3 times, a player can carry 2 medic bags.",

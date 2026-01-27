@@ -6,7 +6,7 @@ module:post_hook(EquipmentsTweakData, "init", function(self)
 
 	self.ammo_bag.quantity = 2
 	self.doctor_bag.quantity = 2
-	self.sentry_gun.quantity = 3
+	self.sentry_gun.quantity = 1
 
 	-- self.trip_mine.pickup_function_name = "pickup_trip_mine"
 	-- self.sentry_gun.pickup_function_name = "pickup_sentry_gun"
