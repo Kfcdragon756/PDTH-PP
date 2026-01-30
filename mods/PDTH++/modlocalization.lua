@@ -275,7 +275,7 @@ local replacements = {
 		chinese = "按住$BTN_INTERACT;拾取步哨机枪",
 		english = "Hold $BTN_INTERACT; to pick up the sentry gun",
 	},
-	["not_sentry_gun_or_low_ammo"] = {
+	["hint_not_sentry_gun_or_low_ammo"] = {
 		chinese = "你携带的装备并非步哨机枪或携带数目已达到上限。",
 		english = "Your equipment is not sentry gun\nor your equipment amount hit the carry amount limit."
 	}, -- need spanish loc.

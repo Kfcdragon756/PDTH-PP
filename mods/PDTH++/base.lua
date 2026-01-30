@@ -86,6 +86,7 @@ module:hook_post_require("lib/units/beings/player/playermovement", "equipment_ov
 DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit") --Sentry interaction
 DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.model") --Sentry Model
 DB:create_entry("material_config", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.material_config") --Sentry Material Config
+--DB:create_entry("hint", "gamedata/hints", "./PDTHPP/gamedata/hints.hint") --Hints
 
 local conflicting_mods = {
 	"anticheat",
