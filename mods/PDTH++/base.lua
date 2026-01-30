@@ -82,6 +82,8 @@ module:hook_post_require("lib/tweak_data/tweakdata", "tweakdata/tweakdata")
 --equipments & crew bonuses and less shake on hit.
 module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_overhaul/playerdamage")
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
+--hints
+module:hook_post_require("lib/managers/hintmanager", "hints/hintmanager")
 --mod_override things
 DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit") --Sentry interaction
 DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.model") --Sentry Model
