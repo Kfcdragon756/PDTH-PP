@@ -15,7 +15,7 @@ module:post_hook(SentryGunBase, "setup", function(self)
 end)
 
 module:post_hook(SentryGunBase, "set_server_information", function(self)
-	self._interact_ext = self._unit:interaction()
+	--self._interact_ext = self._unit:interaction()
 	if self._interact_ext then
 		self._interact_ext:_set_contour("standard_color", 1)
 	end
@@ -28,6 +28,10 @@ module:hook(SentryGunBase, "destroy_sentry", function(self)
 	self._unit:movement():set_active(false)
 	self._unit:base():on_death()
 	--managers.groupai:state():on_criminal_neutralized(self._unit)
+	if self._interact_ext then
+		self._interact_ext:set_active(false)
+	end
 	self._unit:base():remove()
+	World:delete_unit(self._unit)
 	--self._unit:set_slot(0)	
 end, false)
