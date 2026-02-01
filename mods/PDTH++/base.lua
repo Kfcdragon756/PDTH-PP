@@ -84,8 +84,6 @@ module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_over
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
 --hints
 module:hook_post_require("lib/managers/hintmanager", "hints/hintmanager")
---network
-module:hook_post_require("lib/network/handlers/unitnetworkhandler", "network/unitnetworkhandler")
 --mod_override things
 DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit") --Sentry interaction
 DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.model") --Sentry Model
