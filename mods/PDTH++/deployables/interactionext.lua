@@ -10,7 +10,7 @@ end
 
 function SentryGunInteractionExt:interact(player)
 	SentryGunInteractionExt.super.super.interact(self, player) -- For now I have no clue of what it actually does. // -KF
-	if not Network:is_server() then
+	--[[if not Network:is_server() then
 		DNet:send_to_peers("ModEvent", {
 		module = module:id(),
 		event = "Destroy_sentry",
@@ -19,7 +19,7 @@ function SentryGunInteractionExt:interact(player)
 		}, false, false)
 		managers.player:add_selected_equipment(1, 1, 1)
 		return true
-	end
+	end]]
 	self._unit:base():destroy_sentry()
 	managers.player:add_selected_equipment(1, 1, 1)
 	return true
