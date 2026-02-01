@@ -11,7 +11,7 @@ end
 function SentryGunInteractionExt:interact(player)
 	SentryGunInteractionExt.super.super.interact(self, player) -- For now I have no clue of what it actually does. // -KF
 	if not Network:is_server() then
-		DNet:send_to_peers(peer, "ModEvent", {
+		DNet:send_to_peers("ModEvent", {
 		module = module:id(),
 		event = "Destroy_sentry",
 		value = 123,
