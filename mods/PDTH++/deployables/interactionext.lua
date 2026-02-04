@@ -5,7 +5,7 @@ local AmmoBagInteractionExt = module:hook_class("AmmoBagInteractionExt")
 
 function SentryGunInteractionExt:_interact_blocked(player)
     local data, _index = managers.player:equipment_data_by_name("sentry_gun")
-    return not data or data.amount >= 1 or not self._unit:base():server_information() == managers.network:session():local_peer():id() 
+    return not data or data.amount >= 1 or not self._unit:base():server_information().owner_peer_id == managers.network:session():local_peer():id() 
 end
 
 function SentryGunInteractionExt:interact(player)
