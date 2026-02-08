@@ -111,8 +111,8 @@ module:hook("OnNetworkDataRecv", "OnNetworkDataRecv_Destroy_sentry", { "ModEvent
 		for _, equipment in ipairs(deployed_equipment) do
 			if equipment:base().server_information then
 				local server_information = equipment:base():server_information()
-				if server_information and server_information.owner_peer_id == data.id and equipment:get_name_id() == "sentry_gun" then
-					equipment:destroy_sentry()
+				if server_information and server_information.owner_peer_id == data.id and equipment:base():get_name_id() == "sentry_gun" then
+					equipment:base():destroy_sentry()
 				end
 			end
 		end
