@@ -193,7 +193,7 @@ local replacements = {
 	},
 	["des_extra_start_out_ammo"] = {
 		chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。\n装备该技能时，使用弹药包将自动装填已装备武器。",
-		english = "Provide a extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this skill equipped, you will automatically reload your equipped weapon.",
+		english = "Provide an extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this skill equipped, you will automatically reload your equipped weapon.",
 		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.", --NEED SPANISH LOC UPDATE HERE
 	},
 	["des_toolset"] = {
