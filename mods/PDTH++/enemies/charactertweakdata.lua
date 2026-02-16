@@ -65,7 +65,7 @@ module:post_hook(CharacterTweakData, "_init_fbi", function(self, presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_tank", function(self, presets)
-	self.tank.headshot_dmg_mul = 80
+	self.tank.headshot_dmg_mul = 1000
 	self.tank.HEALTH_INIT = 750
 	self.tank.weapon.r870.FALLOFF[1].dmg_mul = 6
 	self.tank.weapon.r870.FALLOFF[2].dmg_mul = 5
@@ -157,7 +157,7 @@ module:hook(50, CharacterTweakData, "_presets", function(self, tweak_data)
 	presets.weapon.fbi = deep_clone(presets.weapon.expert)
 	presets.weapon.swats = deep_clone(presets.weapon.good)
 	
-	presets.gang_member_damage.hurt_severity = { 1, 1, 1, 1,} -- The bots will no longer get knockbacked by a dozer.
+	presets.gang_member_damage.hurt_severity = { 1, 1, 1, 1 } -- The bots will no longer get knockbacked by a dozer.
 	
 	return presets
 end, false)

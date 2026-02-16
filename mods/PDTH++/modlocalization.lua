@@ -193,12 +193,12 @@ local replacements = {
 	},
 	["des_extra_start_out_ammo"] = {
 		chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。\n装备该技能时，使用弹药包将自动装填已装备武器。",
-		english = "Provide a extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this equipped, you will automatically reload your equipped weapon.",
+		english = "Provide a extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this skill equipped, you will automatically reload your equipped weapon.",
 		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.", --NEED SPANISH LOC UPDATE HERE
 	},
 	["des_toolset"] = {
 		chinese = "减少45%互动（包括援助他人）所需时长。",
-		english = "Reduce interaction(including reviving someone) time by 45%.",
+		english = "Reduce interaction (including reviving someone) time by 45%.",
 		spanish = "Reduce el tiempo de interacción en un 45%. \nTambién aplica cuando revives a alguien.",
 	},
 	["debug_equipment_extra_cable_tie"] = {
@@ -263,7 +263,7 @@ local replacements = {
 	},
 	["des_sentry_gun"] = {
 		chinese = "步哨机枪总是可以帮助你清理一大群敌人。\n布置下来以后，步哨机枪可以自动锁定并攻击敌人，直到它被破坏或子弹耗尽为止。\n你可通过拾取步哨机枪重新补充它的弹药与血量。",
-		english = "Sentry guns can always help you to deal with a massive amounts of enemies.\nOn deployed, the sentry gun can automatically lock then shoot the enemies, until it's destroyed or runs out of ammo.\nYou can restore its health and refill its ammo by picking it up.",
+		english = "Sentry guns can always help you to deal with a massive amounts of enemies.\nOn deployed, the sentry gun can automatically detect then shoot the enemies, until it's destroyed or runs out of ammo.\nYou can restore its health and refill its ammo by picking it up.",
 		spanish = "Las Torretas Sentinelas pueden ayudarte a combatir grandes grupos de enemigos. \n¿Una torreta no es suficiente? ¿¡Que te parecen... Tres!? \nUna vez desplegada la torreta automáticamente apuntará y disparará a los enemigos hasta que se quede sin munición o sea destruída.",
 	}, --Need spanish loc update
 	["des_doctor_bag"] = {
@@ -274,10 +274,10 @@ local replacements = {
 	["debug_interact_sentry_gun"] = {
 		chinese = "按住$BTN_INTERACT;拾取步哨机枪",
 		english = "Hold $BTN_INTERACT; to pick up the sentry gun",
-	},
-	["hint_not_sentry_gun_or_low_ammo"] = {
-		chinese = "你携带的装备并非步哨机枪或携带数目已达到上限。",
-		english = "Your equipment is not sentry gun\nor your equipment amount hit the carry amount limit."
+	}, -- need spanish loc.
+	["hint_not_your_sentry_or_low_ammo"] = {
+		chinese = "该步哨机枪不属于你。",
+		english = "This sentry gun doesn't belong to you."
 	}, -- need spanish loc.
 	["mutator_combine_assault"] = {
 		chinese = "联合进攻",
