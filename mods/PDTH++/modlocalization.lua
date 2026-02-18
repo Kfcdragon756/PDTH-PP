@@ -194,7 +194,7 @@ local replacements = {
 	["des_extra_start_out_ammo"] = {
 		chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。\n装备该技能时，使用弹药包将自动装填已装备武器。",
 		english = "Provide an extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this skill equipped, you will automatically reload your equipped weapon.",
-		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.", --NEED SPANISH LOC UPDATE HERE
+		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.\nUna vez que interactúes con una bolsa de munición con esta habilidad equipada, recargarás automáticamente tu arma equipada.", --USING BING MACHINE TRASLATOR
 	},
 	["des_toolset"] = {
 		chinese = "减少45%互动（包括援助他人）所需时长。",
@@ -264,8 +264,8 @@ local replacements = {
 	["des_sentry_gun"] = {
 		chinese = "步哨机枪总是可以帮助你清理一大群敌人。\n布置下来以后，步哨机枪可以自动锁定并攻击敌人，直到它被破坏或子弹耗尽为止。\n你可通过拾取步哨机枪重新补充它的弹药与血量。",
 		english = "Sentry guns can always help you to deal with a massive amounts of enemies.\nOn deployed, the sentry gun can automatically detect then shoot the enemies, until it's destroyed or runs out of ammo.\nYou can restore its health and refill its ammo by picking it up.",
-		spanish = "Las Torretas Sentinelas pueden ayudarte a combatir grandes grupos de enemigos. \n¿Una torreta no es suficiente? ¿¡Que te parecen... Tres!? \nUna vez desplegada la torreta automáticamente apuntará y disparará a los enemigos hasta que se quede sin munición o sea destruída.",
-	}, --Need spanish loc update
+		spanish = "Las Torretas Sentinelas pueden ayudarte a combatir grandes grupos de enemigos.\nCuando está desplecida, la torreta automática puede detectar y disparar a los enemigos, hasta que sea destruida o se quede sin munición.\nPuedes restaurar su salud y recargar su munición recogiéndola.", --USING BING MACHINE TRASLATOR
+	}, 
 	["des_doctor_bag"] = {
 		chinese = "医疗包总是能让你满血复活，而且还能重置你的倒地次数。 \n一个医疗包只能用三次，一个玩家可以携带两个医疗包。",
 		english = "A medic bag can always refill your health and reset your down times. \nA medic bag can be used for 3 times, a player can carry 2 medic bags.",
@@ -274,11 +274,13 @@ local replacements = {
 	["debug_interact_sentry_gun"] = {
 		chinese = "按住$BTN_INTERACT;拾取步哨机枪",
 		english = "Hold $BTN_INTERACT; to pick up the sentry gun",
-	}, -- need spanish loc.
+		spanish = "Mantén presionado $BTN_INTERACT; para recoger la torreta", --USING BING MACHINE TRASLATOR
+	},
 	["hint_not_your_sentry_or_low_ammo"] = {
 		chinese = "该步哨机枪不属于你。",
-		english = "This sentry gun doesn't belong to you."
-	}, -- need spanish loc.
+		english = "This sentry gun doesn't belong to you.",
+		spanish = "Esta torreta automática no te pertenece.", --USING BING MACHINE TRASLATOR
+	},
 	["mutator_combine_assault"] = {
 		chinese = "联合进攻",
 		english = "COMBINE ASSAULT",
