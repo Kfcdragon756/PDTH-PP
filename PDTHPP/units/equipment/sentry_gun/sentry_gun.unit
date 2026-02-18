@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<unit type="static" slot="25">
+  <object file="units/equipment/sentry_gun/sentry_gun" />
+  <network sync="spawn" />
+  <extensions>
+    <extension name="unit_data" class="ScriptUnitData" />
+    <extension name="base" class="SentryGunBase">
+      <var name="sentry_gun" value="true" />
+    </extension>
+    <extension name="network" class="NetworkBaseExtension" />
+    <extension name="brain" class="SentryGunBrain" />
+    <extension name="movement" class="SentryGunMovement" />
+    <extension name="weapon" class="SentryGunWeapon">
+      <var name="name_id" value="sentry_gun" />
+    </extension>
+    <extension name="interaction" class="SentryGunInteractionExt">
+      <var name="tweak_data" value="sentry_gun" />
+    </extension>
+    <extension name="damage" class="UnitDamage" />
+    <extension name="character_damage" class="SentryGunDamage" /><!-- IMPORTANT: This extension must
+    always be last -->
+  </extensions>
+
+  <dependencies>
+    <depends_on bnk="soundbanks/weapon_turret" />
+    <depends_on effect="effects/particles/dest/security_camera_dest" />
+  </dependencies>
+
+  <sounds>
+    <default_soundsource source="a_detect" />
+  </sounds>
+</unit>
