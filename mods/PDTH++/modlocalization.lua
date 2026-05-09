@@ -347,9 +347,9 @@ local replacements = {
 		spanish = "MODO EXPERTO",
 	},
 	["mutator_expert_mode_help"] = {
-		chinese = "专家模式仅供真正的专家游玩。\n\n\n\nGL40已禁用。\n\n\n泰瑟特警的电击前摇变短不再自动换弹，且被电击到倒地的时间减少50%。\n\n\n携带霰弹枪的单位现在没有瞄准延迟了。\n\n\n幻影特工会在制服劫匪时留下烟雾弹。",
-		english = "THE EXPERT MODE is only provided for real experts. \n\n\n\nGl40 is disabled. \n\n\nTasers' eletric shock no longer auto-reload, has a shorter aim delay and getting shocked will let you get downed 50% faster. \n\n\nNo aim-delay for shotgunners. \n\n\nCloaker will drop a smoke grneade when he cloaked a heister. ",
-		spanish = "EL MODO EXPERTO está diseñado para verdaderos jugadores. \n\n\n\nEl GL40 está deshabilitado.\n\n\nLos Tasers ya no recargan tu arma automáticamente al electrocutarte, tardan menos tiempo en apuntar y te incapacitan un 50% más rápido. \n\n\nEl apuntado de los escopeteros es instantáneo. \n\n\nLos Cloakers sueltan una granada de humo cuando patean a un jugador.",
+		chinese = "专家模式仅供真正的专家游玩。\n\n\n\n泰瑟特警的电击前摇变短不再自动换弹，且被电击到倒地的时间减少50%。\n\n\n携带霰弹枪的单位现在没有瞄准延迟了。\n\n\n幻影特工会在制服劫匪时留下烟雾弹。",
+		english = "THE EXPERT MODE is only provided for real experts. \n\n\n\nTasers' eletric shock no longer auto-reload, has a shorter aim delay and getting shocked will let you get downed 50% faster. \n\n\nNo aim-delay for shotgunners. \n\n\nCloaker will drop a smoke grneade when he cloaked a heister. ",
+		spanish = "EL MODO EXPERTO está diseñado para verdaderos jugadores. \n\n\n\nLos Tasers ya no recargan tu arma automáticamente al electrocutarte, tardan menos tiempo en apuntar y te incapacitan un 50% más rápido. \n\n\nEl apuntado de los escopeteros es instantáneo. \n\n\nLos Cloakers sueltan una granada de humo cuando patean a un jugador.",
 	},
 	["mutator_expert_mode_motd"] = {
 		chinese = "突变模式‘专家模式’已开启。技术水平不过关的人不应该在这个大厅里呆着。",
