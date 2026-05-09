@@ -310,7 +310,7 @@ module:hook(WeaponTweakData, "_init_data_gl40", function(self)
     self.m79.NR_CLIPS_MAX = 2
 	self.m79.AMMO_PICKUP = {0, 0}
 	self.m79.EXTRA_PICKUP = { 0, 0 }
-	self.m79.DAMAGE = 30
+	self.m79.DAMAGE = 50
 	self.m79.timers.reload_not_empty = 4
 	self.m79.timers.reload_empty = 4
 	self.m79.DAMAGE_CURVE_POW = 0

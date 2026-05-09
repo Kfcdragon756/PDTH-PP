@@ -74,7 +74,8 @@ module:hook(M79GrenadeBase, "_detect_and_give_dmg", function(self, hit_pos)
 		local dir, len, damage, ray_hit
 		if character then
 			for _, s_pos in ipairs(splinters) do
-				ray_hit = not World:raycast(
+				ray_hit = true
+				--[[not World:raycast(
 					"ray",
 					s_pos,
 					hit_body:center_of_mass(),
@@ -83,7 +84,7 @@ module:hook(M79GrenadeBase, "_detect_and_give_dmg", function(self, hit_pos)
 					"ignore_unit",
 					{ hit_unit },
 					"report"
-				)
+				)]]
 				if ray_hit then
 					break
 				end
