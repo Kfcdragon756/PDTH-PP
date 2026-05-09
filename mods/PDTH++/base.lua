@@ -157,7 +157,6 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	mutator_availability = { all = true }
 	if MutatorHelper.setup_mutator(module, "expert_mode", mutator_availability, nil, true) then
 		module:hook_post_require("lib/tweak_data/playertweakdata", "mutator/expert_mode/playertweakdata")
-		module:hook_post_require("lib/tweak_data/weapontweakdata", "mutator/expert_mode/weapontweakdata")
 		module:hook_post_require("lib/tweak_data/charactertweakdata", "mutator/expert_mode/charactertweakdata")
 		module:hook_post_require(
 			"lib/units/enemies/spooc/actions/lower_body/actionspooc",
