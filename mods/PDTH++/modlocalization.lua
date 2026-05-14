@@ -352,7 +352,7 @@ local replacements = {
 		spanish = "EL MODO EXPERTO está diseñado para verdaderos jugadores. \n\n\n\nLos Tasers ya no recargan tu arma automáticamente al electrocutarte, tardan menos tiempo en apuntar y te incapacitan un 50% más rápido. \n\n\nEl apuntado de los escopeteros es instantáneo. \n\n\nLos Cloakers sueltan una granada de humo cuando patean a un jugador.",
 	},
 	["mutator_expert_mode_motd"] = {
-		chinese = "突变模式‘专家模式’已开启。技术水平不过关的人不应该在这个大厅里呆着。",
+		chinese = "突变模式‘专家模式’已开启。你最好真的是个专家。",
 		english = "mutator 'EXPERT MODE' activated, you should make sure that you are a professional.",
 		spanish = "El mutador 'MODO EXPERTO' está activado, ¡WOW! ¡Débes ser un profesional!",
 	},	

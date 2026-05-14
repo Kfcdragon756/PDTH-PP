@@ -258,7 +258,7 @@ module:post_hook(GroupAITweakData, "init", function(self)
 		fbi = { 0.75, 1, 0.1 },
 	}
 
-	local access_type_all = { "walk", "acrobatic" }
+	local access_type_walk_only = { "walk" }
 	table.merge(self.unit_categories, {
 		fbi = {
 			units = {
@@ -266,14 +266,14 @@ module:post_hook(GroupAITweakData, "init", function(self)
 				Idstring("units/characters/enemies/fbi2/fbi2"),
 				Idstring("units/characters/enemies/fbi3/fbi3"),
 			},
-			access = access_type_all,
+			access = access_type_walk_only,
 		},
 		murky = {
 			units = {
 				Idstring("units/characters/enemies/murky_water1/murky_water1"),
 				Idstring("units/characters/enemies/murky_water2/murky_water2"),
 			},
-			access = access_type_all,
+			access = access_type_walk_only,
 		},
 	})
 end, false)
