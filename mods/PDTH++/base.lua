@@ -31,7 +31,7 @@ local module = DMod:new("PDTH++", {
 		{ "modoptions", { type = "menu_options" } },
 		{ "modhooks" },
 	},
-	update = { id = "49577", platform = "modworkshop" },
+	update = { id = "PDTH++_dev", url = "https://mods.neonsynth.de/pdthpp/version.txt" },
 })
 --Learned this from biglobby mod.
 module:hook("OnModuleLoading", "CheckBLHAssetReplacement", function(module)
@@ -45,7 +45,6 @@ module:hook("OnModuleLoading", "CheckBLHAssetReplacement", function(module)
 	DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.model"))
 	DB:create_entry("material_config", "units/equipment/sentry_gun/sentry_gun", 
 	tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.material_config"))
-
 end)
 
 
