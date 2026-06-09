@@ -1,6 +1,6 @@
 local module = DMod:new("PDTH++", {
 	author = "kfcdragon756",
-	version = "v1.36.1",
+	version = "v1.36.1.0",
 	categories = { "gameplay", "overhaul" },
 	description = {
 		chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
@@ -33,6 +33,21 @@ local module = DMod:new("PDTH++", {
 	},
 	update = { id = "49577", platform = "modworkshop" },
 })
+--Learned this from biglobby mod.
+module:hook("OnModuleLoading", "CheckBLHAssetReplacement", function(module)
+	if not DB.create_entry then
+		module:log(1, "CheckBLHAssetReplacement", "Missing DB:create_entry function!")
+		module.enable_hooks = false
+		return
+	end
+
+	DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.unit"))
+	DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.model"))
+	DB:create_entry("material_config", "units/equipment/sentry_gun/sentry_gun", 
+	tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.material_config"))
+
+end)
+
 
 --sandbox
 module:hook_post_require("lib/managers/achievmentmanager", "sandbox/achievmentmanager")
@@ -84,11 +99,11 @@ module:hook_post_require("lib/units/beings/player/playerdamage", "equipment_over
 module:hook_post_require("lib/units/beings/player/playermovement", "equipment_overhaul/playermovement")
 --hints
 module:hook_post_require("lib/managers/hintmanager", "hints/hintmanager")
---mod_override things
+--[[mod_override things
 DB:create_entry("unit", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.unit") --Sentry interaction
 DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.model") --Sentry Model
 DB:create_entry("material_config", "units/equipment/sentry_gun/sentry_gun", "./PDTHPP/units/equipment/sentry_gun/sentry_gun.material_config") --Sentry Material Config
---DB:create_entry("hint", "gamedata/hints", "./PDTHPP/gamedata/hints.hint") --Hints
+--DB:create_entry("hint", "gamedata/hints", "./PDTHPP/gamedata/hints.hint") --Hints]]
 
 local conflicting_mods = {
 	"anticheat",
