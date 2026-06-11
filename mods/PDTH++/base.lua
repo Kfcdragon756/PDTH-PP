@@ -1,6 +1,6 @@
 local module = DMod:new("PDTH++", {
 	author = "kfcdragon756",
-	version = "1.36.0.2",
+	version = "1.36.0.3",
 	categories = { "gameplay", "overhaul" },
 	description = {
 		chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
@@ -165,6 +165,8 @@ module:hook("OnModuleLoading", "load_mutators", function(module)
 	mutator_availability = { overkill = {}, overkill_145 = {} }
 	if MutatorHelper.setup_mutator(module, "combine_assault", mutator_availability, nil, true) then
 		module:hook_post_require("lib/tweak_data/groupaitweakdata", "mutator/combine_assault/groupaitweakdata")
+		module:hook_post_require("lib/tweak_data/charactertweakdata", "mutator/combine_assault/charactertweakdata")
+		module:hook_post_require("lib/units/enemies/cop/copbrain", "mutator/combine_assault/copbrain")
 		module:hook_post_require("lib/setups/gamesetup", "mutator/combine_assault/gamesetup")
 	end
 
