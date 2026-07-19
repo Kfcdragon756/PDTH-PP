@@ -47,6 +47,7 @@ module:post_hook(CharacterTweakData, "_init_murky", function(self,presets)
 end, false)
 
 module:post_hook(CharacterTweakData, "_init_shield", function(self, presets)
+	self.shield.headshot_dmg_mul = 2.5
 	self.shield.weapon.shield.aim_delay = { 3, 4.5 } --Why would this shield motherfucker turn his shield to enemie instantly in vanilla game???
 end, false)
 
@@ -56,7 +57,7 @@ end, false)
 
 module:post_hook(CharacterTweakData, "_init_fbi", function(self, presets)
 	self.fbi.weapon = presets.weapon.fbi
-	self.fbi.HEALTH_INIT = 4
+	self.fbi.HEALTH_INIT = 3.5
 	self.fbi.headshot_dmg_mul = 2.15
 	self.fbi.dodge = presets.dodge.expert
 	self.fbi.weapon.mossberg.FALLOFF[1].dmg_mul = 1.5

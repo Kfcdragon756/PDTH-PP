@@ -25,7 +25,7 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
     self.r870_shotgun.CLIP_AMMO_MAX = 7
 	self.r870_shotgun.DAMAGE = 2
 	self.r870_shotgun.AMMO_PICKUP = { 0.75, 1.2 }
-	self.r870_shotgun.EXTRA_PICKUP = { 0.1, 0.5 }
+	self.r870_shotgun.EXTRA_PICKUP = { 0.2, 0.7 }
 	self.r870_shotgun.single.fire_rate = 1
 	self.r870_shotgun.firerate_multiplier = 1.65
 	self.r870_shotgun.damage_near = 700
@@ -56,14 +56,14 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
 	self.ak47.auto.fire_rate = 0.1
 	self.ak47.firerate_multiplier = 1
-    self.ak47.DAMAGE = 4.5
+    self.ak47.DAMAGE = 3.5
 	self.ak47.CLIP_AMMO_MAX = 30
     self.ak47.NR_CLIPS_MAX = 4
-    self.ak47.AMMO_PICKUP = { 0.7, 3.1 }
+    self.ak47.AMMO_PICKUP = { 1.5, 3.4 }
 	self.ak47.EXTRA_PICKUP = { 0.3, 0.6 }
 	self.ak47.spread.standing = 1.35
 	self.ak47.spread.crouching = 1
-	self.ak47.spread.steelsight = 0.45
+	self.ak47.spread.steelsight = 0.23
 	self.ak47.spread.moving_standing = 3.8
 	self.ak47.spread.moving_crouching = 1.75
 	self.ak47.crosshair.standing.offset = 0.16
@@ -72,13 +72,13 @@ module:hook(WeaponTweakData, "_init_data_ak47", function(self)
 	self.ak47.crosshair.crouching.offset = 0.08
 	self.ak47.crosshair.crouching.moving_offset = 0.23
 	self.ak47.crosshair.crouching.kick_offset = 0.125
-    self.ak47.kick.v.standing = 2
-    self.ak47.kick.v.crouching = 1.7
-    self.ak47.kick.v.steelsight = 0.68
+    self.ak47.kick.v.standing = 1.5
+    self.ak47.kick.v.crouching = 1.2
+    self.ak47.kick.v.steelsight = 0.63
     self.ak47.kick.h.standing = 2
-    self.ak47.kick.h.crouching = 1.7
-    self.ak47.kick.h.steelsight = 0.6
-	self.ak47.headshot_multiplier = 0.9
+    self.ak47.kick.h.crouching = 1.5
+    self.ak47.kick.h.steelsight = 0.55
+	self.ak47.headshot_multiplier = 1.05
 	self.ak47.ads_speed = 1
 	self.ak47.reload_speed = 1.12
 	self.ak47.bodyshot_multiplier = 0.5
@@ -90,7 +90,7 @@ module:hook(WeaponTweakData, "_init_data_m4", function(self)
 	self.test_raycast_weapon.damage_melee = damage_melee_medium
 	self.test_raycast_weapon.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.test_raycast_weapon.AMMO_PICKUP = { 2.4, 5.6 }
-	self.test_raycast_weapon.EXTRA_PICKUP = { 0.3, 0.7 }
+	self.test_raycast_weapon.EXTRA_PICKUP = { 0.6, 1.4 }
 	self.test_raycast_weapon.CLIP_AMMO_MAX = 30
 	self.test_raycast_weapon.NR_CLIPS_MAX = 5
 	self.test_raycast_weapon.auto.fire_rate = 0.088
@@ -126,7 +126,7 @@ module:hook(WeaponTweakData, "_init_data_m308", function(self)
 	self.m14.damage_melee_effect_mul = damage_melee_effect_multiplier_medium
     self.m14.NR_CLIPS_MAX = 5
     self.m14.AMMO_PICKUP = { 0.5, 1.5 }
-	self.m14.EXTRA_PICKUP = { 0.2, 0.2 }
+	self.m14.EXTRA_PICKUP = { 0.2, 0.7 }
 	self.m14.DAMAGE = 4
 	self.m14.CLIP_AMMO_MAX = 12
 	self.m14.spread.steelsight = 0.01
@@ -175,7 +175,7 @@ module:hook(WeaponTweakData, "_init_data_hk21", function(self)
     self.hk21.NR_CLIPS_MAX = 2
 	self.hk21.CLIP_AMMO_MAX = 80
     self.hk21.AMMO_PICKUP = {2.9, 4.8}
-	self.hk21.EXTRA_PICKUP = {0.3, 0.9}
+	self.hk21.EXTRA_PICKUP = {0.5, 1.2}
 	self.hk21.DAMAGE = 4
     self.hk21.crosshair.standing.offset = 0.2855
     self.hk21.crosshair.standing.moving_offset = 0.3426
@@ -233,7 +233,7 @@ module:hook(WeaponTweakData, "_init_data_mac11", function(self)
     self.mac11.DAMAGE = 3.5
 	self.mac11.spread.steelsight = 1.1
     self.mac11.AMMO_PICKUP = { 2.2, 4.3 }
-	self.mac11.EXTRA_PICKUP = { 0.5, 0.6 }
+	self.mac11.EXTRA_PICKUP = { 0.8, 0.7 }
     self.mac11.auto.fire_rate = 0.05
 	self.mac11.firerate_multiplier = 1
 	self.mac11.kick.v.standing = 0.5
@@ -261,7 +261,7 @@ module:hook(WeaponTweakData, "_init_data_locomotive", function(self)
 	self.mossberg.CLIP_AMMO_MAX = 4
     self.mossberg.NR_CLIPS_MAX = 4
     self.mossberg.AMMO_PICKUP = { 0.3, 0.8 }
-	self.mossberg.EXTRA_PICKUP = { 0.3, 0.3 }
+	self.mossberg.EXTRA_PICKUP = { 0.3, 0.5 }
     self.mossberg.DAMAGE = 1
 	self.mossberg.firerate_multiplier = 2
 	self.mossberg.kick.v.standing = 5
@@ -326,12 +326,12 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
 	self.beretta92.firerate_multiplier = 2
 	self.beretta92.damage_melee = damage_melee_high
 	self.beretta92.damage_melee_effect_mul = damage_melee_effect_multiplier_low
-    self.beretta92.NR_CLIPS_MAX = 4
-    self.beretta92.AMMO_PICKUP = { 1.5, 5.1 }
-	self.beretta92.EXTRA_PICKUP = { 0.8, 1.3 }
+    self.beretta92.NR_CLIPS_MAX = 2
+    self.beretta92.AMMO_PICKUP = { 0.6, 1.8 }
+	self.beretta92.EXTRA_PICKUP = { 0.5, 0.7 }
     self.beretta92.DAMAGE = 1.8
 	self.beretta92.CLIP_AMMO_MAX = 15
-	self.beretta92.single.fire_rate = 0.2
+	self.beretta92.single.fire_rate = 0.3
     self.beretta92.spread.standing = 0.9
     self.beretta92.spread.crouching = 0.6
     self.beretta92.spread.steelsight = 0.1
@@ -346,7 +346,7 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
     self.beretta92.crosshair.crouching.offset = 0.05
     self.beretta92.crosshair.crouching.moving_offset = 0.086
     self.beretta92.crosshair.crouching.kick_offset = 0.3
-	self.beretta92.headshot_multiplier = 1.2
+	self.beretta92.headshot_multiplier = 2
 	self.beretta92.ads_speed = 1.6
 	self.beretta92.reload_speed = 1.4
 	self.beretta92.bodyshot_multiplier = 0.7
@@ -393,7 +393,7 @@ module:hook(WeaponTweakData, "_init_data_bronco", function(self)
 	self.raging_bull.damage_melee_effect_mul = damage_melee_effect_multiplier_low
     self.raging_bull.NR_CLIPS_MAX = 4
     self.raging_bull.AMMO_PICKUP = { 0.25, 0.4 }
-	self.raging_bull.EXTRA_PICKUP = { 0.1, 0.3 }
+	self.raging_bull.EXTRA_PICKUP = { 0.2, 0.45 }
     self.raging_bull.DAMAGE = 13
 	self.raging_bull.bodyshot_multiplier = 5
     self.raging_bull.single.fire_rate = 0.52
@@ -429,7 +429,7 @@ module:hook(WeaponTweakData, "_init_data_stryk", function(self)
     self.glock.NR_CLIPS_MAX = 2
 	self.glock.CLIP_AMMO_MAX = 33
 	self.glock.AMMO_PICKUP = { 1.8, 4.9 }
-	self.glock.EXTRA_PICKUP = { 0.5, 0.7 }
+	self.glock.EXTRA_PICKUP = { 1.2, 0.5 }
     self.glock.DAMAGE = 2
 	self.glock.auto.fire_rate = 0.05
     self.glock.spread.standing = 3.5
@@ -492,7 +492,7 @@ module:post_hook(WeaponTweakData, "_init_data_mp5_npc", function(self)
 end)
 
 module:post_hook(WeaponTweakData, "_init_data_shield_pistol_npc", function(self)
-    self.shield_pistol_npc.DAMAGE = 1.2
+    self.shield_pistol_npc.DAMAGE = 0.8
 end)
 
 --creates some functions does nothing, for mutator purposes.
