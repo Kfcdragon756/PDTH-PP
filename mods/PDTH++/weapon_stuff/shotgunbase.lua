@@ -17,8 +17,10 @@ module:hook(ShotgunBase, "_fire_raycast", function(self, user_unit, from_pos, di
 
 	-- compute falloff damage based on distance
 	local function compute_damage(col_ray)
+		local min_dmg_ratio = tweak_data.weapon[self._name_id].min_damage_ratio or 0
 		local dist = mvector3.distance(col_ray.unit:position(), user_unit:position())
-		return (1 - math.min(1, math.max(0, dist - self._damage_near) / self._damage_far)) * self._damage
+		return math.max(min_dmg_ratio, (1 - math.min(1, math.max(0, dist - self._damage_near) / self._damage_far)))
+		* self._damage
 	end
 
 	local function record_enemy_hit(col_ray)

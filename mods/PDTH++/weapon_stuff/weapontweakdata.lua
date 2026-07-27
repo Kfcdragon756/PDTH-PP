@@ -28,8 +28,9 @@ module:hook(WeaponTweakData, "_init_data_reinbeck", function(self)
 	self.r870_shotgun.EXTRA_PICKUP = { 0.2, 0.7 }
 	self.r870_shotgun.single.fire_rate = 1
 	self.r870_shotgun.firerate_multiplier = 1.65
-	self.r870_shotgun.damage_near = 700
+	self.r870_shotgun.damage_near = 1200
 	self.r870_shotgun.damage_far = 4800
+	self.r870_shotgun.min_damage_ratio = 0.33333
 	self.r870_shotgun.spread.standing = 1.5
 	self.r870_shotgun.spread.crouching = 1.5
 	self.r870_shotgun.spread.steelsight = 0.73
@@ -273,6 +274,7 @@ module:hook(WeaponTweakData, "_init_data_locomotive", function(self)
     self.mossberg.single.fire_rate = 0.6
     self.mossberg.damage_near = 450
     self.mossberg.damage_far = 2700
+	self.mossberg.min_damage_ratio = 0.1
 	self.mossberg.spread.standing = 6
 	self.mossberg.spread.crouching = 6
 	self.mossberg.spread.steelsight = 2
@@ -326,9 +328,9 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
 	self.beretta92.firerate_multiplier = 2
 	self.beretta92.damage_melee = damage_melee_high
 	self.beretta92.damage_melee_effect_mul = damage_melee_effect_multiplier_low
-    self.beretta92.NR_CLIPS_MAX = 2
-    self.beretta92.AMMO_PICKUP = { 0.6, 1.8 }
-	self.beretta92.EXTRA_PICKUP = { 0.5, 0.7 }
+    self.beretta92.NR_CLIPS_MAX = 4
+    self.beretta92.AMMO_PICKUP = { 1.5, 3.8 }
+	self.beretta92.EXTRA_PICKUP = { 0.8, 1.2 }
     self.beretta92.DAMAGE = 1.8
 	self.beretta92.CLIP_AMMO_MAX = 15
 	self.beretta92.single.fire_rate = 0.3
@@ -479,7 +481,7 @@ module:post_hook(WeaponTweakData, "_init_data_beretta92_npc", function(self)
 end)
 
 module:post_hook(WeaponTweakData, "_init_data_sentry_gun_npc", function(self)
-	self.sentry_gun.DAMAGE = 1.7
+	self.sentry_gun.DAMAGE = 1.2
 	self.sentry_gun.SPREAD = 1
 end)
 
