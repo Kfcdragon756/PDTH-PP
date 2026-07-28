@@ -333,7 +333,7 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
 	self.beretta92.EXTRA_PICKUP = { 0.8, 1.2 }
     self.beretta92.DAMAGE = 1.8
 	self.beretta92.CLIP_AMMO_MAX = 15
-	self.beretta92.single.fire_rate = 0.3
+	self.beretta92.single.fire_rate = 0.2
     self.beretta92.spread.standing = 0.9
     self.beretta92.spread.crouching = 0.6
     self.beretta92.spread.steelsight = 0.1
@@ -348,7 +348,7 @@ module:hook(WeaponTweakData, "_init_data_b9s", function(self)
     self.beretta92.crosshair.crouching.offset = 0.05
     self.beretta92.crosshair.crouching.moving_offset = 0.086
     self.beretta92.crosshair.crouching.kick_offset = 0.3
-	self.beretta92.headshot_multiplier = 2
+	self.beretta92.headshot_multiplier = 1.2
 	self.beretta92.ads_speed = 1.6
 	self.beretta92.reload_speed = 1.4
 	self.beretta92.bodyshot_multiplier = 0.7
