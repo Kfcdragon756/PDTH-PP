@@ -1,3 +1,9 @@
+--[[
+PDTH++ 多语言文本表。
+本轮在此加入联机隔离、多部位检测、步哨状态 HUD 与回收弹药不足提示。
+逻辑代码应只引用 text_id/help_id，不在功能文件中硬编码面向玩家的完整文本。
+]]
+
 local replacements = {
 	["tie_yourself_keybind"] = {
 		english = "Tie/Untie yourself with skill",
@@ -38,6 +44,27 @@ local replacements = {
 		english = "The sensitivity when M308 is zoomed.",
 		chinese = "M308开镜时的灵敏度",
 		spanish = "La sensibilidad que tienes cuando haces zoom con el M308.",
+	},
+	-- 联机隔离与步哨多部位检测设置文本。
+	["network_isolation"] = {
+		english = "Online isolation",
+		chinese = "联机隔离",
+		spanish = "Aislamiento en línea",
+	},
+	["network_isolation_help"] = {
+		english = "When enabled, prevent players without the mod from joining while hosting.",
+		chinese = "启用时，作为主机阻止没安装mod的玩家加入。",
+		spanish = "Al activarlo, impide que jugadores sin el mod se unan cuando eres el anfitrión.",
+	},
+	["sentry_multi_part_reachability"] = {
+		english = "Sentry multi-part reachability check",
+		chinese = "步哨多部位可达检测",
+		spanish = "Comprobación de alcance por partes de la torreta",
+	},
+	["sentry_multi_part_reachability_help"] = {
+		english = "When the vanilla aiming point cannot be reached, check whether another part of the enemy can be hit.",
+		chinese = "原版瞄准点不可达时，检测敌人的其它部位是否可以命中。",
+		spanish = "Cuando no se pueda alcanzar el punto de apuntado original, comprueba si se puede impactar otra parte del enemigo.",
 	},
 	--Added smart weapon switch stuffs here.
 	["sws_show_queue_hints"] = {
@@ -277,9 +304,20 @@ local replacements = {
 		spanish = "Mantén presionado $BTN_INTERACT; para recoger la torreta", --USING BING MACHINE TRASLATOR
 	},
 	["hint_not_your_sentry_or_low_ammo"] = {
-		chinese = "该步哨机枪不属于你。",
-		english = "This sentry gun doesn't belong to you.",
-		spanish = "Esta torreta automática no te pertenece.", --USING BING MACHINE TRASLATOR
+		chinese = "该步哨机枪不属于你，或武器弹药不足。",
+		english = "This sentry gun does not belong to you, or you do not have enough weapon ammunition.",
+		spanish = "Esta torreta no te pertenece o no tienes suficiente munición.",
+	},
+	-- 步哨精确状态与回收失败提示；AMMO/HEALTH 由运行时参数替换。
+	["pdthpp_sentry_status_hud"] = {
+		chinese = "弹药 $AMMO;% | 耐久 $HEALTH;%",
+		english = "Ammo $AMMO;% | Health $HEALTH;%",
+		spanish = "Munición $AMMO;% | Salud $HEALTH;%",
+	},
+	["pdthpp_sentry_not_enough_ammo"] = {
+		chinese = "武器弹药不足，无法拾取步哨机枪。",
+		english = "Not enough weapon ammunition to pick up the sentry gun.",
+		spanish = "No hay suficiente munición para recoger la torreta.",
 	},
 	["mutator_combine_assault"] = {
 		chinese = "联合进攻",

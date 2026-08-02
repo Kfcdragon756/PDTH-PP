@@ -1,3 +1,11 @@
+--[[
+PDTH++ 设置菜单。
+本轮新增两个设置：
+- 联机隔离：仅控制主机是否强制拒绝缺少 PDTH++ 协议的连接；大厅标签始终保留。
+- 步哨多部位可达检测：原版躯干点不可命中时，允许检测其他身体部位。
+高级爆头策略仍保留在 sentrygunmovement.lua 顶部作为代码变量，不加入玩家菜单。
+]]
+
 local module = ... or D:module("PDTH++")
 
 --A script in hud module, not really know what it does...
@@ -37,7 +45,23 @@ module:add_menu_option("m308_fov_zoom_sens", {
 	help_id = "m308_fov_zoom_sens_help",
 })
 
+-- 主机侧强制校验开关；不会移除 Steam 大厅的协议过滤标签。
+module:add_menu_option("network_isolation", {
+	type = "boolean",
+	default_value = true,
+	text_id = "network_isolation",
+	help_id = "network_isolation_help",
+})
+
 --Ported from mod "smart_weapon_switch".
+
+-- 默认开启。关闭后只使用原版躯干；若代码启用主动爆头，则头不可达时回退躯干，不扫描手腿。
+module:add_menu_option("sentry_multi_part_reachability", {
+	type = "boolean",
+	default_value = true,
+	text_id = "sentry_multi_part_reachability",
+	help_id = "sentry_multi_part_reachability_help",
+})
 
 module:add_menu_option("sws_show_queue_hints", {
 	type = "boolean",

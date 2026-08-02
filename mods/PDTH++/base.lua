@@ -1,6 +1,6 @@
 local module = DMod:new("PDTH++", {
 	author = "kfcdragon756",
-	version = "1.36.0.7",
+	version = "1.36.0.8",
 	categories = { "gameplay", "overhaul" },
 	description = {
 		chinese = "收获日：掠夺的游戏体验不够丰富，而这个大修就是尽可能在有限的内容里添加尽可能多的丰富度。",
@@ -34,9 +34,9 @@ local module = DMod:new("PDTH++", {
 	update = { id = "PDTH++_dev", url = "https://pdthpp.neonsynth.de/version.txt" },
 })
 --Learned this from biglobby mod.
-module:hook("OnModuleLoading", "CheckBLHAssetReplacement", function(module)
+module:hook("OnModuleLoading", "CheckPPAssetReplacement", function(module)
 	if not DB.create_entry then
-		module:log(1, "CheckBLHAssetReplacement", "Missing DB:create_entry function!")
+		module:log(1, "CheckPPAssetReplacement", "Missing DB:create_entry function!")
 		module.enable_hooks = false
 		return
 	end
@@ -45,13 +45,26 @@ module:hook("OnModuleLoading", "CheckBLHAssetReplacement", function(module)
 	DB:create_entry("model", "units/equipment/sentry_gun/sentry_gun", tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.model"))
 	DB:create_entry("material_config", "units/equipment/sentry_gun/sentry_gun", 
 	tostring(module:path() .. "PDTHPP_overrides/units/equipment/sentry_gun/sentry_gun.material_config"))
+	DB:create_entry("model", "units/weapons/shield/shield", tostring(module:path() .. "PDTHPP_overrides/units/weapons/shield/shield.model"))
+	DB:create_entry("object", "units/weapons/shield/shield", tostring(module:path() .. "PDTHPP_overrides/units/weapons/shield/shield.object"))
 end)
 
+
+--[[
+PDTH++ 主入口与脚本挂载表。
+本轮新增内容主要集中在两组：
+1. 联机协议标记与主机侧加入校验（sandbox 下的三个脚本）；
+2. 步哨选敌、瞄准点、射线遮挡、回收费用与精确 HUD 同步（deployables 下的脚本）。
+这里仅负责在原版对应类加载完成后挂入扩展，具体行为均放在独立文件中，
+避免入口文件承担状态逻辑，也便于按 RequiredScript 分阶段初始化同一功能文件。
+]]
 
 --sandbox
 module:hook_post_require("lib/managers/achievmentmanager", "sandbox/achievmentmanager")
 module:hook_post_require("lib/network/matchmaking/networkaccountsteam", "sandbox/NetworkAccountSTEAM")
-module:hook_post_require("lib/network/matchmaking/networkmatchmakingsteam", "sandbox/NetworkMatchMakingSTEAM")
+module:hook_post_require("lib/network/matchmaking/networkmatchmakingsteam", "sandbox/networkmatchmakingsteam")
+module:hook_post_require("lib/managers/dlcmanager", "sandbox/dlcmanager")
+module:hook_post_require("lib/network/base/handlers/connectionnetworkhandler", "sandbox/connectionnetworkhandler")
 module:hook_post_require("lib/managers/savefilemanager", "sandbox/savefile")
 --player weapon & NPC base weapon stats.
 module:hook_post_require("lib/tweak_data/playertweakdata", "weapon_stuff/playertweakdata")
@@ -72,11 +85,15 @@ module:hook_post_require("lib/tweak_data/charactertweakdata", "enemies/character
 module:hook_post_require("core/lib/units/coreunitdamage", "enemies/coreunitdamage")
 module:hook_post_require("lib/units/enemies/cop/copdamage", "enemies/copdamage")
 module:hook_post_require("lib/units/enemies/cop/copbase", "enemies/copbase")
+module:hook_post_require("lib/units/weapons/raycastweaponbase", "enemies/visor")
 module:hook_post_require("lib/units/civilians/logics/civilianlogicescort", "enemies/civilianlogicescort")
 module:hook_post_require("lib/units/player_team/logics/teamailogicassault", "enemies/teamailogicassault")
 module:hook_post_require("lib/units/enemies/cop/logics/coplogicidle", "enemies/coplogicidle")
 module:hook_post_require("lib/units/player_team/logics/teamailogicidle", "enemies/teamailogicidle")
 module:hook_post_require("lib/units/player_team/logics/teamailogictravel", "enemies/teamailogictravel")
+module:hook_post_require("lib/units/weapons/raycastweaponbase", "enemies/breakshield")
+module:hook_post_require("lib/managers/gameplaycentralmanager", "enemies/breakshield")
+module:hook_post_require("lib/units/enemies/cop/copinventory", "enemies/breakshield")
 --difficulty
 module:hook_post_require("lib/tweak_data/groupaitweakdata", "difficulties/groupaitweakdata")
 module:hook_post_require("lib/tweak_data/charactertweakdata", "difficulties/charactertweakdata")
@@ -87,7 +104,21 @@ module:hook_post_require("lib/tweak_data/equipmentstweakdata", "deployables/equi
 module:hook_post_require("lib/units/pickups/ammoclip", "deployables/pickupdeployables")
 module:hook_post_require("lib/managers/playermanager", "deployables/pickupdeployables")
 module:hook_post_require("lib/units/equipment/ammo_bag/ammobagbase", "deployables/pickupdeployables")
+-- 步哨扩展的加载顺序说明：
+-- sentryammo.lua 会被多个原版脚本重复加载，因此其公共函数必须有一次性初始化保护；
 module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentrygunbase") -- Currently unused but will be still here for future development.
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbase", "deployables/sentryammo")
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygundamage", "deployables/sentryammo")
+module:hook_post_require("lib/units/weapons/sentrygunweapon", "deployables/sentryammo")
+module:hook_post_require("lib/units/interactions/interactionext", "deployables/sentryammo")
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbrain", "deployables/sentrygunbrain")
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunmovement", "deployables/sentrygunmovement")
+-- 步哨爆音诊断版专用：必须放在现有步哨覆盖之后安装，确保统计的是最终生效函数。
+-- 诊断脚本只使用 pre-hook 观察调用，不替换 fire/trigger_held 的返回值或射速逻辑。
+module:hook_post_require("lib/units/weapons/raycastweaponbase", "deployables/sentrydiagnostics")
+module:hook_post_require("lib/units/weapons/sentrygunweapon", "deployables/sentrydiagnostics")
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunbrain", "deployables/sentrydiagnostics")
+module:hook_post_require("lib/units/equipment/sentry_gun/sentrygunmovement", "deployables/sentrydiagnostics")
 module:hook_post_require("lib/units/weapons/trip_mine/tripminebase", "deployables/tripminebase")
 module:hook_post_require("lib/units/interactions/interactionext", "deployables/interactionext")
 --tweakdata

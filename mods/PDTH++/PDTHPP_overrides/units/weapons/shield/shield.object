@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<dynamic_object>
+	<diesel materials="units/weapons/shield/shield" orientation_object="rp_weapon" />
+	<sequence_manager file="units/weapons/shield/shield" />
+	<bodies>
+		<body name="held_body" enabled="true" template="animated" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision">
+			<object name="rp_weapon" />
+			<object name="c_1" collision_type="box" padding="-2" />
+			<object name="c_2" collision_type="box" padding="-2" />
+		</body>
+		<body name="dropped_body" enabled="false" template="debris" collision_class="ragdoll" pushed_by_mover="false" remove_ray_type="ai_vision">
+			<object name="rp_weapon" />
+			<object name="c_1" collision_type="box" padding="-2" />
+			<object name="c_2" collision_type="box" padding="-2" />
+		</body>
+	</bodies>
+
+	<!-- 完整保留 Base Model 中原版 dm_body，用于正常弹孔贴花。 -->
+	<decal_surfaces default_material="shield">
+		<decal_mesh name="dm_body" enabled="true" material="shield" />
+	</decal_surfaces>
+
+	<graphics>
+		<!-- 原版主体保留在 model 内维持原始资源关系，但不参与显示。 -->
+		<object name="g_body" enabled="false" />
+
+		<!-- Blender 修改后的无独立筋条主体。 -->
+		<object name="g_body_breakable" enabled="true" />
+
+		<!-- 左上横筋 -->
+		<object name="g_grille_left_top_intact" enabled="true" />
+		<object name="g_grille_left_top_broken_outer" enabled="false" />
+		<object name="g_grille_left_top_broken_inner" enabled="false" />
+
+		<!-- 左下横筋。backup 当前完全不用，必须保持禁用。 -->
+		<object name="g_grille_left_bottom_intact" enabled="true" />
+		<object name="g_grille_left_bottom_broken_outer" enabled="false" />
+		<object name="g_grille_left_bottom_broken_inner" enabled="false" />
+		<object name="g_grille_left_bottom_broken_backup" enabled="false" />
+
+		<!-- 右上横筋；完整模型保留当前 _intact_full 名称。 -->
+		<object name="g_grille_right_top_intact_full" enabled="true" />
+		<object name="g_grille_right_top_broken_outer" enabled="false" />
+		<object name="g_grille_right_top_broken_inner" enabled="false" />
+
+		<!-- 右下横筋 -->
+		<object name="g_grille_right_bottom_intact" enabled="true" />
+		<object name="g_grille_right_bottom_broken_outer" enabled="false" />
+		<object name="g_grille_right_bottom_broken_inner" enabled="false" />
+
+		<!-- 中央竖筋 -->
+		<object name="g_grille_middle_intact" enabled="true" />
+		<object name="g_grille_middle_broken_top" enabled="false" />
+		<object name="g_grille_middle_broken_bottom" enabled="false" />
+
+		<!--object name="s_body" enabled="true" shadow_caster="true" /-->
+	</graphics>
+</dynamic_object>

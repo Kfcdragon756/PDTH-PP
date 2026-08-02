@@ -1,3 +1,9 @@
+--[[
+升级与装备基础数值覆盖。
+本轮与步哨直接相关的是基础弹药上限改为400，以及关闭原版技能树对步哨弹药/耐久的额外增量，
+使 HUD 同步、回收费比例和实际部署数值都使用统一的最大值来源。
+]]
+
 local module = ... or DorHUD:module("PDTH++")
 local UpgradesTweakData = module:hook_class("UpgradesTweakData")
 
@@ -52,6 +58,7 @@ module:hook(UpgradesTweakData, "init_weapon_upgrade_data", function(self)
 	self.values.m4.clip_ammo_increase = { 0, 0 }
 	self.values.m4.spread_multiplier = { 1, 1, 1, 1 }
 	self.values.m4.damage_multiplier = { 1, 1 }
+	-- 部署物基础量；步哨最大弹药由 sentry_gun_base_ammo 统一控制，当前为400。
 	--Deployables
 	self.ammo_bag_base = 7.5
 	self.values.ammo_bag.ammo_increase = { 0, 0, 0 }
@@ -59,7 +66,7 @@ module:hook(UpgradesTweakData, "init_weapon_upgrade_data", function(self)
 	self.values.doctor_bag.amount_increase = { 0, 0, 0 }
 	self.values.trip_mine.quantity = { 0, 0, 0, 0, 0, 0 }
 	self.values.trip_mine.damage_multiplier = { 1, 1 }
-	self.sentry_gun_base_ammo = 300
+	self.sentry_gun_base_ammo = 400
 	self.sentry_gun_base_armor = 10
 	self.values.sentry_gun.ammo_increase = { 0, 0, 0, 0 }
 	self.values.sentry_gun.armor_increase = { 0, 0, 0, 0 }
