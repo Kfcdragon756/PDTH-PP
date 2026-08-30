@@ -12,7 +12,7 @@ local NetworkMatchMakingSTEAM = module:hook_class("NetworkMatchMakingSTEAM")
 -- compatible while this protocol stays unchanged.
 local PDTHPP_NETWORK_PROTOCOL = module:version()
 NetworkMatchMakingSTEAM._BUILD_SEARCH_INTEREST_KEY = string.format(
-	"%s-protocol-%d",
+	"%s-protocol-%s",
 	module:id(),
-	PDTHPP_NETWORK_PROTOCOL
+	tostring(PDTHPP_NETWORK_PROTOCOL)
 )
