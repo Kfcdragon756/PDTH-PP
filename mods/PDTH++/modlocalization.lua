@@ -13,7 +13,7 @@ local replacements = {
 	["tie_yourself_help"] = {
 		english = "Once you equpped fake surrender in game, you can Tie/Untie yourself with skill when pressed this key.",
 		chinese = "在装备诈降专家技能时，点击该按键用技能把自己绑起来/解绑。",
-		spanish = "Una vez tengas equipado la habilidad 'Rendición Teatral' en la partida, puedes atarte/desarte a voluntad cuando presionas esta tecla.",
+		spanish = "Una vez tengas equipado la habilidad 'Rendición Teatral' puedes atarte/desarte a voluntad cuando presionas esta tecla.",
 	},
 	["change_308_fov_zoom_keybind"] = {
 		english = "Change M308 scope zoom",
@@ -23,7 +23,7 @@ local replacements = {
 	["change_308_fov_zoom_help"] = {
 		english = "You can press this button while handling M308, then you can change the M308's fov zoom.\n\n\nIndependent aiming setting is required to use this function.",
 		chinese = "手持M308时轻击该按钮即可改变倍镜倍率。\n\n\n需要开启独立瞄准设置以生效。",
-		spanish = "Cuando pulsas esta tecla mientras tienes el rifle M308 equipado, puedes cambiar el zoom del FOV.\n\n\nPara usar esta función necesitas configurar el FOV deseado en la opción de abajo.",
+		spanish = "Al pulsar esta tecla cuando tienes el M308 equipado puedes cambiar el zoom del FOV.\n\n\nPara usar esta función necesitas configurar el FOV deseado en la opción de abajo.",
 	},
 	["m308_fov_zoom_set_keybind"] = {
 		english = "M308 zoomed fov set",
@@ -33,7 +33,7 @@ local replacements = {
 	["m308_fov_zoom_set_help"] = {
 		english = "The fov when M308 is zoomed.",
 		chinese = "M308高倍镜的FOV。",
-		spanish = "El zoom del FOV que tiene la mira del rifle M308 cuando estás apuntando.",
+		spanish = "El zoom del FOV que tiene la mira del M308 cuando estás apuntando.",
 	},
 	["m308_fov_zoom_sens"] = {
 		english = "M308 zoomed sensitivity",
@@ -54,7 +54,7 @@ local replacements = {
 	["network_isolation_help"] = {
 		english = "When enabled, prevent players without the mod from joining while hosting.",
 		chinese = "启用时，作为主机阻止没安装mod的玩家加入。",
-		spanish = "Al activarlo, impide que jugadores sin el mod se unan cuando eres el anfitrión.",
+		spanish = "Al activarlo impide que otros jugadores sin el mod se unan cuando hosteas.",
 	},
 	["sentry_multi_part_reachability"] = {
 		english = "Sentry multi-part reachability check",
@@ -64,18 +64,18 @@ local replacements = {
 	["sentry_multi_part_reachability_help"] = {
 		english = "When the vanilla aiming point cannot be reached, check whether another part of the enemy can be hit.",
 		chinese = "原版瞄准点不可达时，检测敌人的其它部位是否可以命中。",
-		spanish = "Cuando no se pueda alcanzar el punto de apuntado original, comprueba si se puede impactar otra parte del enemigo.",
+		spanish = "Cuando la misma no pueda alcanzar el objetivo original, esta comprueba si puede impactar otra parte del enemigo.",
 	},
 	--Added smart weapon switch stuffs here.
 	["sws_show_queue_hints"] = {
 		english = "Show hints on switch queue",
 		chinese = "在切换武器延迟时显示提示",
-		spanish = "Mostrar indicadores del cambio de armas inteligente",
+		spanish = "Mostrar indicadores del cambio de armas en cola",
 	},
 	["sws_show_queue_hints_help"] = {
 		english = "Show screen hints about the queue system while reloading.",
 		chinese = "在武器换弹时间百分比小于设定数值时，换弹切枪时将会显示切换武器延时的提示。\n\n\n不影响实际延迟切换机制。",
-		spanish = "Muestra un indicador en la pantalla sobre el cambio de armas inteligente mientras relizas una recarga.",
+		spanish = "Muestra un indicador en la pantalla sobre el sistema de recargas en cola mientras relizas una recarga.",
 	},
 	["sws_min_reload_remaining_pct"] = {
 		english = "Force weapon switch threshold (%)",
@@ -85,27 +85,27 @@ local replacements = {
 	["sws_min_reload_remaining_pct_help"] = {
 		english = "When attempting to switch weapons during a reload, if the current reload has this much or more remaining (in percent), the switch will be forced immediately. Value is the percent of reload left (1-100).\nQueued weapon switches can be cancelled by attempting to equip the currently selected weapon.",
 		chinese = "在武器换弹时切换武器，倘若剩余换弹时间的百分比值高于该设置的值，那么就会像原版一样立刻开始切换武器，反之，则会在武器换弹完成之后才切换武器。\n\n该值的设置区间为1%-100%，设置为1%将在实质上关闭该功能。\n在延迟期间切换武器可通过再次装备该武器取消。",
-		spanish = "Cuando intentes cambiar de arma mientras recargas, si a la recarga actual le queda este valor o menos se forzará el cambio de arma inmediatamente.\n\nEl valor representa al tiempo de recarga restante en forma de porcentaje (1-100).\nPuedes cancelar el cambio de armas inteligente pulsando la tecla del arma que tienes equipada actualmente.", 
+		spanish = "Al intentar de cambiar de arma mientras recargas, si a la recarga actual le queda este valor o menos, se forzará el cambio de arma inmediatamente.\n\nEl valor representa al tiempo de recarga restante en forma de porcentaje (1-100).\nPuedes cancelar el 'cambio de armas en cola' pulsando la tecla del arma que tienes equipada actualmente.", 
     },
 	["sws_force_switch_after_loading_shell"] = {
 		english = "Force weapon switch after loading a shell",
 		chinese = "单发装填武器延迟切换优化",
-		spanish = "Forzar cambio de arma luego de introducir un cartucho.",
+		spanish = "Forzar el cambio de arma luego de introducir un cartucho.",
 	},
 	["sws_force_switch_after_loading_shell_help"] = {
 		english = "When enabled, if a weapon switch is queued while reloading a shotgun (shell-by-shell reload), the switch will be performed immediately after the next shell is loaded, without waiting for the full reload to finish.",
 		chinese = "开启以后，倘若单发装填的武器触发了切换武器延迟，那么将会在装填完毕下一颗弹药以后立刻切换武器，而不是必须等到换弹完成以后。",
-		spanish = "Cuando está activado, si hay un cambio de arma en cola mientras recargas una escopeta (recarga de cartucho por cartucho) el cambio será realizado inmediatamente luego de que el siguiente cartucho sea cargado, sin necesidad de esperar a que la recarga completa termine.",
+		spanish = "Cuando está activo, si hay un 'cambio de arma en cola' mientras recargas una escopeta, cambiarás de arma luego de introducir el siguiente cartucho y sin esperar a que la recarga completa termine.",
 	},
 	["sws_hint_doubletap_to_force_switch"] = {
 		english = "Weapon switch queued; double-tap to force switching weapons.",
 		chinese = "武器切换已延迟，双击武器槽位对应按键以强制切换武器。",
-		spanish = "Cambio de arma en cola: Pulsa 2 veces para forzarlo.",
+		spanish = "Cambio de arma en cola; Pulsa 2 veces para forzarlo.",
 	},
 	["sws_hint_switching_after_shell_load"] = {
 		english = "Weapon switch queued; switching weapons after finishing loading the next shell.",
 		chinese = "武器切换已延迟，将在填装下一颗弹药以后切换武器。",
-		spanish = "Cambio de arma en cola: Se realizará luego de cargar el siguiente cartucho.",
+		spanish = "Cambio de arma en cola; Se realizará luego del siguiente cartucho.",
 	},
 	["sws_hint_switch_cancelled"] = {
 		english = "Weapon switch queue cancelled.",
@@ -115,12 +115,12 @@ local replacements = {
 	["sws_melee_cancel_queue"] = {
 		english = "Cancel weapon switch queue with melee",
 		chinese = "用近战取消武器切换延迟",
-		spanish = "Cancelar cambio de armas inteligente con golpe a melee",
+		spanish = "Cancelar cambio de armas en cola con golpe a melee",
 	},
 	["sws_melee_cancel_queue_help"] = {
 		english = "When enabled, performing a melee attack will cancel your current weapon switch queue.",
 		chinese = "开启时，使用近战将会取消武器切换。",
-		spanish = "Cuando está activado, realizar un golpe a melee cancelará el cambio de armas inteligente.",
+		spanish = "Cuando está activo, realizar un golpe a melee cancelará el cambio de armas en cola.",
 	},
 	["sws_never"] = {
 		english = "never",
@@ -130,7 +130,7 @@ local replacements = {
 	["sws_on_not_weapon_empty"] = {
 		english = "If weapon is magazine is not empty",
 		chinese = "如果武器弹匣不为空",
-		spanish = "Si el cargador del arma no está vacio",
+		spanish = "Solo si el cargador no está vacio",
 	},
 	["sws_always"] = {
 		english = "Always",
@@ -141,37 +141,37 @@ local replacements = {
 	["des_m4"] = {
 		chinese = "数据：控制性高：高精度：高射速：增伤6点： \n高射速，容易操控，精度高使得即使是略低一点的伤害也不妨碍其成为专业人员的第一选择。\n即使是没经过训练的菜鸟也能轻松使用。",
 		english = "stats:high control:high accuracy:high firerate:gain 6 extra-damagee:\nHigh firerate,easy to control and high accuracy makes it a professional's priority one, although it has a little low damagee for its downside. \nEven an un-trained rookie can handle it easily.",
-		spanish = "Estadísticas: Daño bajo : Retroceso bajo : Precisión alta : Candecia de fuego alta. \nSus buenas estadísticas hacen que los profesionales la elijan sobre otras armas. \nEl perk 'Munición AP' añade 6 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño bajo : Retroceso bajo : Precisión alta : Candecia de fuego alta. \nSus buenas estadísticas hacen que los profesionales la elijan sobre otras armas. \nIncluso un novato puede manejarla fácilmente.",
 	},
 	["des_ak47"] = {
 		chinese = "数据：较难控制：精度略低：中等射速：大威力：增伤5点： \n可靠，便宜，威力大是它的标志性描述。相比起来，精准度和射速的不足反而不那么像是一种缺陷。\n无需瞄准头部，只需命中即可获得不小收益。",
 		english = "stats:low control:low accuracy:medium firerate:hi-power:gain 5 extra-damagee:\nReliable, cheap, powerful is it's symbolic description. It's lack of accuracy and firerate is not really like a kind of downside. \nNo need to aim for heads, hit their bodies can also earn much.",
-		spanish = "Estadísticas: Daño medio : Mucho retroceso : Precisión baja : Cadencia de fuego intermedia. \nSu cadencia y precisión baja no son un problema, disparar al cuerpo es más eficiente. \nEl perk 'Munición AP' añade 5 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño medio : Mucho retroceso : Precisión baja : Cadencia de fuego intermedia. \nSu cadencia y precisión baja no son un problema, disparar al cuerpo es más eficiente. \nDéjalos como un queso suizo.",
 	},
 	["des_r870_shotgun"] = {
 		chinese = "数据：威力巨大：中近距离：伤害衰减：低捡弹：增伤24点：	\n这把问世于2011年犯罪狂潮的霰弹枪以在中近距离极强的火力而闻名。 \n装载六颗弹丸的超重型霰弹能毁灭一切敢于与它作对的敌人。 \n射速略慢，射击时尽可能保证一击必杀。",
 		english = "stats:extreme-power:medium-close range:damagee-falloff:low pickup:gain 24 extra-damagee:\nThis shotgun born in 2011 crimefest is famous for its extreme-firepower in medium-close range. \nThe 6-pellet packed ultra heavy shells can destroy anyone against it.",
-		spanish = "Estadísticas: Daño alto : Arma de corto-medio alcance : El daño disminuye con la distancia : Recogida de munición escasa \nDispara cartuchos cargados con 6 perdigones muy pesados. \nEl perk 'Munición AP' añade 24 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño alto : Arma de corto-medio alcance : El daño disminuye con la distancia : Recogida de munición escasa \nDispara cartuchos cargados con 6 perdigones muy pesados que pueden destruir enemigos fácilmente.",
 	},
 	["des_m14"] = {
 		chinese = "数据：高爆头倍率：精度极高：盾牌穿透：增伤30点： \n精准，头盔穿透能力强使它成为对自己枪法有自信的家伙的首选。 \n盾牌在它眼中宛如纸片，但防爆特警的面甲于它难以穿透。\n远距离战斗是它的主场。 ",
 		english = "stats:high headshot multiplier:extreme accuracy:shield penetration:gain 30 extra-damagee:\nAccurate, and good penetration makes it the priority one for head-shooters, unluckily it's hard to shoot through bulldozer's visor for m308.",
-		spanish = "Estadísticas: Daño medio : Multiplicador por disparo a la cabeza alto : Precisión casi perfecta : Perfora el Escudo de los policias : NO puede perforar el visor de los bulldozers. \nEl arma perfecta para esa gente que sabe buscar cabezas. \nEl perk 'Munición AP' añade 30 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño medio : Multiplicador por disparo a la cabeza alto : Precisión casi perfecta : Perfora Escudos : NO puede perforar el visor de los bulldozers. \nEl arma perfecta para esa gente que sabe buscar cabezas.",
 	},
 	["des_hk21"] = {
 		chinese = "数据：精度较低：较高射速：强压制力：手持与射击时减速：威力强大：增伤15点： \n不赖的精度，高射速与高威力让它变成了一头猛兽。近距离没有任何人可以抵挡得住这家伙的扫射。\n若有人敢来犯，就用80发大弹盒让他们瞧瞧厉害。",
 		english = "stats:low accuracy:high firerate:high suppression ability:reduce movement speed while wielded and shooting:hi-power:gain 15 extra-damagee: \nOkay accuracy, high firerate and high firepower makes it a beast. No one can live under it's strafing at close range. \nGive'em a lesson with your 80 rounds box magtazine if they get near.",
-		spanish = "Estadísticas: Daño alto : Precisión baja : Cadencia de fuego alta : Supresión alta : Sostenerla o disparar ralentiza la velocidad de movimiento : Cargador enorme de 80 rondas. \nNadie sobrevive estando cerca de esta bestia. \nEl perk 'Munición AP' añade 15 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño alto : Precisión baja : Cadencia de fuego alta : Supresión alta : Sostenerla o disparar ralentiza la velocidad de movimiento : Cargador enorme de 80 rondas. \nNadie sobrevive estando cerca de esta bestia.",
 	},
 	["des_beretta92"] = {
 		chinese = "数据：高精度：高射速：增伤7点： \n这把带着消音器的手枪终于迎来了春天。 \n改良以后的枪管和弹药现在能在不增加后坐力的前提下增加精度和威力。其具有的高射速让使用者能快速造成伤害。 \n不论是警察，特工，安保人员，甚至是劫匪都对其非常满意，适合新手使用。",
 		english = "stats:high accuracy:high firerate:gain 7 extra-damagee: \nBeing easy to control, great firepower, and best firerate makes it a great weapon for rookies.",
-		spanish = "Estadísticas: Daño bajo : Precisión alta : Cadencia de fuego alta. \nEstadísticas excelentes para una pistola, el arma ideal para los novatos. \nEl perk 'Munición AP' añade 7 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño bajo : Precisión alta : Cadencia de fuego alta. \nEstadísticas excelentes para una pistola, el arma ideal para los novatos.",
 	},
 	["des_c45"] = {
 		chinese = "数据：威力大：精度略低：携弹量少：增伤10点： \n这把问世于2011年的.45口径手枪在现在推出了最新的改良版本。 \n它的威力和精度现在完全足够应付绝大多数敌人，代价是八发稀烂的弹匣。 \n这把改良型武器受到绝大多数群体的欢迎。",
 		english = "stats:hi-power:low accuracy:low ammo:gain 10 extra-damagee: \nCompared to The original one, this MK II pistol is more worth using.\nIt's firepower and accuracy now is enough for dealing with most enemies, but it has a only-8-round magazine. \nThis improved weapon now is now welcomed by the vast majority of shooters.",
-		spanish = "Estadísticas: Daño alto : Precisión baja : Poca munición : Cargador pequeño de solo 8 rondas. \nSu daño y precisión ahora son suficientes para lidiar con la mayoría de enemigos. \nEl perk 'Munición AP' añade 10 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño alto : Precisión baja : Poca munición : Cargador pequeño de solo 8 rondas. \nEsta versión MK II mejora la pistola haciendo que su daño y precisión ahora son suficientes para lidiar con la mayoría de enemigos.",
 	},
 	["debug_c45"] = {
 		chinese = "CROSSKILL .45 MK II手枪",
@@ -181,12 +181,12 @@ local replacements = {
 	["des_raging_bull"] = {
 		chinese = "数据：威力巨大：精度高：携弹量少：难以控制：增伤50点： \n.44MAGNUM弹药注定了这把枪将会非同凡响，这把枪原本用于对付大型动物。 \n巨大的威力让它所向披靡。",
 		english = "stats:extreme-power:high accuracy:low ammo:hard to control:gain 50 extra-damagee: \n.44MAGNUM rounds makes it will not be a common pistol. \nThis weapon is designed to deal with larger animals. \nExtreme firepower will make it unstoppable.",
-		spanish = "Estadísticas: Daño descomunal : Precisión casi perfecta : Poca munición : Difícil de controlar : EL calibre .44 MAGNUM hace que no sea común encontrarse con munición. \nArma diseñada para cazar animales grandes. \nEl perk 'Munición AP' añade 50 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño descomunal : Precisión casi perfecta : Poca munición : Difícil de controlar : EL calibre .44 MAGNUM hace que no sea común encontrarse con munición. \nArma diseñada para cazar animales enormes.",
 	},
 	["des_glock"] = {
 		chinese = "数据：精度略低：极高射速：强压制力：增伤5点： \nSTRYK是一把采用大量聚合物制造的自动手枪，其因在近距离极强的爆发性输出而闻名。 \n军方在用，一些地区的警察在用，黑帮也在用，现在轮到你了。",
 		english = "stats:low accuracy:extreme high firerate:high supression ability:gain 5 extra-damagee: \nSTRYK is an automatic pistol made of large amount of polymer. It's famous for bursting lots of damagee at close range. \nGive'em a pocket surprise.",
-		spanish = "Estadísticas: Daño medio : Precisión baja : Cadencia de fuego demasiado alta : Supresión alta. \nPistola automática hecha de una grán cantidad de polímero. \nEs la ideal para inligir mucho daño a cortas distancias. \nEl perk 'Munición AP' añade 5 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño medio : Precisión baja : Cadencia de fuego demasiado alta : Supresión alta. \nPistola automática hecha de una grán cantidad de polímero. \nEs la ideal para inligir mucho daño a cortas distancias. \nIdeal para Rushear B.",
 	},
 	["des_m79"] = {
 		chinese = "数据：威力巨大：只能从弹药包获取弹药：具有爆炸性： \n沃尔夫到底从哪里搞到的这东西？ \n从弹药包获取一发弹药会直接扣取75%的弹药量。爆炸范围非常宽广，可以炸死多数敌对单位，在需要的时候用吧。",
@@ -196,7 +196,7 @@ local replacements = {
 	["des_mac11"] = {
 		chinese = "数据：低精准度：强压制力：较难控制：续航偏弱：增伤15点： \n高射速，高伤害，大弹匣。\n拿上它，你就会让你的敌人后悔出生在这个世界上。",
 		english = "stats:low accuarcy:high suppresion ability:hard to control:low endurance:gain 15 extra-damagee:\nHigh firerate, High power, Big magazine. \nBecome a moster and let cops regret wake up this morning.",
-		spanish = "Estadísticas: Daño alto : Precisión baja : Supresión alta : Difícil de controlar : Estabilidad baja : Cargador grande. \nEl arma por excelencia para eliminar Bulldozers. \nEl perk 'Munición AP' añade 15 de daño extra al cuerpo.",
+		spanish = "Estadísticas: Daño alto : Estabilidad baja : Precisión baja : Supresión alta : Difícil de controlar : Cargador grande. \nEl arma por excelencia para eliminar Bulldozers.",
 	},
 	["des_mp5"] = {
 		chinese = "数据：高精度：高爆头倍率：低基础伤害：\n紧凑型-5冲锋枪因为其紧凑，优秀的的可控性和精准度受到反恐部队的喜爱。\n但是较差的护甲穿透力让这把枪对于使用者的操作水平要求较高。",
@@ -206,7 +206,7 @@ local replacements = {
 	["des_mossberg"] = {
 		chinese = "数据：快速行动：威力巨大：伤害衰减：打击范围较大：极强击退力：手持时速度增加： \n火车头 12G以更少的弹容量和更差的精准度为代价获得了极高的爆发能力。 \n使用装有14发弹丸的鹿弹，牺牲单颗弹丸火力，但容错率变得更高了。 \n务必在近距离使用。",
 		english = "stats:quick action:extreme-power:damagee falloff:wide spread:strong knockback:increase movement speed while wielded: \nLocomotive 12G gains terrific ability to burst damagee in cost of lower capacity and worse accuracy. \nIt uses buckshot contains 14 pellets, missing one pellet will never be a deal.",
-		spanish = "Estadísticas: Daño descomunal : Arma de corto alcance : El daño disminuye con la distancia : Precisión mediocre : Cadencia de fuego alta : Dispara en forma de cono amplio : Retroceso fuerte : Tenerla equipada incrementa tu velocidad de movimiento un 5%. \nDispara cartuchos cargados con 14 perdigones.",
+		spanish = "Estadísticas: Daño descomunal : Arma de corto alcance : El daño disminuye con la distancia : Precisión mediocre : Cadencia de fuego alta : Retroceso fuerte : Sostenerla incrementa tu velocidad de movimiento un 5%. \nDispara cartuchos cargados con 14 perdigones.",
 	},
 	["debug_thick_skin"] = {
 		chinese = "重型护甲",
@@ -216,12 +216,12 @@ local replacements = {
 	["des_thick_skin"] = {
 		chinese = "重型护甲为玩家增加100点血量与30点护甲。\n代价是行走速度减慢15%,奔跑速度减慢10%，护甲回复时间延长0.8秒。\n这种护甲能让你近距离硬抗防爆特警一枪而不倒地。",	
 		english = "Heavy armor provides 100 hp and 30 ap. \nFor what it costs, your walking speed is decreased by 15%, running speed decreased by 10%, and armor regen time is increased by 0.8 second. \nThis kind of armor can allow you to take a Bulldozer's shotgun shot without bleeding out.",
-		spanish = "La Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en un 15%, al correr un 10% y el tiempo de regeneración es incrementado por 0.8 segundos. \nEste tipo de armadura te permite aguantar un escopetazo de los Bulldozers y seguir vivo.",
+		spanish = "La Armadura Robusta te provee 100HP y 30AP. \n¿Pero a qué costo? Tu velocidad al caminar se reduce en 15%, al correr un 10% y el tiempo de regeneración es incrementado por 0.8 segundos. \nEste tipo de armadura te permite aguantar un escopetazo de los Bulldozers y seguir vivo.",
 	},
 	["des_extra_start_out_ammo"] = {
 		chinese = "每把武器额外获得一个弹匣（GL40不享受该加成）。\n装备该技能时，使用弹药包将自动装填已装备武器。",
 		english = "Provide an extra magazine per weapon.(In exception of GL40) \nOnce interacted with an ammo bag with this skill equipped, you will automatically reload your equipped weapon.",
-		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.\nUna vez que interactúes con una bolsa de munición con esta habilidad equipada, recargarás automáticamente tu arma equipada.", --USING BING MACHINE TRASLATOR
+		spanish = "Le da un cargador extra a cada arma que tengas. \nEl GL40 NO se beneficia de esta habilidad.\nAl equipar ésta habilidad e interactuar con bolsas de munición recargará tu arma equipada automáticamente.",
 	},
 	["des_toolset"] = {
 		chinese = "减少45%互动（包括援助他人）所需时长。",
@@ -251,7 +251,7 @@ local replacements = {
 	["des_more_blood_to_bleed"] = {
 		chinese = "使队友的倒地血量增加100%，并使队友的可被援助时间与倒地的援助时间惩罚增加100%。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
 		english = "Your teammates' down timer along with down timer penalty and health point on downed will be increased by 100%.",
-		spanish = "Aumenta el tiempo y la vida de tus compañeros de equipo en un 100% cuando están desangrándose.",
+		spanish = "Aumenta el tiempo y la vida de tus compañeros de equipo en 100% cuando están desangrándose.",
 	},
 	["debug_upgrade_aggressor"] = {
 		chinese = "穿甲弹药",
@@ -261,17 +261,17 @@ local replacements = {
 	["des_aggressor"] = {
 		chinese = "队友的武器非爆头伤害增加。具体数值请见武器介绍，且增加的伤害不会影响对防爆特警面甲的伤害。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
 		english = "Your teammates' non-headshot damagee will be increased and the extra damage will not affect the actual damagee against bulldozer's visor.",
-		spanish = "Tus compañeros de equipo infligen más daño al cuerpo de los enemigos, NO aplica al daño a la cabeza ni al visor de los bulldozers. \n\nEl daño adicional que ofrece este perk está en las descripciones de las armas.",
+		spanish = "Tus compañeros de equipo infligen más daño al cuerpo de los enemigos, NO aplica al daño a la cabeza ni al visor de los bulldozers.",
 	},
 	["des_speed_reloaders"] = {
 		chinese = "队友的换弹速度提升15%。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
 		english = "Your teammates' reload speed is increased by 15%.",
-		spanish = "Aumenta el tiempo de recarga en un 15% para los compañeros de equipo.",
+		spanish = "Aumenta el tiempo de recarga en 15% para los compañeros de equipo.",
 	},
 	["des_sharpshooters"] = {
 		chinese = "队友的武器精准度提升10%，且武器爆头倍率增加0.25。\n爆头倍率计算方式为：武器爆头倍率*敌人爆头倍率*难度爆头倍率。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
 		english = "Your teammates' weapon accuracy is increased by 10% and weapons' headshot multipliers are increased by 0.25.",
-		spanish = "Para tus compañeros de equipo aumenta la precisión de sus armas en un 10% y el multiplicador por disparo a la cabeza en 0.25.",
+		spanish = "Para tus compañeros de equipo aumenta la precisión de sus armas en 10% y el multiplicador por disparo a la cabeza en 0.25.",
 	},
 	["des_mr_nice_guy"] = {
 		chinese = "给队友提供现金加成。\n你的小组加成只能对你的队友生效，也就是说你只能享受你队友的小组加成。\n小组加成效果不随小组加成数量叠加，且被羁押会使小组加成失效。",
@@ -291,7 +291,7 @@ local replacements = {
 	["des_sentry_gun"] = {
 		chinese = "步哨机枪总是可以帮助你清理一大群敌人。\n布置下来以后，步哨机枪可以自动锁定并攻击敌人，直到它被破坏或子弹耗尽为止。\n你可通过拾取步哨机枪重新补充它的弹药与血量。",
 		english = "Sentry guns can always help you to deal with a massive amounts of enemies.\nOn deployed, the sentry gun can automatically detect then shoot the enemies, until it's destroyed or runs out of ammo.\nYou can restore its health and refill its ammo by picking it up.",
-		spanish = "Las Torretas Sentinelas pueden ayudarte a combatir grandes grupos de enemigos.\nCuando está desplecida, la torreta automática puede detectar y disparar a los enemigos, hasta que sea destruida o se quede sin munición.\nPuedes restaurar su salud y recargar su munición recogiéndola.", --USING BING MACHINE TRASLATOR
+		spanish = "Las Torretas Sentinelas pueden ayudarte a combatir grandes grupos de enemigos.\nUna vez desplegada, detecta y dispara a enemigos hasta que sea destruida o se quede sin munición.\nPuedes repararla y reponer su munición recogiéndola nuevamente.",
 	}, 
 	["des_doctor_bag"] = {
 		chinese = "医疗包总是能让你满血复活，而且还能重置你的倒地次数。 \n一个医疗包只能用三次，一个玩家可以携带两个医疗包。",
@@ -332,7 +332,7 @@ local replacements = {
 	["mutator_combine_assault_motd"] = {
 		chinese = "突变模式‘联合进攻’已开启，装备了更高级武器的黑水雇佣兵和FBI探员将会生成。",
 		english = "mutator 'COMBINE ASSAULT' activated, murkywater mercenaries and FBI agents with better weapons will spawn.",
-		spanish = "El mutador 'ASALTO COMBINE' está activado, los Mercenarios de Murkywater y los Agentes del FBI tienen mejores armas y van a spawnear.",
+		spanish = "El mutador 'ASALTO COMBINE' está activo, los Mercenarios de Murkywater y los Agentes del FBI tienen mejores armas y van a spawnear.",
 	},
 	["mutator_exercised_cops"] = {
 		chinese = "高级训练",
@@ -347,12 +347,12 @@ local replacements = {
 	["mutator_exercised_cops_motd"] = {
 		chinese = "突变模式‘高级训练’已开启，准备好被重甲水军按着打吧。",
 		english = "mutator 'EXERCISED COPS' activated, ready to get fucked by heavy swats.",
-		spanish = "El mutador 'POLICIAS DOPADOS' está activado, prepárate ser cogido por Heavy SWATS (rico)",
+		spanish = "El mutador 'POLICIAS DOPADOS' está activo, prepárate ser cogido por Heavy SWATS",
 	},
 	["mutator_full_speed"] = {
 		chinese = "全速出击",
 		english = "OUTRUN",
-		spanish = "AZUCARADO",
+		spanish = "HIPERACTIVO",
 	},
 	["mutator_full_speed_help"] = {
 		chinese = "我怀疑条子们磕了点奇怪的东西，他们今天怎么跑这么快？\n\n\n不管了，既然他们先磕，那我们也磕点东西，要不然可不就输了！弟兄们，准备好心脏爆炸吧！\n\n\n\n玩家，敌人，与AI队友的移速乘以3。",
@@ -392,7 +392,7 @@ local replacements = {
 	["mutator_expert_mode_motd"] = {
 		chinese = "突变模式‘专家模式’已开启。你最好真的是个专家。",
 		english = "mutator 'EXPERT MODE' activated, you should make sure that you are a professional.",
-		spanish = "El mutador 'MODO EXPERTO' está activado, ¡WOW! ¡Débes ser un profesional!",
+		spanish = "El mutador 'MODO EXPERTO' está activo, ¡WOW! ¡Débes ser un profesional!",
 	},	
 	["mutator_no_time_for_searching"] = {
 		chinese = "无暇搜刮",
@@ -402,12 +402,12 @@ local replacements = {
 	["mutator_no_time_for_searching_help"] = {
 		chinese = "弟兄们，这次十万火急！\n\n\n这次应该没时间从条子身上搜刮弹药了，多带点！\n\n\n\n敌人死亡不会掉落可拾取的弹药盒，且玩家可携带弹药量增加。\n\n与炸翻天和肘击高手冲突。",
 		english = "Gang, we got a situation! \n\n\nWe have no time for searching ammo from these dead cops, just carry more AMMO! \n\n\n\nAmmoclip will not spawn on enemies dead, and players' start out ammo is increased.\n\nConflicts with KABOOM and MELEE EXPERT mutator.",
-		spanish = "Pandilla ¡Estámos en problemas! \n\n\nNo tenemos tiempo para buscar munición de esos cadáveres ¡Simplemente llevemos más munición! \n\n\n\nLos enemigos muertos no dejarán caér munición y la munición con la que aparecen los jugadores está incrementada.\n\nEste mutador tiene conflicto con los mutadores '¡KABOOM!' y 'EXPERTO EN ARTES MARCIALES'.",
+		spanish = "Pandilla ¡Estámos en problemas! \n\n\nNo tenemos tiempo para buscar munición de esos cadáveres ¡Simplemente llevemos más munición! \n\n\n\nLos enemigos muertos no dejarán caer munición y la munición con la que aparecen los jugadores está incrementada.\n\nEste mutador tiene conflicto con los mutadores '¡KABOOM!' y 'EXPERTO EN ARTES MARCIALES'.",
 	},
 	["mutator_no_time_for_searching_motd"] = {
 		chinese = "突变模式‘无暇搜刮’已开启。别指望从条子尸体身上捡到奇奇怪怪的子弹了。",
 		english = "mutator 'NO TIME FOR SEARCHING' activated, cops will not spawn ammoclip on they get killed.",
-		spanish = "El mutador 'NO HAY TIEMPO QUE PERDER' está activado, los policias no dejaran caér cajas de munición al morir.",
+		spanish = "El mutador 'NO HAY TIEMPO QUE PERDER' está activo, los policias no dejaran caér cajas de munición al morir.",
 	},
 	["mutator_kaboom"] = {
 		chinese = "炸翻天",
@@ -417,7 +417,7 @@ local replacements = {
 	["mutator_kaboom_help"] = {
 		chinese = "“今天让那帮傻逼条子吃点好吃的！”\n\n\n“沃尔夫，你这个傻逼！这就是你他妈连其他弹药都不带的理由？都怪你，现在我们只有筒子和手枪能用的，你一个人滚去吃屎吧！”\n\n\n\nGL40可以捡弹，换弹更快，但以伤害更低为代价。\n\n\n只能使用手枪和GL40，其他武器全部没有子弹。\n\n与肘击高手和无暇搜刮冲突。",
 		english = "What makes me a good demoman?\n\n\nWolf, you fucking moron! Is this the reason you don't carry other fucking ammunition? It's all your fault that we can only use Grenade launcher and a pistol now, go eat shit yourself!\n\n\n\nGL40 can now pickup ammo, reload faster in cost of lower damagee.\n\n\nOnly pistols and GL40 are availiable, No ammo for other weapons.\n\nConflicts with MELEE EXPERT and NO TIME FOR SEARCHING mutator.",
-		spanish = "¿Que es lo que me hace un buen demoledor?\n\n\n¡Wolf, psicótico de mierda! ¿Ésta es la razón por la que no trajiste otro tipo de munición? Por tu culpa solo podemos usar el Lanzagranadas y la Pistola, si no morimos por esto ¡Te mataré con propias mis manos!\n\n\n\nEl GL40 puede recoger munición del suelo, ahora recarga más rápido a costa de que su daño es menor.\n\n\nSolo las pistolas y el GL40 están disponibles. No hay munición para otras armas.\n\nEste mutador tiene conflicto con los mutadores 'NO HAY TIEMPO QUE PERDER' y 'EXPERTO EN ARTES MARCIALES'.",
+		spanish = "¿Que es lo que me hace un buen demoledor?\n\n\n¡Wolf, psicótico de mierda! ¿No trajiste otro tipo de munición más que la explosiva? Por tu culpa solo podemos usar el Lanzagranadas y la Pistola, espero no suicidarme por accidente...\n\n\n\nEl GL40 puede recoger munición del suelo y recarga más rápido a costa de un daño menor.\n\n\nSolo las pistolas y el GL40 están disponibles. No hay munición para otras armas.\n\nEste mutador tiene conflicto con los mutadores 'NO HAY TIEMPO QUE PERDER' y 'EXPERTO EN ARTES MARCIALES'.",
 	},
 	["mutator_kaboom_motd"] = {
 		chinese = "突变模式‘炸翻天’已开启。把这些傻逼全炸死！",
@@ -432,12 +432,12 @@ local replacements = {
 	["mutator_better_enemy_lmg_help"] = {
 		chinese = "啊，又是一个扛着破烂机枪的防爆特警——等等他今天怎么射这么快？！\n\n\n兄弟们快躲起来，随便找个掩体，快！\n\n\n\n敌方布伦纳-21的射速加快。简单难度不启用。",
 		english = "Ah, another bulldozer with shitty machine gun----WAIT HOW CAN HE SHOOT THIS FAST TODAY?!\n\n\nTAKE COVER GANG, FIND ANYTHING TO HIDE, HURRY!\n\n\n\nEnemy Breener-21's fire rate is increased. Does not apply on Easy difficulty.",
-		spanish = "Ah que bien... otro Bulldozer con una LMG de juguete nada nuevo--- ¿¡QUÉ!? ¿¡PORQUÉ HOY ESTÁN DISPARANDO DEMASIADO RÁPIDO!?\n\n\n¡CÚBRANSE, APÚRENSE, ENCUENTREN UN LUGAR SEGURO!\n\n\n\nLa cadencia del arma Brenner-21 enemiga está aumentada. \n\nNo aplica a la dificultad Fácil.",
+		spanish = "Ah que bien... otro Bulldozer con una LMG de juguete nada nue- ¿¡PORQUÉ HOY ESTÁN DISPARANDO DEMASIADO RÁPIDO!?\n\n\n¡CÚBRANSE, APÚRENSE, ENCUENTREN UN LUGAR SEGURO!\n\n\n\nLa cadencia del arma Brenner-21 enemiga está aumentada. \n\nNo aplica a la dificultad Fácil.",
 	},
 	["mutator_better_enemy_lmg_motd"] = {
 		chinese = "突变模式‘敌方机枪加强’已开启。小心敌方携带机枪的单位。",
 		english = "mutator 'BETTER ENEMY LMG' activated, watch out for these units who carring LMGs.",
-		spanish = "El mutador 'AMETRELLADORAS ENEMIGAS SUPERIORES' está activado, ten cuidado si ves a alguien con una LMG.",
+		spanish = "El mutador 'AMETRELLADORAS ENEMIGAS SUPERIORES' está activo, ten cuidado si ves a alguien con una LMG.",
 	},
 	["mutator_dozers_on_street"] = {
 		chinese = "防爆特警过马路",
@@ -452,7 +452,7 @@ local replacements = {
 	["mutator_dozers_on_street_motd"] = {
 		chinese = "突变模式‘防爆特警过马路’已开启。过马路前看看有没有防爆特警！",
 		english = "mutator 'DOZERS ON STREET' activated, check if there's dozers before crossing the road!",
-		spanish = "El mutador '¡BULLDOZERS, POR FAVOR FRENE!' está activado ¡Recuerde mirar hacia los lados antes de cruzar la calle!",
+		spanish = "El mutador '¡BULLDOZERS, POR FAVOR FRENE!' está activo ¡Recuerde mirar hacia los lados antes de cruzar la calle!",
 	},
 	["mutator_stealth_marksman"] = {
 		chinese = "超隐蔽狙击手",
@@ -462,7 +462,7 @@ local replacements = {
 	["mutator_stealth_marksman_help"] = {
 		chinese = "沃尔夫，你他妈看见那傻逼从哪射的不？！\n\n\n我他妈看不见！看不见！看不见！！！！\n\n\n\n狙击手装备不产生红色轨迹的M308，更难以发现。\n\n在毫不留情劫案不可用。",
 		english = "WOLF, DID YOU SEE THAT MOTHERFUCKER WHO JUST SNIPE US?!\n\n\nI CAN'T SEE! CAN'T SEE! CAN'T SEE!!!!\n\n\n\nSnipers will equip M308s which will not cause red traces.\n\nUnavailiable in NO MERCY heist.",
-		spanish = "¿¡WOLF, VISTE AL BASTARDO QUE NOS ACABA DE DISPARAR!?\n\n\n¡NO LO VEO! ¿¡DONDE ESTÁ!?\n\n\n\nLos Snipers enemigos ahora están equipados con un M308 que no causa trazados rojos/naranjas.\n\nNo disponible en 'NO MERCY' (xd)",
+		spanish = "¿¡WOLF, VISTE AL BASTARDO QUE NOS ACABA DE DISPARAR!?\n\n\n¡NO LO VEO! ¿¡DONDE ESTÁ!?\n\n\n\nLos Snipers enemigos ahora están equipados con un M308 que no causa trazados rojos/naranjas.\n\nNo disponible en 'NO MERCY'",
 	},
 	["mutator_stealth_marksman_motd"] = {
 		chinese = "狙佬呢？！",
